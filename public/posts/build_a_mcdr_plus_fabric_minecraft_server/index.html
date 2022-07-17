@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>搭建MCDR加Fabric我的世界1.19服务器(Arch Linux) // &#39;bcyfo5u0v38t&#39;s Blog&#39;</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://bcyfo5u0v38t.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)"/>
+<meta name="twitter:description" content="第一步:配置环境 安装JDK Python pip
+paru -S --needed liberica-jdk-full-bin python pip
+安装MCDR
+pip install mcdreforged
+第二步:搭建原版服务端 创建MC/server文件夹
+mkdir -p MC/server
+进入MC/server文件夹
+cd MC/server
+从麻将官网下载原版服务端
+curl https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar
+运行服务端
+java -jar server.jar nogui
+此时会报错一次 修改文件夹中的eula.txt文件 将其内容改为
+eula=false
+再次运行服务端
+java -jar server.jar nogui
+出现Done说明服务器搭建成功
+输入stop停止服务器
+可以通过server.properties文件对服务器进行一些配置
+第三步:搭建Fabric服务端 从Fabric官网下载Fabric服务端
+curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar
+运行服务端以生成一些文件
+java -jar fabric-server-mc.1.19-loader.0.14.8-launcher.0.11.0.jar nogui
+出现Done说明服务器搭建成功
+输入stop停止服务器
+第四步:搭建MCDR 返回上层目录(MC)
+cd ..
+初始化MCDR环境
+python -m mcdreforged init
+启动MCDR
+python -m mcdreforged
+MCDR&#43;Fabric服务端搭建成功
+也可以看看 原版服务器设置文件Wiki"/>
+
+    <meta property="og:title" content="搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)" />
+<meta property="og:description" content="第一步:配置环境 安装JDK Python pip
+paru -S --needed liberica-jdk-full-bin python pip
+安装MCDR
+pip install mcdreforged
+第二步:搭建原版服务端 创建MC/server文件夹
+mkdir -p MC/server
+进入MC/server文件夹
+cd MC/server
+从麻将官网下载原版服务端
+curl https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar
+运行服务端
+java -jar server.jar nogui
+此时会报错一次 修改文件夹中的eula.txt文件 将其内容改为
+eula=false
+再次运行服务端
+java -jar server.jar nogui
+出现Done说明服务器搭建成功
+输入stop停止服务器
+可以通过server.properties文件对服务器进行一些配置
+第三步:搭建Fabric服务端 从Fabric官网下载Fabric服务端
+curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar
+运行服务端以生成一些文件
+java -jar fabric-server-mc.1.19-loader.0.14.8-launcher.0.11.0.jar nogui
+出现Done说明服务器搭建成功
+输入stop停止服务器
+第四步:搭建MCDR 返回上层目录(MC)
+cd ..
+初始化MCDR环境
+python -m mcdreforged init
+启动MCDR
+python -m mcdreforged
+MCDR&#43;Fabric服务端搭建成功
+也可以看看 原版服务器设置文件Wiki" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-17T18:00:46+08:00" />
+<meta property="article:modified_time" content="2022-07-17T18:00:46+08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://bcyfo5u0v38t.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>&#39;bcyfo5u0v38t&#39;s Blog&#39;</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 17, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="第一步配置环境">第一步:配置环境</h2>
+<p>安装JDK Python pip<br>
+<code>paru -S --needed liberica-jdk-full-bin python pip</code><br>
+安装MCDR<br>
+<code>pip install mcdreforged</code></p>
+<h2 id="第二步搭建原版服务端">第二步:搭建原版服务端</h2>
+<p>创建MC/server文件夹<br>
+<code>mkdir -p MC/server</code><br>
+进入MC/server文件夹<br>
+<code>cd MC/server</code><br>
+从麻将官网<a href="https://www.minecraft.net/en-us/download/server">下载</a>原版服务端<br>
+<code>curl https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar</code><br>
+运行服务端<br>
+<code>java -jar server.jar nogui</code><br>
+此时会报错一次 修改文件夹中的eula.txt文件 将其内容改为<br>
+<code>eula=false</code><br>
+再次运行服务端<br>
+<code>java -jar server.jar nogui</code><br>
+出现<code>Done</code>说明服务器搭建成功<br>
+输入<code>stop</code>停止服务器<br>
+可以通过<a href="https://minecraft.fandom.com/wiki/Server.properties">server.properties</a>文件对服务器进行一些配置</p>
+<h2 id="第三步搭建fabric服务端">第三步:搭建Fabric服务端</h2>
+<p>从Fabric官网<a href="https://fabricmc.net/use/server/">下载Fabric服务端</a><br>
+<code>curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar</code><br>
+运行服务端以生成一些文件<br>
+<code>java -jar fabric-server-mc.1.19-loader.0.14.8-launcher.0.11.0.jar nogui</code><br>
+出现<code>Done</code>说明服务器搭建成功<br>
+输入<code>stop</code>停止服务器</p>
+<h2 id="第四步搭建mcdr">第四步:搭建MCDR</h2>
+<p>返回上层目录(MC)<br>
+<code>cd ..</code><br>
+初始化MCDR环境<br>
+<code>python -m mcdreforged init</code><br>
+启动MCDR<br>
+<code>python -m mcdreforged</code><br>
+MCDR+Fabric服务端搭建成功</p>
+<h2 id="也可以看看">也可以看看</h2>
+<p><a href="https://minecraft.fandom.com/wiki/Server.properties">原版服务器设置文件Wiki</a><br>
+<a href="https://mcdreforged.readthedocs.io/en/latest/index.html">MCDReforged的文档</a><br>
+<a href="https://github.com/MCDReforged/PluginCatalogue/blob/catalogue/readme.md">MCDReforged的插件目录索引</a><br>
+MC1.11.2前后 离线服务器也会使用正版验证的UUID 如果你的离线服务器出现服务器白名单添加玩家后依旧进不去的问题
+你可能需要这个<a href="https://www.curseforge.com/minecraft/mc-mods/easywhitelist">模组</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
