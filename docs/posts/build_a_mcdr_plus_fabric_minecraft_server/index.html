@@ -13,11 +13,11 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)"/>
-<meta name="twitter:description" content="第一步:配置环境 安装JDK Python pip
+<meta name="twitter:description" content="1.配置环境 安装JDK Python pip
 paru -S --needed liberica-jdk-full-bin python pip
 安装MCDR
 pip install mcdreforged
-第二步:搭建原版服务端 创建MC/server文件夹
+2.搭建原版服务端 创建MC/server文件夹
 mkdir -p MC/server
 进入MC/server文件夹
 cd MC/server
@@ -32,13 +32,13 @@ java -jar server.jar nogui
 出现Done说明服务器搭建成功
 输入stop停止服务器
 可以通过server.properties文件对服务器进行一些配置
-第三步:搭建Fabric服务端 从Fabric官网下载Fabric服务端
+3.搭建Fabric服务端 从Fabric官网下载Fabric服务端
 curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar
 运行服务端以生成一些文件
 java -jar fabric-server-mc.1.19-loader.0.14.8-launcher.0.11.0.jar nogui
 出现Done说明服务器搭建成功
 输入stop停止服务器
-第四步:搭建MCDR 返回上层目录(MC)
+4.搭建MCDR 返回上层目录(MC)
 cd ..
 初始化MCDR环境
 python -m mcdreforged init
@@ -48,11 +48,11 @@ MCDR&#43;Fabric服务端搭建成功
 也可以看看 原版服务器设置文件Wiki"/>
 
     <meta property="og:title" content="搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)" />
-<meta property="og:description" content="第一步:配置环境 安装JDK Python pip
+<meta property="og:description" content="1.配置环境 安装JDK Python pip
 paru -S --needed liberica-jdk-full-bin python pip
 安装MCDR
 pip install mcdreforged
-第二步:搭建原版服务端 创建MC/server文件夹
+2.搭建原版服务端 创建MC/server文件夹
 mkdir -p MC/server
 进入MC/server文件夹
 cd MC/server
@@ -67,13 +67,13 @@ java -jar server.jar nogui
 出现Done说明服务器搭建成功
 输入stop停止服务器
 可以通过server.properties文件对服务器进行一些配置
-第三步:搭建Fabric服务端 从Fabric官网下载Fabric服务端
+3.搭建Fabric服务端 从Fabric官网下载Fabric服务端
 curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar
 运行服务端以生成一些文件
 java -jar fabric-server-mc.1.19-loader.0.14.8-launcher.0.11.0.jar nogui
 出现Done说明服务器搭建成功
 输入stop停止服务器
-第四步:搭建MCDR 返回上层目录(MC)
+4.搭建MCDR 返回上层目录(MC)
 cd ..
 初始化MCDR环境
 python -m mcdreforged init
@@ -118,12 +118,12 @@ MCDR&#43;Fabric服务端搭建成功
       </div>
     </header>
     <div class="post-content">
-      <h2 id="第一步配置环境">第一步:配置环境</h2>
+      <h2 id="1配置环境">1.配置环境</h2>
 <p>安装JDK Python pip<br>
 <code>paru -S --needed liberica-jdk-full-bin python pip</code><br>
 安装MCDR<br>
 <code>pip install mcdreforged</code></p>
-<h2 id="第二步搭建原版服务端">第二步:搭建原版服务端</h2>
+<h2 id="2搭建原版服务端">2.搭建原版服务端</h2>
 <p>创建MC/server文件夹<br>
 <code>mkdir -p MC/server</code><br>
 进入MC/server文件夹<br>
@@ -139,14 +139,14 @@ MCDR&#43;Fabric服务端搭建成功
 出现<code>Done</code>说明服务器搭建成功<br>
 输入<code>stop</code>停止服务器<br>
 可以通过<a href="https://minecraft.fandom.com/wiki/Server.properties">server.properties</a>文件对服务器进行一些配置</p>
-<h2 id="第三步搭建fabric服务端">第三步:搭建Fabric服务端</h2>
+<h2 id="3搭建fabric服务端">3.搭建Fabric服务端</h2>
 <p>从Fabric官网<a href="https://fabricmc.net/use/server/">下载Fabric服务端</a><br>
 <code>curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar</code><br>
 运行服务端以生成一些文件<br>
 <code>java -jar fabric-server-mc.1.19-loader.0.14.8-launcher.0.11.0.jar nogui</code><br>
 出现<code>Done</code>说明服务器搭建成功<br>
 输入<code>stop</code>停止服务器</p>
-<h2 id="第四步搭建mcdr">第四步:搭建MCDR</h2>
+<h2 id="4搭建mcdr">4.搭建MCDR</h2>
 <p>返回上层目录(MC)<br>
 <code>cd ..</code><br>
 初始化MCDR环境<br>

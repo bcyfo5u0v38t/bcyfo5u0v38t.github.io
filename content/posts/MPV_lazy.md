@@ -4,7 +4,7 @@ date: 2022-07-18T07:10:18+08:00
 draft: false
 ---
 
-## 第一步:下载MPV_lazy
+## 1.下载MPV_lazy
 
 GitHub只有源码 从奶牛[下载](https://hooke007.cowtransfer.com/s/143a3d6e402540)  
 下载下来是一个.exe文件  
@@ -15,7 +15,7 @@ GitHub只有源码 从奶牛[下载](https://hooke007.cowtransfer.com/s/143a3d6e
 打开目录下的installer文件夹 右键以管理员权限运行mpv-install.bat  
 到这一步就可以使用了
 
-## 第二步:安装Play-With-MPV在线播放插件
+## 2.安装Play-With-MPV在线播放插件
 
 安装Chrome浏览器插件[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN)  
 安装油猴脚本[Play-With-MPV](https://greasyfork.org/zh-CN/scripts/444056-play-with-mpv)  
@@ -23,7 +23,7 @@ GitHub只有源码 从奶牛[下载](https://hooke007.cowtransfer.com/s/143a3d6e
 解压到MPV目录下并重命名为Play-With-MPV(参考C:\Users\bcyfo5u0v38t\Software\MPV\Play-With-MPV)  
 进入Play-With-MPV目录下 右键使用PowerShell运行install.ps1
 
-## 第三步:添加着色器运行模式缓存插件
+## 3.添加着色器运行模式缓存插件
 
 从GitHub
 Releases下载[MPV_Glsl_Running_Mode_Cache](https://github.com/LuckyPuppy514/MPV_Glsl_Running_Mode_Cache/releases/tag/v1.0.0)  
@@ -44,7 +44,7 @@ Releases下载[MPV_Glsl_Running_Mode_Cache](https://github.com/LuckyPuppy514/MPV
  CTRL+0 script-binding Glsl_Model_0
 ```
 
-## 第四步:添加复制粘贴网址播放插件
+## 4.添加复制粘贴网址播放插件
 
 从GitHub Releases下载[mpv-scripts](https://github.com/Eisa01/mpv-scripts/releases)(Source code (zip))  
 解压 复制里面的script-opts和scripts文件夹到MPV\portable_config目录下

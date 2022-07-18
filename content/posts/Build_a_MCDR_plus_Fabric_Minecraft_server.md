@@ -4,14 +4,14 @@ date: 2022-07-17T18:00:46+08:00
 draft: false
 ---
 
-## 第一步:配置环境
+## 1.配置环境
 
 安装JDK Python pip  
 `paru -S --needed liberica-jdk-full-bin python pip`  
 安装MCDR  
 `pip install mcdreforged`
 
-## 第二步:搭建原版服务端
+## 2.搭建原版服务端
 
 创建MC/server文件夹  
 `mkdir -p MC/server`  
@@ -29,7 +29,7 @@ draft: false
 输入`stop`停止服务器  
 可以通过[server.properties](https://minecraft.fandom.com/wiki/Server.properties)文件对服务器进行一些配置
 
-## 第三步:搭建Fabric服务端
+## 3.搭建Fabric服务端
 
 从Fabric官网[下载Fabric服务端](https://fabricmc.net/use/server/)  
 `curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar`  
@@ -38,7 +38,7 @@ draft: false
 出现`Done`说明服务器搭建成功  
 输入`stop`停止服务器
 
-## 第四步:搭建MCDR
+## 4.搭建MCDR
 
 返回上层目录(MC)  
 `cd ..`  
