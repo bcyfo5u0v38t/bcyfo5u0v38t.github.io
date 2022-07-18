@@ -23,7 +23,7 @@
     <description><![CDATA[安装前的准备 1.确保网络环境 Arch Linux的安装需要网络 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接]]></description>
 </item>
 <item>
-    <title>搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)</title>
+    <title>搭建MCDR加Fabric我的世界1.19服务器</title>
     <link>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</link>
     <pubDate>Sun, 17 Jul 2022 18:00:46 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
