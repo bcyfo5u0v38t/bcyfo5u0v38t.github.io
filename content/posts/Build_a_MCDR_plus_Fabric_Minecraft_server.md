@@ -1,5 +1,5 @@
 ---
-title: "搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)"
+title: "搭建MCDR加Fabric我的世界1.19服务器"
 date: 2022-07-17T18:00:46+08:00
 draft: false
 ---
