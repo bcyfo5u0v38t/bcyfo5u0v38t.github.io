@@ -1,86 +1,116 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>Arch Linux 安装(GPT&#43;BTRFS&#43;Libvirt) // &#39;bcyfo5u0v38t&#39;s Blog&#39;</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.101.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="https://bcyfo5u0v38t.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
-
-    
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Arch Linux 安装(GPT&#43;BTRFS&#43;Libvirt)"/>
-<meta name="twitter:description" content="安装前的准备 1.确保网络环境 Arch Linux的安装需要网络
-有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接上网
-WiFi无线网络:建议事先把自己所用的WiFi名称改成自己能记住的英文名称 因为安装时无法显示和输入中文名的WiFi 你会看到一堆不知道是什么的方块 虽然通过一些繁琐的步骤可以解决终端中文的问题 但是显然这么做在安装Arch Linux时毫无必要
-有些笔记本电脑上存在无线网卡的硬件开关或者键盘控制 开机后安装前需要确保你的无线网卡硬件开关处于打开状态
-2.刻录启动U盘 准备一个2G以上的优盘 刻录一个安装启动盘 安装镜像 iso 在下载页面下载 你需要选择通过磁力链接或使用torrent下载
-也可以下载Arch Linux GUI 一个快速 离线 图形化的安装程序的Arch Linux(本教程使用此镜像)
-建议使用Ventoy来进行U盘刻录 在GitHub Releases 页面下载
-3.进入主板 BIOS 进行设置 插入优盘并开机 在开机的时候 按下F2/F8/F10/DEL等(取决与你的主板型号 具体请查阅你主板的相关信息)按键 进入主板的BIOS设置界面
-关闭安全启动:在类似名为security的选项卡中 找到一项名为Secure Boot(名称可能略有差异)的选项 选择Disable将其禁用
-调整启动方式为UEFI:在某些旧的主板里 需要调整启动模式为UEFI 而非传统的 BIOS/CSM 在类似名为boot的选项卡中 找到类似名为Boot Mode的选项 确保将其调整为UEFI only 而非legacy/CSM
-调整硬盘启动顺序:在类似名为boot的选项卡中 找到类似名为Boot Options(名称可能略有差异)的设置选项 将USB优盘的启动顺序调至首位(一些主板需要手动选择 无需设置硬盘启动顺序)
-开启虚拟化功能:在类似名为Configuration或Security的选项卡 找到类似名为Virtualization(名称可能略有差异)的设置选项 开启Intel处理器VT-x或对于AMD处理器AMD-V功能 Intel处理器可能还需要开启iommu功能
-4.准备安装 最后保存BIOS设置并退出 一般的按键是F10 此时系统重启 不出意外你应该已经进入Arch Linux的安装界面
-开始安装 NVIDIA显卡请选择带有NVIDIA字样的启动项"/>
-
-    <meta property="og:title" content="Arch Linux 安装(GPT&#43;BTRFS&#43;Libvirt)" />
-<meta property="og:description" content="安装前的准备 1.确保网络环境 Arch Linux的安装需要网络
-有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接上网
-WiFi无线网络:建议事先把自己所用的WiFi名称改成自己能记住的英文名称 因为安装时无法显示和输入中文名的WiFi 你会看到一堆不知道是什么的方块 虽然通过一些繁琐的步骤可以解决终端中文的问题 但是显然这么做在安装Arch Linux时毫无必要
-有些笔记本电脑上存在无线网卡的硬件开关或者键盘控制 开机后安装前需要确保你的无线网卡硬件开关处于打开状态
-2.刻录启动U盘 准备一个2G以上的优盘 刻录一个安装启动盘 安装镜像 iso 在下载页面下载 你需要选择通过磁力链接或使用torrent下载
-也可以下载Arch Linux GUI 一个快速 离线 图形化的安装程序的Arch Linux(本教程使用此镜像)
-建议使用Ventoy来进行U盘刻录 在GitHub Releases 页面下载
-3.进入主板 BIOS 进行设置 插入优盘并开机 在开机的时候 按下F2/F8/F10/DEL等(取决与你的主板型号 具体请查阅你主板的相关信息)按键 进入主板的BIOS设置界面
-关闭安全启动:在类似名为security的选项卡中 找到一项名为Secure Boot(名称可能略有差异)的选项 选择Disable将其禁用
-调整启动方式为UEFI:在某些旧的主板里 需要调整启动模式为UEFI 而非传统的 BIOS/CSM 在类似名为boot的选项卡中 找到类似名为Boot Mode的选项 确保将其调整为UEFI only 而非legacy/CSM
-调整硬盘启动顺序:在类似名为boot的选项卡中 找到类似名为Boot Options(名称可能略有差异)的设置选项 将USB优盘的启动顺序调至首位(一些主板需要手动选择 无需设置硬盘启动顺序)
-开启虚拟化功能:在类似名为Configuration或Security的选项卡 找到类似名为Virtualization(名称可能略有差异)的设置选项 开启Intel处理器VT-x或对于AMD处理器AMD-V功能 Intel处理器可能还需要开启iommu功能
-4.准备安装 最后保存BIOS设置并退出 一般的按键是F10 此时系统重启 不出意外你应该已经进入Arch Linux的安装界面
-开始安装 NVIDIA显卡请选择带有NVIDIA字样的启动项" />
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Arch Linux 安装(GPT&#43;UEFI) - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Arch Linux 安装(GPT&#43;UEFI)" />
+<meta property="og:description" content="安装前的准备 1.确保网络环境 Arch Linux的安装需要网络 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-18T10:16:53+08:00" />
-<meta property="article:modified_time" content="2022-07-18T10:16:53+08:00" />
+<meta property="article:modified_time" content="2022-07-18T10:16:53+08:00" /><meta property="og:site_name" content="My cool site" />
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Arch Linux 安装(GPT&#43;UEFI)"/>
+<meta name="twitter:description" content="安装前的准备 1.确保网络环境 Arch Linux的安装需要网络 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux 安装(GPT+UEFI)",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/arch_linux_install\/"
+        },"genre": "posts","wordcount":  3892 ,
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/arch_linux_install\/","datePublished": "2022-07-18T10:16:53+08:00","dateModified": "2022-07-18T10:16:53+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "bcyfo5u0v38t"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://bcyfo5u0v38t.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <h1>&#39;bcyfo5u0v38t&#39;s Blog&#39;</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-    </header>
-    <main class="app-container">
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Arch Linux 安装(GPT&#43;BTRFS&#43;Libvirt)</h1>
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Jul 18, 2022
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
         </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          4 min read
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
         </div>
-      </div>
-    </header>
-    <div class="post-content">
-      <h1 id="安装前的准备">安装前的准备</h1>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Arch Linux 安装(GPT+UEFI)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-18">2022-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3892 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1确保网络环境">1.确保网络环境</a></li>
+    <li><a href="#2刻录启动u盘">2.刻录启动U盘</a></li>
+    <li><a href="#3进入主板-bios-进行设置">3.进入主板 BIOS 进行设置</a></li>
+    <li><a href="#4准备安装">4.准备安装</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1禁用-reflector">1.禁用 reflector</a></li>
+    <li><a href="#2再次确保是否为uefi模式">2.再次确保是否为UEFI模式</a></li>
+    <li><a href="#3连接网络">3.连接网络</a></li>
+    <li><a href="#4更新系统时钟">4.更新系统时钟</a></li>
+    <li><a href="#5分区">5.分区</a></li>
+    <li><a href="#6格式化">6.格式化</a></li>
+    <li><a href="#7挂载">7.挂载</a></li>
+    <li><a href="#8镜像源的选择">8.镜像源的选择</a></li>
+    <li><a href="#9安装系统">9.安装系统</a></li>
+    <li><a href="#10生成fstab文件">10.生成fstab文件</a></li>
+    <li><a href="#11change-root">11.change root</a></li>
+    <li><a href="#12时区设置">12.时区设置</a></li>
+    <li><a href="#13设置-locale-进行本地化">13.设置 Locale 进行本地化</a></li>
+    <li><a href="#14设置主机名">14.设置主机名</a></li>
+    <li><a href="#15配置pacman-添加cn源">15.配置Pacman 添加cn源</a></li>
+    <li><a href="#16安装微码-引导程序-桌面环境-libvirt全家桶">16.安装微码 引导程序 桌面环境 Libvirt全家桶&hellip;</a></li>
+    <li><a href="#17新建一个非root用户">17.新建一个非root用户</a></li>
+    <li><a href="#18安装并生成grub配置文件">18.安装并生成GRUB配置文件</a></li>
+    <li><a href="#19一些配置">19.一些配置</a></li>
+    <li><a href="#20启动服务并重启">20.启动服务并重启</a></li>
+    <li><a href="#21安装后的一些-比如在live里不咋方便弄的">21.安装后的一些 比如在live里不咋方便弄的</a></li>
+    <li><a href="#也可以看看">也可以看看</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="安装前的准备">安装前的准备</h1>
 <h2 id="1确保网络环境">1.确保网络环境</h2>
 <p>Arch Linux的安装需要网络<br>
 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接上网<br>
@@ -88,9 +118,9 @@ WiFi无线网络:建议事先把自己所用的WiFi名称改成自己能记住�
 Linux时毫无必要<br>
 有些笔记本电脑上存在无线网卡的硬件开关或者键盘控制 开机后安装前需要确保你的无线网卡硬件开关处于打开状态</p>
 <h2 id="2刻录启动u盘">2.刻录启动U盘</h2>
-<p>准备一个2G以上的优盘 刻录一个安装启动盘 安装镜像 iso 在<a href="https://archlinux.org/download/">下载页面</a>下载 你需要选择通过磁力链接或使用torrent下载<br>
-也可以下载<a href="https://sourceforge.net/projects/arch-linux-gui/">Arch Linux GUI</a> 一个快速 离线 图形化的安装程序的Arch Linux(本教程使用此镜像)<br>
-建议使用<a href="https://www.ventoy.net/cn/index.html">Ventoy</a>来进行U盘刻录 在<a href="https://github.com/ventoy/Ventoy/releases">GitHub Releases</a>
+<p>准备一个2G以上的优盘 刻录一个安装启动盘 安装镜像 iso 在<a href="https://archlinux.org/download/" target="_blank" rel="noopener noreffer ">下载页面</a>下载 你需要选择通过磁力链接或使用torrent下载<br>
+也可以下载<a href="https://sourceforge.net/projects/arch-linux-gui/" target="_blank" rel="noopener noreffer ">Arch Linux GUI</a> 一个快速 离线 图形化的安装程序的Arch Linux(本教程使用此镜像)<br>
+建议使用<a href="https://www.ventoy.net/cn/index.html" target="_blank" rel="noopener noreffer ">Ventoy</a>来进行U盘刻录 在<a href="https://github.com/ventoy/Ventoy/releases" target="_blank" rel="noopener noreffer ">GitHub Releases</a>
 页面下载</p>
 <h2 id="3进入主板-bios-进行设置">3.进入主板 BIOS 进行设置</h2>
 <p>插入优盘并开机 在开机的时候 按下F2/F8/F10/DEL等(取决与你的主板型号 具体请查阅你主板的相关信息)按键 进入主板的BIOS设置界面<br>
@@ -121,7 +151,7 @@ station wlan0 scan              #扫描网络
 station wlan0 get-networks      #列出网络 比如想连接SSR这个无线
 station wlan0 connect SSR       #进行连接 输入密码即可
 exit                            #成功后exit退出
-</code></pre><p>使用PPPoE拨号:
+</code></pre><p>使用PPPoE拨号:<br>
 <code>pppoe-setup</code><br>
 USER NAME 输入拨号登录账号<br>
 INTERFACE 输入网卡名称<br>
@@ -147,7 +177,7 @@ EFI分区/dev/nvme0n1p1: /efi 100M<br>
 根(root)目录/dev/nvme0n1p2: / 128G<br>
 家目录/dev/nvme0n1p3: /home 剩余全部<br>
 swap分区/dev/nvme0n1p4: 8G 现在的内存大小很少使用到swap 但是如果你需要休眠 那swap是必须的(
-你也可以使用<a href="https://wiki.archlinux.org/title/Swap#Swap_file">交换文件</a> 不建议)<br>
+你也可以使用<a href="https://wiki.archlinux.org/title/Swap#Swap_file" target="_blank" rel="noopener noreffer ">交换文件</a> 不建议)<br>
 使用fdisk进行分区 这里假设你使用NVME的固态硬盘 名称为nvme0n1 如果你是机械硬盘 那可能是sdx<br>
 一般建议将EFI分区设置为磁盘的第一个分区 据说有些主板如果不将EFI设置为第一个分区 可能有不兼容的问题<br>
 m : 显示菜单和帮助信息<br>
@@ -171,7 +201,7 @@ swapon /dev/nvme0n1p4   #启用swap
 mkdir /mnt/efi  #创建efi目录
 mount /dev/nvme0n1p1 /mnt/efi   #挂载efi目录
 mkdir /mnt/home    #创建home目录
-mount -t btrfs -o discard=async,autodefrag,compress=zstd,ssd /dev/nvme0n1p3 /mnt    #挂载家目录
+mount -t btrfs -o discard=async,autodefrag,compress=zstd,ssd /dev/nvme0n1p3 /mnt/home    #挂载家目录
 </code></pre><h2 id="8镜像源的选择">8.镜像源的选择</h2>
 <p>使用如下命令编辑镜像列表:
 <code>vim /etc/pacman.d/mirrorlist</code>
@@ -238,14 +268,12 @@ grub efibootmgr fish qemu-desktop libvirt edk2-ovmf virt-manager dnsmasq ebtable
 </code></pre><p>微码</p>
 <pre tabindex="0"><code>pacman -S intel-ucode   #Intel的CPU
 pacman -S amd-ucode     #AMD的CPU
-</code></pre><p>引导程序(os-prober让grub-mkconfig可以搜索其他已安装的系统并自动将它们添加到grub菜单中 需要挂载其他系统引导的分区 单Arch Linux 不需要os-prober)<br>
-<code>grub efibootmgr os-prober</code><br>
-KDE Plasma桌面环境(plasma-wayland-session使用Wayland启动Plasma 仍存在一些缺失的功能和已知问题 建议使用xorg)<br>
-<code>plasma plasma-wayland-session konsole dolphin ttf-sarasa-gothic archlinux-wallpaper</code><br>
+</code></pre><p>引导程序(os-prober让grub-mkconfig可以搜索其他已安装的系统并自动将它们添加到grub菜单中 需要挂载其他系统引导的分区 单Arch Linux 不需要os-prober):grub efibootmgr os-prober<br>
+KDE Plasma桌面环境(plasma-wayland-session使用Wayland启动Plasma 仍存在一些缺失的功能和已知问题 建议使用xorg):plasma plasma-wayland-session konsole dolphin ttf-sarasa-gothic archlinux-wallpaper<br>
 显卡驱动<br>
-IntelGPU<code>mesa vulkan-intel</code><br>
-AMDGPU<code>mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau</code><br>
-NVIDIAGPU<code>nvidia-dkms nvidia-settings cuda</code></p>
+IntelGPU:mesa vulkan-intel<br>
+AMDGPU:mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau<br>
+NVIDIAGPU:nvidia-dkms nvidia-settings cuda</p>
 <h2 id="17新建一个非root用户">17.新建一个非root用户</h2>
 <p>wheel:sudo权限 lp:使用蓝牙 video:OBS录屏及虚拟摄像头<br>
 <code>useradd -m -G wheel,libvirt,video,lxd,lp -s /usr/bin/fish user1</code><br>
@@ -320,19 +348,47 @@ MPV复制带有默认设置的示例配置文件<br>
 <code>nvim ~/.config/vifm/vifmrc</code><br>
 把set vicmd=vim改成set vicmd=nvim</p>
 <h2 id="也可以看看">也可以看看</h2>
-<p><a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/">Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio</a><br>
-<a href="https://liucreator.gitlab.io/zh/">LEDIS的博客</a><br>
-<a href="https://wiki.archlinux.org/">Arch Linux Wiki</a><br>
-<a href="https://v2raya.org/">V2RayA文档</a><br>
-<a href="https://fishshell.com/docs/current/">fish shell文档</a><br>
-<a href="https://linuxcontainers.org/lxd/docs/master/">LXD文档</a></p>
-
+<p><a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/" target="_blank" rel="noopener noreffer ">Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio</a><br>
+<a href="https://liucreator.gitlab.io/zh/" target="_blank" rel="noopener noreffer ">LEDIS的博客</a><br>
+<a href="https://wiki.archlinux.org/" target="_blank" rel="noopener noreffer ">Arch Linux Wiki</a><br>
+<a href="https://v2raya.org/" target="_blank" rel="noopener noreffer ">V2RayA文档</a><br>
+<a href="https://fishshell.com/docs/current/" target="_blank" rel="noopener noreffer ">fish shell文档</a><br>
+<a href="https://linuxcontainers.org/lxd/docs/master/" target="_blank" rel="noopener noreffer ">LXD文档</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-07-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
     </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
 
-    </main>
-  </body>
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/build_a_mcdr_plus_fabric_minecraft_server/" class="prev" rel="prev" title="搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)</a>
+            <a href="/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" class="next" rel="next" title="Arch Linux下安装配置qBittorrent nox">Arch Linux下安装配置qBittorrent nox<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

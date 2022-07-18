@@ -1,27 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://bcyfo5u0v38t.github.io/</loc>
-    <lastmod>2022-07-18T10:16:53+08:00</lastmod>
-  </url><url>
-    <loc>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</loc>
-    <lastmod>2022-07-18T10:16:53+08:00</lastmod>
-  </url><url>
-    <loc>https://bcyfo5u0v38t.github.io/posts/</loc>
-    <lastmod>2022-07-18T10:16:53+08:00</lastmod>
-  </url><url>
-    <loc>https://bcyfo5u0v38t.github.io/posts/mpv_lazy/</loc>
-    <lastmod>2022-07-18T07:10:18+08:00</lastmod>
-  </url><url>
-    <loc>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</loc>
-    <lastmod>2022-07-17T18:00:46+08:00</lastmod>
-  </url><url>
-    <loc>https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/</loc>
-    <lastmod>2022-07-17T07:34:17+08:00</lastmod>
-  </url><url>
-    <loc>https://bcyfo5u0v38t.github.io/categories/</loc>
-  </url><url>
-    <loc>https://bcyfo5u0v38t.github.io/tags/</loc>
-  </url>
-</urlset>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/</loc><lastmod>2022-07-18T21:29:23&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/</loc><lastmod>2022-07-18T21:29:23&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/</loc><lastmod>2022-07-18T21:29:23&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</loc><lastmod>2022-07-18T10:16:53&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</loc><lastmod>2022-07-17T18:00:46&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/</loc><lastmod>2022-07-17T07:34:17&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/categories/</loc></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/tags/</loc></url></urlset>

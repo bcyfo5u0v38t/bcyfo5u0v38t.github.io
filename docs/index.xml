@@ -1,120 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>&#39;bcyfo5u0v38t&#39;s Blog&#39;</title>
-    <link>https://bcyfo5u0v38t.github.io/</link>
-    <description>Recent content on &#39;bcyfo5u0v38t&#39;s Blog&#39;</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jul 2022 10:16:53 +0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Arch Linux 安装(GPT&#43;BTRFS&#43;Libvirt)</title>
-      <link>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</link>
-      <pubDate>Mon, 18 Jul 2022 10:16:53 +0800</pubDate>
-      
-      <guid>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</guid>
-      <description>安装前的准备 1.确保网络环境 Arch Linux的安装需要网络
-有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接上网
-WiFi无线网络:建议事先把自己所用的WiFi名称改成自己能记住的英文名称 因为安装时无法显示和输入中文名的WiFi 你会看到一堆不知道是什么的方块 虽然通过一些繁琐的步骤可以解决终端中文的问题 但是显然这么做在安装Arch Linux时毫无必要
-有些笔记本电脑上存在无线网卡的硬件开关或者键盘控制 开机后安装前需要确保你的无线网卡硬件开关处于打开状态
-2.刻录启动U盘 准备一个2G以上的优盘 刻录一个安装启动盘 安装镜像 iso 在下载页面下载 你需要选择通过磁力链接或使用torrent下载
-也可以下载Arch Linux GUI 一个快速 离线 图形化的安装程序的Arch Linux(本教程使用此镜像)
-建议使用Ventoy来进行U盘刻录 在GitHub Releases 页面下载
-3.进入主板 BIOS 进行设置 插入优盘并开机 在开机的时候 按下F2/F8/F10/DEL等(取决与你的主板型号 具体请查阅你主板的相关信息)按键 进入主板的BIOS设置界面
-关闭安全启动:在类似名为security的选项卡中 找到一项名为Secure Boot(名称可能略有差异)的选项 选择Disable将其禁用
-调整启动方式为UEFI:在某些旧的主板里 需要调整启动模式为UEFI 而非传统的 BIOS/CSM 在类似名为boot的选项卡中 找到类似名为Boot Mode的选项 确保将其调整为UEFI only 而非legacy/CSM
-调整硬盘启动顺序:在类似名为boot的选项卡中 找到类似名为Boot Options(名称可能略有差异)的设置选项 将USB优盘的启动顺序调至首位(一些主板需要手动选择 无需设置硬盘启动顺序)
-开启虚拟化功能:在类似名为Configuration或Security的选项卡 找到类似名为Virtualization(名称可能略有差异)的设置选项 开启Intel处理器VT-x或对于AMD处理器AMD-V功能 Intel处理器可能还需要开启iommu功能
-4.准备安装 最后保存BIOS设置并退出 一般的按键是F10 此时系统重启 不出意外你应该已经进入Arch Linux的安装界面
-开始安装 NVIDIA显卡请选择带有NVIDIA字样的启动项</description>
-    </item>
-    
-    <item>
-      <title>MPV(视频播放器)_lazy懒人包 集成Anime4K...(Windows)</title>
-      <link>https://bcyfo5u0v38t.github.io/posts/mpv_lazy/</link>
-      <pubDate>Mon, 18 Jul 2022 07:10:18 +0800</pubDate>
-      
-      <guid>https://bcyfo5u0v38t.github.io/posts/mpv_lazy/</guid>
-      <description>1.下载MPV_lazy GitHub只有源码 从奶牛下载
-下载下来是一个.exe文件
-重命名为.7z文件并解压
-移至用户目录下(防止权限问题) 路径不要有中文
-允许Windows执行PowerShell脚本 以管理员身份打开PowerShell输入 set-executionpolicy remotesigned 打开目录下的installer文件夹 右键以管理员权限运行mpv-install.bat
-到这一步就可以使用了
-2.安装Play-With-MPV在线播放插件 安装Chrome浏览器插件Tampermonkey
-安装油猴脚本Play-With-MPV
-从GitHub Releases下载Play-With-MPV(Source code (zip))
-解压到MPV目录下并重命名为Play-With-MPV(参考C:\Users\bcyfo5u0v38t\Software\MPV\Play-With-MPV)
-进入Play-With-MPV目录下 右键使用PowerShell运行install.ps1
-3.添加着色器运行模式缓存插件 从GitHub Releases下载MPV_Glsl_Running_Mode_Cache
-解压 复制里面的lua脚本到MPV\portable_config\scripts目录下
-打开input.conf文件 添加以下内容 并注释(前面加#)掉原来的配置
-## 着色器模式 GLSL MODEL: Glsl_Running_Mode_Cache.lua CTRL+1 script-binding Glsl_Model_1 CTRL+2 script-binding Glsl_Model_2 CTRL+3 script-binding Glsl_Model_3 CTRL+4 script-binding Glsl_Model_4 CTRL+5 script-binding Glsl_Model_5 CTRL+6 script-binding Glsl_Model_6 CTRL+7 script-binding Glsl_Model_7 CTRL+8 script-binding Glsl_Model_8 CTRL+9 script-binding Glsl_Model_9 CTRL+0 script-binding Glsl_Model_0 4.添加复制粘贴网址播放插件 从GitHub Releases下载mpv-scripts(Source code (zip))</description>
-    </item>
-    
-    <item>
-      <title>搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)</title>
-      <link>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</link>
-      <pubDate>Sun, 17 Jul 2022 18:00:46 +0800</pubDate>
-      
-      <guid>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</guid>
-      <description>1.配置环境 安装JDK Python pip
-paru -S --needed liberica-jdk-full-bin python pip
-安装MCDR
-pip install mcdreforged
-2.搭建原版服务端 创建MC/server文件夹
-mkdir -p MC/server
-进入MC/server文件夹
-cd MC/server
-从麻将官网下载原版服务端
-curl https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar
-运行服务端
-java -jar server.jar nogui
-此时会报错一次 修改文件夹中的eula.txt文件 将其内容改为
-eula=false
-再次运行服务端
-java -jar server.jar nogui
-出现Done说明服务器搭建成功
-输入stop停止服务器
-可以通过server.properties文件对服务器进行一些配置
-3.搭建Fabric服务端 从Fabric官网下载Fabric服务端
-curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.19/0.14.8/0.11.0/server/jar
-运行服务端以生成一些文件
-java -jar fabric-server-mc.1.19-loader.0.14.8-launcher.0.11.0.jar nogui
-出现Done说明服务器搭建成功
-输入stop停止服务器
-4.搭建MCDR 返回上层目录(MC)
-cd ..
-初始化MCDR环境
-python -m mcdreforged init
-启动MCDR
-python -m mcdreforged
-MCDR+Fabric服务端搭建成功
-也可以看看 原版服务器设置文件Wiki</description>
-    </item>
-    
-    <item>
-      <title>使用GitHub Pages和Hugo搭建个人博客(Windows)</title>
-      <link>https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/</link>
-      <pubDate>Sun, 17 Jul 2022 07:34:17 +0800</pubDate>
-      
-      <guid>https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/</guid>
-      <description>1.安装Hugo 从Github Releases页面下载 hugo_extended_xxx_Windows-64bit.zip
-将压缩包解压到用户目录(防止权限问题)下并添加到环境变量Path中
-重启后 使用hugo version命令验证安装是否成功
-2.创建新站点 初始化一个hugo项目
-hugo new site yourgithubusername.github.io
-3.添加主题 从该页面选择自己心仪的主题 我当前使用的是m10c主题 进入该目录 并下载m10c主题
-cd yourgithubusername.github.io git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c 将主题到站点配置(config.toml)中
-theme = &amp;quot;m10c&amp;quot;
-4.添加文章 创建一篇空文章
-hugo new post/test.md
-另外 需要将生成在文章(/content/post/test.md)头部的draft=true修改为draft=false 否则并不会生成草稿页面 更多信息
-5.创建GitHub Pages项目并配置 创建一个新的 GitHub 项目 项目名称需要是 &amp;lt;yourgithubusername.github.io&amp;gt; 格式 配置Pages项目
-6.生成静态页面并启动Hugo服务 生成静态页面之前需要修改 config.toml 文件中的 baseURL 配置 将其修改为个人站点 baseURL = &amp;quot;https://yourgithubusername.github.io&amp;quot; GitHub Pages目前只支持从根(root)或docs目录中的文件夹构建站点 hugo server -d docs
-进入 http://localhost:1313/ 预览页面
-7.上传Github Pages项目 git remote add origin git@github.</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/</link>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Mon, 18 Jul 2022 21:29:23 &#43;0800</lastBuildDate>
+            <atom:link href="https://bcyfo5u0v38t.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Arch Linux下安装配置qBittorrent nox</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/</link>
+    <pubDate>Mon, 18 Jul 2022 21:29:23 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/</guid>
+    <description><![CDATA[1.安装qbittorrent-nox paru -S qbittorrent-nox 2.初始化配置 qbittorrent-nox 会问你是否同意协议(y同意) 输入y 回车 3.WEBUI qBittorrent的WEBUI应该在]]></description>
+</item>
+<item>
+    <title>Arch Linux 安装(GPT&#43;UEFI)</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</link>
+    <pubDate>Mon, 18 Jul 2022 10:16:53 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</guid>
+    <description><![CDATA[安装前的准备 1.确保网络环境 Arch Linux的安装需要网络 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接]]></description>
+</item>
+<item>
+    <title>搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</link>
+    <pubDate>Sun, 17 Jul 2022 18:00:46 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</guid>
+    <description><![CDATA[1.配置环境 安装JDK Python pip paru -S --needed liberica-jdk-full-bin python pip minecraft-server fabric-server 安装MCDR pip install mcdreforged 2.搭建原版服务端 创建MC/server文件夹 mkdir -p MC/server 进入MC/server文件夹]]></description>
+</item>
+<item>
+    <title>使用GitHub Pages和Hugo搭建个人博客</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/</link>
+    <pubDate>Sun, 17 Jul 2022 07:34:17 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/</guid>
+    <description><![CDATA[1.安装Hugo paru -S hugo 2.创建新站点 初始化一个hugo项目 hugo new site yourgithubusername.github.io 3.添加主题 从该页面选择自己心仪的主题 我当前使用的是LoveIt主题 进入该]]></description>
+</item>
+</channel>
 </rss>

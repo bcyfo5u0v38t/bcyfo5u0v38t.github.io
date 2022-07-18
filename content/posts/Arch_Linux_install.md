@@ -1,5 +1,5 @@
 ---
-title: "Arch Linux 安装(GPT+BTRFS+Libvirt)"
+title: "Arch Linux 安装(GPT+UEFI)"
 date: 2022-07-18T10:16:53+08:00
 draft: false
 ---
@@ -65,7 +65,7 @@ station wlan0 connect SSR       #进行连接 输入密码即可
 exit                            #成功后exit退出
 ```
 
-使用PPPoE拨号:
+使用PPPoE拨号:  
 `pppoe-setup`  
 USER NAME 输入拨号登录账号  
 INTERFACE 输入网卡名称  
@@ -115,7 +115,6 @@ w : 保存修改
 ```
 fdisk -l    #列出所有分区表
 fdisk /dev/nvme0n1  #对/dev/nvme0n1进行分区
-
 ```  
 
 ## 6.格式化
@@ -140,7 +139,7 @@ mount -t btrfs -o discard=async,autodefrag,compress=zstd,ssd /dev/nvme0n1p2 /mnt
 mkdir /mnt/efi  #创建efi目录
 mount /dev/nvme0n1p1 /mnt/efi   #挂载efi目录
 mkdir /mnt/home    #创建home目录
-mount -t btrfs -o discard=async,autodefrag,compress=zstd,ssd /dev/nvme0n1p3 /mnt    #挂载家目录
+mount -t btrfs -o discard=async,autodefrag,compress=zstd,ssd /dev/nvme0n1p3 /mnt/home    #挂载家目录
 ```
 
 ## 8.镜像源的选择
@@ -244,14 +243,12 @@ pacman -S intel-ucode   #Intel的CPU
 pacman -S amd-ucode     #AMD的CPU
 ```
 
-引导程序(os-prober让grub-mkconfig可以搜索其他已安装的系统并自动将它们添加到grub菜单中 需要挂载其他系统引导的分区 单Arch Linux 不需要os-prober)  
-`grub efibootmgr os-prober`  
-KDE Plasma桌面环境(plasma-wayland-session使用Wayland启动Plasma 仍存在一些缺失的功能和已知问题 建议使用xorg)  
-`plasma plasma-wayland-session konsole dolphin ttf-sarasa-gothic archlinux-wallpaper`  
+引导程序(os-prober让grub-mkconfig可以搜索其他已安装的系统并自动将它们添加到grub菜单中 需要挂载其他系统引导的分区 单Arch Linux 不需要os-prober):grub efibootmgr os-prober  
+KDE Plasma桌面环境(plasma-wayland-session使用Wayland启动Plasma 仍存在一些缺失的功能和已知问题 建议使用xorg):plasma plasma-wayland-session konsole dolphin ttf-sarasa-gothic archlinux-wallpaper  
 显卡驱动  
-IntelGPU`mesa vulkan-intel`  
-AMDGPU`mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau`  
-NVIDIAGPU`nvidia-dkms nvidia-settings cuda`
+IntelGPU:mesa vulkan-intel  
+AMDGPU:mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau  
+NVIDIAGPU:nvidia-dkms nvidia-settings cuda
 
 ## 17.新建一个非root用户
 
