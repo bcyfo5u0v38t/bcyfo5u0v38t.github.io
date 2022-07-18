@@ -6,7 +6,30 @@
     <description>Recent content in Posts on &#39;bcyfo5u0v38t&#39;s Blog&#39;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2022 18:00:46 +0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jul 2022 07:10:18 +0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MPV(视频播放器)_lazy懒人包 集成Anime4K...(Windows)</title>
+      <link>https://bcyfo5u0v38t.github.io/posts/mpv_lazy/</link>
+      <pubDate>Mon, 18 Jul 2022 07:10:18 +0800</pubDate>
+      
+      <guid>https://bcyfo5u0v38t.github.io/posts/mpv_lazy/</guid>
+      <description>第一步:下载MPV_lazy GitHub只有源码 从奶牛下载
+下载下来是一个.exe文件
+重命名为.7z文件并解压
+移至用户目录下(防止权限问题) 路径不要有中文
+允许Windows执行PowerShell脚本 以管理员身份打开PowerShell输入 set-executionpolicy remotesigned 打开目录下的installer文件夹 右键以管理员权限运行mpv-install.bat
+到这一步就可以使用了
+第二步:安装Play-With-MPV在线播放插件 安装Chrome浏览器插件Tampermonkey
+安装油猴脚本Play-With-MPV
+从GitHub Releases下载Play-With-MPV(Source code (zip))
+解压到MPV目录下并重命名为Play-With-MPV(参考C:\Users\bcyfo5u0v38t\Software\MPV\Play-With-MPV)
+进入Play-With-MPV目录下 右键使用PowerShell运行install.ps1
+第三步:添加着色器运行模式缓存插件 从GitHub Releases下载MPV_Glsl_Running_Mode_Cache
+解压 复制里面的lua脚本到MPV\portable_config\scripts目录下
+打开input.conf文件 添加以下内容 并注释(前面加#)掉原来的配置
+## 着色器模式 GLSL MODEL: Glsl_Running_Mode_Cache.lua CTRL+1 script-binding Glsl_Model_1 CTRL+2 script-binding Glsl_Model_2 CTRL+3 script-binding Glsl_Model_3 CTRL+4 script-binding Glsl_Model_4 CTRL+5 script-binding Glsl_Model_5 CTRL+6 script-binding Glsl_Model_6 CTRL+7 script-binding Glsl_Model_7 CTRL+8 script-binding Glsl_Model_8 CTRL+9 script-binding Glsl_Model_9 CTRL+0 script-binding Glsl_Model_0 第四步:添加复制粘贴网址播放插件 从GitHub Releases下载mpv-scripts(Source code (zip))</description>
+    </item>
+    
     <item>
       <title>搭建MCDR加Fabric我的世界1.19服务器(Arch Linux)</title>
       <link>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</link>
