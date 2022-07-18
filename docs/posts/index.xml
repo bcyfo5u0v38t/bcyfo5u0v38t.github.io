@@ -4,7 +4,15 @@
         <link>https://bcyfo5u0v38t.github.io/posts/</link>
         <description>All Posts | bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Mon, 18 Jul 2022 21:29:23 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 19 Jul 2022 00:10:01 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Arch Linux 安装MariaDB</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/install_mariadb_on_arch_linux/</link>
+    <pubDate>Tue, 19 Jul 2022 00:10:01 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/install_mariadb_on_arch_linux/</guid>
+    <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.安装MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组 sudo]]></description>
+</item>
+<item>
     <title>Arch Linux下安装配置qBittorrent nox</title>
     <link>https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/</link>
     <pubDate>Mon, 18 Jul 2022 21:29:23 &#43;0800</pubDate>
