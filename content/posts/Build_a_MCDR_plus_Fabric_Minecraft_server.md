@@ -7,7 +7,7 @@ draft: false
 ## 1.配置环境
 
 安装JDK Python pip  
-`paru -S --needed liberica-jdk-full-bin python pip minecraft-server fabric-server`  
+`paru -S --needed liberica-jdk-full-bin python python-pip minecraft-server fabric-server`  
 安装MCDR  
 `pip install mcdreforged`
 

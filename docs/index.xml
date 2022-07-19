@@ -36,7 +36,7 @@
     <pubDate>Sun, 17 Jul 2022 18:00:46 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</guid>
-    <description><![CDATA[1.配置环境 安装JDK Python pip paru -S --needed liberica-jdk-full-bin python pip minecraft-server fabric-server 安装MCDR pip install mcdreforged 2.搭建原版服务端 创建MC/server文件夹 mkdir -p MC/server 进入MC/server文件夹]]></description>
+    <description><![CDATA[1.配置环境 安装JDK Python pip paru -S --needed liberica-jdk-full-bin python python-pip minecraft-server fabric-server 安装MCDR pip install mcdreforged 2.搭建原版服务端 创建MC/server文件夹 mkdir -p MC/server 进入MC/server文件夹]]></description>
 </item>
 <item>
     <title>使用GitHub Pages和Hugo搭建个人博客</title>
