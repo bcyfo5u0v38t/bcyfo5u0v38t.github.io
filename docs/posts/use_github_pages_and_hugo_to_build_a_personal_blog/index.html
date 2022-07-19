@@ -17,7 +17,9 @@
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -45,8 +47,7 @@
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -68,8 +69,7 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用GitHub Pages和Hugo搭建个人博客</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a>
-</span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-17">2022-07-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;437 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -95,8 +95,7 @@
 <p>初始化一个hugo项目<br>
 <code>hugo new site yourgithubusername.github.io</code></p>
 <h2 id="3添加主题">3.添加主题</h2>
-<p>从该页面选择自己心仪的<a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer">主题</a>
- 我当前使用的是LoveIt主题
+<p>从该页面选择自己心仪的<a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer ">主题</a> 我当前使用的是LoveIt主题
 进入该目录 并下载LoveIt主题</p>
 <pre tabindex="0"><code>cd yourgithubusername.github.io
 git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
@@ -106,8 +105,7 @@ git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
 <p>创建一篇空文章<br>
 <code>hugo new post/test.md</code><br>
 另外 需要将生成在文章(/content/post/test.md)头部的draft=true修改为draft=false 否则并不会生成草稿页面
-<a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content" target="_blank" rel="noopener noreffer">更多信息</a>
-</p>
+<a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content" target="_blank" rel="noopener noreffer ">更多信息</a></p>
 <h2 id="5创建github-pages项目并配置">5.创建GitHub Pages项目并配置</h2>
 <p>创建一个新的 GitHub 项目 项目名称需要是 &lt;yourgithubusername.github.io&gt; 格式<br>
 配置Pages项目 改成从/docs中的文件夹构建</p>
@@ -125,12 +123,9 @@ git add .
 git commit -m &#34;init github pages&#34;
 git push origin
 </code></pre><h2 id="也可以看看">也可以看看</h2>
-<p><a href="https://gohugo.io/documentation/" target="_blank" rel="noopener noreffer">Hugo官方文档</a>
-<br>
-<a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreffer">Markdown基本语法</a>
-<br>
-<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer">LoveIt主题</a>
-</p>
+<p><a href="https://gohugo.io/documentation/" target="_blank" rel="noopener noreffer ">Hugo官方文档</a><br>
+<a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreffer ">Markdown基本语法</a><br>
+<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer ">LoveIt主题</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -140,7 +135,7 @@ git push origin
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@6.20.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/" data-title="使用GitHub Pages和Hugo搭建个人博客"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -157,7 +152,7 @@ git push origin
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
         </div>
     </footer></div>
@@ -167,5 +162,5 @@ git push origin
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

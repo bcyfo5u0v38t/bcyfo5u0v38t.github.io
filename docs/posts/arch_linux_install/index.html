@@ -17,7 +17,9 @@
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -45,8 +47,7 @@
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -67,9 +68,8 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Arch Linux 安装(GPT&#43;UEFI)</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a>
-</span></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Arch Linux 安装(GPT+UEFI)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-18">2022-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3892 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -118,13 +118,9 @@ WiFi无线网络:建议事先把自己所用的WiFi名称改成自己能记住�
 Linux时毫无必要<br>
 有些笔记本电脑上存在无线网卡的硬件开关或者键盘控制 开机后安装前需要确保你的无线网卡硬件开关处于打开状态</p>
 <h2 id="2刻录启动u盘">2.刻录启动U盘</h2>
-<p>准备一个2G以上的优盘 刻录一个安装启动盘 安装镜像 iso 在<a href="https://archlinux.org/download/" target="_blank" rel="noopener noreffer">下载页面</a>
-下载 你需要选择通过磁力链接或使用torrent下载<br>
-也可以下载<a href="https://sourceforge.net/projects/arch-linux-gui/" target="_blank" rel="noopener noreffer">Arch Linux GUI</a>
- 一个快速 离线 图形化的安装程序的Arch Linux(本教程使用此镜像)<br>
-建议使用<a href="https://www.ventoy.net/cn/index.html" target="_blank" rel="noopener noreffer">Ventoy</a>
-来进行U盘刻录 在<a href="https://github.com/ventoy/Ventoy/releases" target="_blank" rel="noopener noreffer">GitHub Releases</a>
-
+<p>准备一个2G以上的优盘 刻录一个安装启动盘 安装镜像 iso 在<a href="https://archlinux.org/download/" target="_blank" rel="noopener noreffer ">下载页面</a>下载 你需要选择通过磁力链接或使用torrent下载<br>
+也可以下载<a href="https://sourceforge.net/projects/arch-linux-gui/" target="_blank" rel="noopener noreffer ">Arch Linux GUI</a> 一个快速 离线 图形化的安装程序的Arch Linux(本教程使用此镜像)<br>
+建议使用<a href="https://www.ventoy.net/cn/index.html" target="_blank" rel="noopener noreffer ">Ventoy</a>来进行U盘刻录 在<a href="https://github.com/ventoy/Ventoy/releases" target="_blank" rel="noopener noreffer ">GitHub Releases</a>
 页面下载</p>
 <h2 id="3进入主板-bios-进行设置">3.进入主板 BIOS 进行设置</h2>
 <p>插入优盘并开机 在开机的时候 按下F2/F8/F10/DEL等(取决与你的主板型号 具体请查阅你主板的相关信息)按键 进入主板的BIOS设置界面<br>
@@ -181,8 +177,7 @@ EFI分区/dev/nvme0n1p1: /efi 100M<br>
 根(root)目录/dev/nvme0n1p2: / 128G<br>
 家目录/dev/nvme0n1p3: /home 剩余全部<br>
 swap分区/dev/nvme0n1p4: 8G 现在的内存大小很少使用到swap 但是如果你需要休眠 那swap是必须的(
-你也可以使用<a href="https://wiki.archlinux.org/title/Swap#Swap_file" target="_blank" rel="noopener noreffer">交换文件</a>
- 不建议)<br>
+你也可以使用<a href="https://wiki.archlinux.org/title/Swap#Swap_file" target="_blank" rel="noopener noreffer ">交换文件</a> 不建议)<br>
 使用fdisk进行分区 这里假设你使用NVME的固态硬盘 名称为nvme0n1 如果你是机械硬盘 那可能是sdx<br>
 一般建议将EFI分区设置为磁盘的第一个分区 据说有些主板如果不将EFI设置为第一个分区 可能有不兼容的问题<br>
 m : 显示菜单和帮助信息<br>
@@ -353,18 +348,12 @@ MPV复制带有默认设置的示例配置文件<br>
 <code>nvim ~/.config/vifm/vifmrc</code><br>
 把set vicmd=vim改成set vicmd=nvim</p>
 <h2 id="也可以看看">也可以看看</h2>
-<p><a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/" target="_blank" rel="noopener noreffer">Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio</a>
-<br>
-<a href="https://liucreator.gitlab.io/zh/" target="_blank" rel="noopener noreffer">LEDIS的博客</a>
-<br>
-<a href="https://wiki.archlinux.org/" target="_blank" rel="noopener noreffer">Arch Linux Wiki</a>
-<br>
-<a href="https://v2raya.org/" target="_blank" rel="noopener noreffer">V2RayA文档</a>
-<br>
-<a href="https://fishshell.com/docs/current/" target="_blank" rel="noopener noreffer">fish shell文档</a>
-<br>
-<a href="https://linuxcontainers.org/lxd/docs/master/" target="_blank" rel="noopener noreffer">LXD文档</a>
-</p>
+<p><a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/" target="_blank" rel="noopener noreffer ">Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio</a><br>
+<a href="https://liucreator.gitlab.io/zh/" target="_blank" rel="noopener noreffer ">LEDIS的博客</a><br>
+<a href="https://wiki.archlinux.org/" target="_blank" rel="noopener noreffer ">Arch Linux Wiki</a><br>
+<a href="https://v2raya.org/" target="_blank" rel="noopener noreffer ">V2RayA文档</a><br>
+<a href="https://fishshell.com/docs/current/" target="_blank" rel="noopener noreffer ">fish shell文档</a><br>
+<a href="https://linuxcontainers.org/lxd/docs/master/" target="_blank" rel="noopener noreffer ">LXD文档</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -374,7 +363,7 @@ MPV复制带有默认设置的示例配置文件<br>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@6.20.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" data-title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -391,7 +380,7 @@ MPV复制带有默认设置的示例配置文件<br>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
         </div>
     </footer></div>
@@ -401,5 +390,5 @@ MPV复制带有默认设置的示例配置文件<br>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

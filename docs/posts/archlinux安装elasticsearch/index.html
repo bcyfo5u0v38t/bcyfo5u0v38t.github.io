@@ -4,32 +4,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Arch Linux下安装配置qBittorrent nox - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Arch Linux下安装配置qBittorrent nox" />
-<meta property="og:description" content="1.安装qbittorrent-nox paru -S qbittorrent-nox 2.初始化配置 qbittorrent-nox 会问你是否同意协议(y同意) 输入y 回车 3.WEBUI qBittorrent的WEBUI应该在" />
+        <title>ArchLinux安装Elasticsearch - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="ArchLinux安装Elasticsearch" />
+<meta property="og:description" content="1.配置环境 Elasticsearch需要JDK10以上版本 安装JDK 注意 8.2(2022-07-18 14:16 (UTC))以上版本才可以使用JDK18构建 paru -S liberica-jdk-full-bin 确认环境是否" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-18T21:29:23+08:00" />
-<meta property="article:modified_time" content="2022-07-18T21:29:23+08:00" /><meta property="og:site_name" content="My cool site" />
+<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-19T23:31:06+08:00" />
+<meta property="article:modified_time" content="2022-07-19T23:31:06+08:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Arch Linux下安装配置qBittorrent nox"/>
-<meta name="twitter:description" content="1.安装qbittorrent-nox paru -S qbittorrent-nox 2.初始化配置 qbittorrent-nox 会问你是否同意协议(y同意) 输入y 回车 3.WEBUI qBittorrent的WEBUI应该在"/>
+<meta name="twitter:title" content="ArchLinux安装Elasticsearch"/>
+<meta name="twitter:description" content="1.配置环境 Elasticsearch需要JDK10以上版本 安装JDK 注意 8.2(2022-07-18 14:16 (UTC))以上版本才可以使用JDK18构建 paru -S liberica-jdk-full-bin 确认环境是否"/>
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/arch_linux_install/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/install_mariadb_on_arch_linux/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/install_mariadb_on_arch_linux/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Arch Linux下安装配置qBittorrent nox",
+        "headline": "ArchLinux安装Elasticsearch",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/install_and_configure_qbittorrent_nox_under_arch_linux\/"
-        },"genre": "posts","wordcount":  186 ,
-        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/install_and_configure_qbittorrent_nox_under_arch_linux\/","datePublished": "2022-07-18T21:29:23+08:00","dateModified": "2022-07-18T21:29:23+08:00","publisher": {
+            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/archlinux%E5%AE%89%E8%A3%85elasticsearch\/"
+        },"genre": "posts","wordcount":  280 ,
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/archlinux%E5%AE%89%E8%A3%85elasticsearch\/","datePublished": "2022-07-19T23:31:06+08:00","dateModified": "2022-07-19T23:31:06+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -68,9 +68,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Arch Linux下安装配置qBittorrent nox</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ArchLinux安装Elasticsearch</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-18">2022-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;186 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-19">2022-07-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;280 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -79,39 +79,47 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1安装qbittorrent-nox">1.安装qbittorrent-nox</a></li>
-    <li><a href="#2初始化配置">2.初始化配置</a></li>
-    <li><a href="#3webui">3.WEBUI</a></li>
-    <li><a href="#4指定用户启动服务">4.指定用户启动服务</a></li>
+    <li><a href="#1配置环境">1.配置环境</a></li>
+    <li><a href="#2安装elasticsearch">2.安装Elasticsearch</a></li>
+    <li><a href="#3配置elasticsearch">3.配置Elasticsearch</a></li>
+    <li><a href="#4启用并启动elasticsearch">4.启用并启动Elasticsearch</a></li>
     <li><a href="#也可以看看">也可以看看</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="1安装qbittorrent-nox">1.安装qbittorrent-nox</h2>
-<p><code>paru -S qbittorrent-nox</code></p>
-<h2 id="2初始化配置">2.初始化配置</h2>
-<p><code>qbittorrent-nox</code>
-会问你是否同意协议(y同意) 输入y 回车</p>
-<h2 id="3webui">3.WEBUI</h2>
-<p>qBittorrent的WEBUI应该在(浏览器打开)<br>
-http://localhost:8080/<br>
-默认用户名:admin<br>
-密码:adminadmin</p>
-<h2 id="4指定用户启动服务">4.指定用户启动服务</h2>
-<p>回到服务器的命令行 Ctrl+c 退出qBittorrent nox<br>
-指定用户开机启动服务(&ndash;now立刻启动)<br>
-<code>sudo systemctl enable --now qbittorrent-nox@username</code></p>
+            </div><div class="content" id="content"><h2 id="1配置环境">1.配置环境</h2>
+<p>Elasticsearch需要JDK10以上版本 安装JDK<br>
+注意 8.2(2022-07-18 14:16 (UTC))以上版本才可以使用JDK18构建<br>
+<code>paru -S liberica-jdk-full-bin</code><br>
+确认环境是否正确<br>
+<code>archlinux-java status</code></p>
+<h2 id="2安装elasticsearch">2.安装Elasticsearch</h2>
+<p><code>paru -S elasticsearch</code><br>
+可能有报错无法安装 重新设置环境变量<br>
+<code>archlinux-java set liberica-jdk-full</code></p>
+<h2 id="3配置elasticsearch">3.配置Elasticsearch</h2>
+<p>在启动Elasticsearch之前应该创建一个密钥库<br>
+<code>sudo elasticsearch-keystore create</code><br>
+可能会有报错<br>
+<code>could not find java in bundled JDK at /usr/share/elasticsearch/jdk/bin/java</code><br>
+解决办法 设置ES_JAVA_HOME变量<br>
+<code>sudo nvim /etc/environment</code><br>
+把下面这条变量加进去<br>
+<code>ES_JAVA_HOME=/usr/lib/jvm/default</code></p>
+<h2 id="4启用并启动elasticsearch">4.启用并启动Elasticsearch</h2>
+<p><code>sudo systemctl enable --now elasticsearch.service</code></p>
 <h2 id="也可以看看">也可以看看</h2>
-<p><a href="https://github.com/XIU2/TrackersListCollection" target="_blank" rel="noopener noreffer ">热门Tracker服务器列表</a></p>
+<p><a href="https://www.elastic.co/guide/index.html" target="_blank" rel="noopener noreffer ">Elasticsearch的官方文档</a><br>
+<a href="https://wiki.archlinux.org/title/Elasticsearch" target="_blank" rel="noopener noreffer ">Elasticsearch的ArchWiki</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-07-18</span>
+                <span>Updated on 2022-07-19</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" data-title="Arch Linux下安装配置qBittorrent nox"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" data-title="Arch Linux下安装配置qBittorrent nox"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" data-title="Arch Linux下安装配置qBittorrent nox"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/" data-title="Arch Linux下安装配置qBittorrent nox"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" data-title="ArchLinux安装Elasticsearch"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" data-title="ArchLinux安装Elasticsearch"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" data-title="ArchLinux安装Elasticsearch"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" data-title="ArchLinux安装Elasticsearch"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -123,8 +131,7 @@ http://localhost:8080/<br>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/arch_linux_install/" class="prev" rel="prev" title="Arch Linux 安装(GPT&#43;UEFI)"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Arch Linux 安装(GPT+UEFI)</a>
-            <a href="/posts/install_mariadb_on_arch_linux/" class="next" rel="next" title="Arch Linux 安装MariaDB">Arch Linux 安装MariaDB<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/posts/install_mariadb_on_arch_linux/" class="prev" rel="prev" title="Arch Linux 安装MariaDB"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Arch Linux 安装MariaDB</a></div>
 </div>
 </article></div>
             </main><footer class="footer">

@@ -4,7 +4,15 @@
         <link>https://bcyfo5u0v38t.github.io/posts/</link>
         <description>All Posts | bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 19 Jul 2022 00:10:01 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 19 Jul 2022 23:31:06 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ArchLinux安装Elasticsearch</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/</link>
+    <pubDate>Tue, 19 Jul 2022 23:31:06 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/</guid>
+    <description><![CDATA[1.配置环境 Elasticsearch需要JDK10以上版本 安装JDK 注意 8.2(2022-07-18 14:16 (UTC))以上版本才可以使用JDK18构建 paru -S liberica-jdk-full-bin 确认环境是否]]></description>
+</item>
+<item>
     <title>Arch Linux 安装MariaDB</title>
     <link>https://bcyfo5u0v38t.github.io/posts/install_mariadb_on_arch_linux/</link>
     <pubDate>Tue, 19 Jul 2022 00:10:01 &#43;0800</pubDate>
