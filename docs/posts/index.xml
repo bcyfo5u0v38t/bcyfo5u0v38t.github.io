@@ -4,34 +4,42 @@
         <link>https://bcyfo5u0v38t.github.io/posts/</link>
         <description>All Posts | bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 19 Jul 2022 00:10:01 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Wed, 20 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ArchLinux安装Elasticsearch</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/</link>
+    <pubDate>Wed, 20 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/</guid>
+    <description><![CDATA[1.配置环境 Elasticsearch需要JDK10以上版本 安装JDK 注意 8.2(2022-07-18 14:16 (UTC))以上版本才可以使用JDK18构建 paru -S liberica-jdk-full-bin 确认环境是否]]></description>
+</item>
+<item>
     <title>ArchLinux安装MariaDB</title>
     <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85mariadb/</link>
-    <pubDate>Tue, 19 Jul 2022 00:10:01 &#43;0800</pubDate>
+    <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85mariadb/</guid>
     <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.安装MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组 sudo]]></description>
 </item>
 <item>
-    <title>ArchLinux下安装qBittorrent-enhanced-nox</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E4%B8%8B%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</link>
-    <pubDate>Mon, 18 Jul 2022 21:29:23 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E4%B8%8B%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</guid>
-    <description><![CDATA[1.安装qBittorrent-enhanced-nox paru -S qbittorrent-enhanced-nox 2.初始化配置 运行qBittorrent-enhanced-nox qbittorrent-nox 会问你是否]]></description>
-</item>
-<item>
     <title>Arch Linux 安装(GPT&#43;UEFI)</title>
     <link>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</link>
-    <pubDate>Mon, 18 Jul 2022 10:16:53 &#43;0800</pubDate>
+    <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</guid>
     <description><![CDATA[安装前的准备 1.确保网络环境 Arch Linux的安装需要网络 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接]]></description>
 </item>
 <item>
+    <title>ArchLinux下安装qBittorrent-enhanced-nox</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E4%B8%8B%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</link>
+    <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E4%B8%8B%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</guid>
+    <description><![CDATA[1.安装qBittorrent-enhanced-nox paru -S qbittorrent-enhanced-nox 2.初始化配置 运行qBittorrent-enhanced-nox qbittorrent-nox 会问你是否]]></description>
+</item>
+<item>
     <title>我的世界MCDR&#43;Fabric服务器搭建</title>
     <link>https://bcyfo5u0v38t.github.io/posts/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8Cmcdr&#43;fabric%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</link>
-    <pubDate>Sun, 17 Jul 2022 18:00:46 &#43;0800</pubDate>
+    <pubDate>Sun, 17 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8Cmcdr&#43;fabric%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</guid>
     <description><![CDATA[1.配置环境 安装JDK Python pip &hellip; paru -S --needed liberica-jdk-full-bin python python-pip minecraft-server fabric-server 安装MCDR pip install mcdreforged 2.搭建原版服务端 创建MC/server文件夹 mkdir -p MC/server 进入MC/server文件]]></description>
@@ -39,7 +47,7 @@
 <item>
     <title>使用Hugo搭建个人博客并部署在GitHubPages</title>
     <link>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/</link>
-    <pubDate>Sat, 16 Jul 2022 07:34:17 &#43;0800</pubDate>
+    <pubDate>Sat, 16 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/</guid>
     <description><![CDATA[1.安装Hugo paru -S hugo 2.创建新站点 初始化一个hugo项目 hugo new site yourgithubusername.github.io 3.添加主题 从该页面选择自己心仪的主题 我当前使用的是LoveIt主题 进入该]]></description>

@@ -1,6 +1,6 @@
 ---
 title: "Arch Linux 安装(GPT+UEFI)"
-date: 2022-07-18T10:16:53+08:00
+date: 2022-07-18T08:00:00+08:00
 draft: false
 ---
 
