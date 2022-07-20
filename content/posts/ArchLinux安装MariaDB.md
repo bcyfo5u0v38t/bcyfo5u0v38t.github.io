@@ -36,9 +36,9 @@ draft: false
 6.默认情况下 MariaDB带有一个名为“test”的数据库 任何人都可以使用 问你是否移除这个测试数据库 默认是y 回车即可  
 7.问你是否重新加载权限表将确保到目前为止所做的所有更改将立即生效(如果你反悔了 可以输入n重新来过) 默认是y 回车即可
 
-## 7.开机自启MariaDB服务
+## 7.启用并启动MariaDB
 
-`sudo systemctl enable mariadb.service`
+`sudo systemctl enable --now mariadb.service`
 
 ## 也可以看看
 

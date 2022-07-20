@@ -29,11 +29,11 @@
     <description><![CDATA[安装前的准备 1.确保网络环境 Arch Linux的安装需要网络 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接]]></description>
 </item>
 <item>
-    <title>ArchLinux下安装qBittorrent-enhanced-nox</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E4%B8%8B%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</link>
+    <title>ArchLinux安装qBittorrent-enhanced-nox</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</link>
     <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E4%B8%8B%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</guid>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</guid>
     <description><![CDATA[1.安装qBittorrent-enhanced-nox paru -S qbittorrent-enhanced-nox 2.初始化配置 运行qBittorrent-enhanced-nox qbittorrent-nox 会问你是否]]></description>
 </item>
 <item>

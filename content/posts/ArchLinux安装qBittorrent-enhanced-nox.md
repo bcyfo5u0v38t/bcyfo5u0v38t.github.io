@@ -1,5 +1,5 @@
 ---
-title: "ArchLinux下安装qBittorrent-enhanced-nox"
+title: "ArchLinux安装qBittorrent-enhanced-nox"
 date: 2022-07-18T08:00:00+08:00
 draft: false
 ---
@@ -23,10 +23,9 @@ http://localhost:8080/
 默认用户名:admin  
 密码:adminadmin
 
-## 4.指定用户启动服务
+## 4.指定用户启用并启动服务
 
 回到服务器的命令行 Ctrl+c 退出qBittorrent nox  
-指定用户开机启动服务(--now立刻启动)  
 `sudo systemctl enable --now qbittorrent-nox@username`
 
 ## 也可以看看

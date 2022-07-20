@@ -85,7 +85,7 @@
     <li><a href="#4把用户添加到mysql用户组">4.把用户添加到mysql用户组</a></li>
     <li><a href="#5打开mariadb的服务">5.打开MariaDB的服务</a></li>
     <li><a href="#6提高初始安全性">6.提高初始安全性</a></li>
-    <li><a href="#7开机自启mariadb服务">7.开机自启MariaDB服务</a></li>
+    <li><a href="#7启用并启动mariadb">7.启用并启动MariaDB</a></li>
     <li><a href="#也可以看看">也可以看看</a></li>
   </ul>
 </nav></div>
@@ -109,8 +109,8 @@
 5.问你是否禁用远程root登录(如果你有从其他电脑连接数据库的需要 则应该输入n) 默认是y 回车即可<br>
 6.默认情况下 MariaDB带有一个名为“test”的数据库 任何人都可以使用 问你是否移除这个测试数据库 默认是y 回车即可<br>
 7.问你是否重新加载权限表将确保到目前为止所做的所有更改将立即生效(如果你反悔了 可以输入n重新来过) 默认是y 回车即可</p>
-<h2 id="7开机自启mariadb服务">7.开机自启MariaDB服务</h2>
-<p><code>sudo systemctl enable mariadb.service</code></p>
+<h2 id="7启用并启动mariadb">7.启用并启动MariaDB</h2>
+<p><code>sudo systemctl enable --now mariadb.service</code></p>
 <h2 id="也可以看看">也可以看看</h2>
 <p><a href="https://wiki.archlinux.org/title/MariaDB" target="_blank" rel="noopener noreffer ">MariaDB的ArchWiki</a><br>
 <a href="https://mariadb.com/" target="_blank" rel="noopener noreffer ">MariaDB官方网站</a><br>
