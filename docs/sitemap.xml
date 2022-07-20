@@ -2,13 +2,12 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/</loc><lastmod>2022-07-19T23:31:06&#43;08:00</lastmod></url><url>
-            <loc>https://bcyfo5u0v38t.github.io/</loc><lastmod>2022-07-19T23:31:06&#43;08:00</lastmod></url><url>
-            <loc>https://bcyfo5u0v38t.github.io/posts/</loc><lastmod>2022-07-19T23:31:06&#43;08:00</lastmod></url><url>
-            <loc>https://bcyfo5u0v38t.github.io/posts/install_mariadb_on_arch_linux/</loc><lastmod>2022-07-19T00:10:01&#43;08:00</lastmod></url><url>
-            <loc>https://bcyfo5u0v38t.github.io/posts/install_and_configure_qbittorrent_nox_under_arch_linux/</loc><lastmod>2022-07-18T21:29:23&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85mariadb/</loc><lastmod>2022-07-19T00:10:01&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/</loc><lastmod>2022-07-19T00:10:01&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/</loc><lastmod>2022-07-19T00:10:01&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/archlinux%E4%B8%8B%E5%AE%89%E8%A3%85qbittorrent-enhanced-nox/</loc><lastmod>2022-07-18T21:29:23&#43;08:00</lastmod></url><url>
             <loc>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</loc><lastmod>2022-07-18T10:16:53&#43;08:00</lastmod></url><url>
-            <loc>https://bcyfo5u0v38t.github.io/posts/build_a_mcdr_plus_fabric_minecraft_server/</loc><lastmod>2022-07-17T18:00:46&#43;08:00</lastmod></url><url>
-            <loc>https://bcyfo5u0v38t.github.io/posts/use_github_pages_and_hugo_to_build_a_personal_blog/</loc><lastmod>2022-07-17T07:34:17&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8Cmcdr&#43;fabric%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</loc><lastmod>2022-07-17T18:00:46&#43;08:00</lastmod></url><url>
+            <loc>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/</loc><lastmod>2022-07-16T07:34:17&#43;08:00</lastmod></url><url>
             <loc>https://bcyfo5u0v38t.github.io/categories/</loc></url><url>
             <loc>https://bcyfo5u0v38t.github.io/tags/</loc></url></urlset>
