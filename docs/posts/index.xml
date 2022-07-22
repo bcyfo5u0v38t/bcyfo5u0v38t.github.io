@@ -4,13 +4,21 @@
         <link>https://bcyfo5u0v38t.github.io/posts/</link>
         <description>All Posts | bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Thu, 21 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ArchLinux安装Docker</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/</link>
+    <pubDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/</guid>
+    <description><![CDATA[1.安装Docker Docker-Compose paru -S docker docker-compose 把用户添加到docker组 sudo usermod -a -G docker username 2.启用并启动Docker sudo systemctl enable --now docker.service 也可以看看 Docker的ArchWi]]></description>
+</item>
+<item>
     <title>使用Docker&#43;Calibre-Web搭建数字图书馆</title>
     <link>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/</link>
     <pubDate>Thu, 21 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/</guid>
-    <description><![CDATA[1.下载镜像 docker pull johngong/calibre-web:latest 列出本地镜像 docker images 2.启动容器 docker run -d \ --name=my-ebook-library \ -p 22331:8083 \ -v /home/username/.config/calibre/:/config \ -v /home/username/Calibre-Library/:/library \ -v /home/username/Downloads/autoaddbooks:/autoaddbooks \ -e CALIBRE_SERVER_USER=username \ -e CALIBRE_SERVER_PASSWORD=password \ -e CALIBRE_ASCII_FILENAME=false \ johngong/calibre-web:latest 查看容器状态 docker ps 3.浏览器访问 浏览器输]]></description>
+    <description><![CDATA[1.下载镜像 docker pull johngong/calibre-web:latest 列出本地镜像 docker images 2.启动容器 docker run -d \ --name=my-ebook-library \ 设置容器名 -p 22331:8083 \ #把容器内8083(容器默认WEBUI访问端口)映射到22331 -v]]></description>
 </item>
 <item>
     <title>ArchLinux安装Elasticsearch</title>
@@ -27,14 +35,6 @@
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85mariadb/</guid>
     <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.安装MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组 sudo]]></description>
-</item>
-<item>
-    <title>Arch Linux 安装(GPT&#43;UEFI)</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</link>
-    <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/arch_linux_install/</guid>
-    <description><![CDATA[安装前的准备 1.确保网络环境 Arch Linux的安装需要网络 有线网络:使用路由器分接出来的网线(也可以使用手机USB网络共享) 以DHCP的方式直接]]></description>
 </item>
 <item>
     <title>ArchLinux安装qBittorrent-enhanced-nox</title>

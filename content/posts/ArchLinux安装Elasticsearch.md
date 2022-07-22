@@ -1,6 +1,7 @@
 ---
 title: "ArchLinux安装Elasticsearch"
 date: 2022-07-20T08:00:00+08:00
+tags: ["Arch Linux","Elasticsearch","Search Engine"]
 draft: false
 ---
 
@@ -14,9 +15,7 @@ Elasticsearch需要JDK10以上版本 安装JDK
 
 ## 2.安装Elasticsearch
 
-`paru -S elasticsearch`  
-可能有报错无法安装 重新设置环境变量  
-`archlinux-java set liberica-jdk-full`
+`paru -S elasticsearch`
 
 ## 3.配置Elasticsearch
 

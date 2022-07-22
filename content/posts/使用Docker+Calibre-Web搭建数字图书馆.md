@@ -1,6 +1,7 @@
 ---
 title: "使用Docker+Calibre-Web搭建数字图书馆"
 date: 2022-07-21T08:00:00+08:00
+tags: ["Arch Linux","Docker","Calibre"]
 draft: false
 ---
 
@@ -14,14 +15,14 @@ draft: false
 
 ```
 docker run -d \
---name=my-ebook-library \
--p 22331:8083 \
--v /home/username/.config/calibre/:/config \
--v /home/username/Calibre-Library/:/library \
--v /home/username/Downloads/autoaddbooks:/autoaddbooks \
--e CALIBRE_SERVER_USER=username \
--e CALIBRE_SERVER_PASSWORD=password \
--e CALIBRE_ASCII_FILENAME=false \
+--name=my-ebook-library \    设置容器名
+-p 22331:8083 \    #把容器内8083(容器默认WEBUI访问端口)映射到22331
+-v /home/username/.config/calibre:/config \    #配置文件位置
+-v /home/username/Calibre-Library:/library \    #书库默认位置
+-v /home/username/Downloads/autoaddbooks:/autoaddbooks \    #自动添加图书文件夹位置
+-e CALIBRE_SERVER_USER=username \    #设置用户名
+-e CALIBRE_SERVER_PASSWORD=password \    #设置密码
+-e CALIBRE_ASCII_FILENAME=false \    #支持中文目录
 johngong/calibre-web:latest
 ```
 

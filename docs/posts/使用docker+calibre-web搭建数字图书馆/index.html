@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>使用Docker&#43;Calibre-Web搭建数字图书馆 - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="使用Docker&#43;Calibre-Web搭建数字图书馆" />
-<meta property="og:description" content="1.下载镜像 docker pull johngong/calibre-web:latest 列出本地镜像 docker images 2.启动容器 docker run -d \ --name=my-ebook-library \ -p 22331:8083 \ -v /home/username/.config/calibre/:/config \ -v /home/username/Calibre-Library/:/library \ -v /home/username/Downloads/autoaddbooks:/autoaddbooks \ -e CALIBRE_SERVER_USER=username \ -e CALIBRE_SERVER_PASSWORD=password \ -e CALIBRE_ASCII_FILENAME=false \ johngong/calibre-web:latest 查看容器状态 docker ps 3.浏览器访问 浏览器输" />
+<meta property="og:description" content="1.下载镜像 docker pull johngong/calibre-web:latest 列出本地镜像 docker images 2.启动容器 docker run -d \ --name=my-ebook-library \ 设置容器名 -p 22331:8083 \ #把容器内8083(容器默认WEBUI访问端口)映射到22331 -v" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-21T08:00:00+08:00" />
@@ -13,11 +13,11 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用Docker&#43;Calibre-Web搭建数字图书馆"/>
-<meta name="twitter:description" content="1.下载镜像 docker pull johngong/calibre-web:latest 列出本地镜像 docker images 2.启动容器 docker run -d \ --name=my-ebook-library \ -p 22331:8083 \ -v /home/username/.config/calibre/:/config \ -v /home/username/Calibre-Library/:/library \ -v /home/username/Downloads/autoaddbooks:/autoaddbooks \ -e CALIBRE_SERVER_USER=username \ -e CALIBRE_SERVER_PASSWORD=password \ -e CALIBRE_ASCII_FILENAME=false \ johngong/calibre-web:latest 查看容器状态 docker ps 3.浏览器访问 浏览器输"/>
+<meta name="twitter:description" content="1.下载镜像 docker pull johngong/calibre-web:latest 列出本地镜像 docker images 2.启动容器 docker run -d \ --name=my-ebook-library \ 设置容器名 -p 22331:8083 \ #把容器内8083(容器默认WEBUI访问端口)映射到22331 -v"/>
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E4%BD%BF%E7%94%A8docker\u002bcalibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86\/"
-        },"genre": "posts","wordcount":  121 ,
+        },"genre": "posts","keywords": "Arch Linux, Docker, Calibre","wordcount":  202 ,
         "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E4%BD%BF%E7%94%A8docker\u002bcalibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86\/","datePublished": "2022-07-21T08:00:00+08:00","dateModified": "2022-07-21T08:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -70,7 +70,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用Docker+Calibre-Web搭建数字图书馆</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-21">2022-07-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;121 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-21">2022-07-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;202 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -91,14 +91,14 @@
 <code>docker images</code></p>
 <h2 id="2启动容器">2.启动容器</h2>
 <pre tabindex="0"><code>docker run -d \
---name=my-ebook-library \
--p 22331:8083 \
--v /home/username/.config/calibre/:/config \
--v /home/username/Calibre-Library/:/library \
--v /home/username/Downloads/autoaddbooks:/autoaddbooks \
--e CALIBRE_SERVER_USER=username \
--e CALIBRE_SERVER_PASSWORD=password \
--e CALIBRE_ASCII_FILENAME=false \
+--name=my-ebook-library \    设置容器名
+-p 22331:8083 \    #把容器内8083(容器默认WEBUI访问端口)映射到22331
+-v /home/username/.config/calibre:/config \    #配置文件位置
+-v /home/username/Calibre-Library:/library \    #书库默认位置
+-v /home/username/Downloads/autoaddbooks:/autoaddbooks \    #自动添加图书文件夹位置
+-e CALIBRE_SERVER_USER=username \    #设置用户名
+-e CALIBRE_SERVER_PASSWORD=password \    #设置密码
+-e CALIBRE_ASCII_FILENAME=false \    #支持中文目录
 johngong/calibre-web:latest
 </code></pre><p>查看容器状态<br>
 <code>docker ps</code></p>
@@ -117,19 +117,20 @@ johngong/calibre-web:latest
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆" data-hashtags="Arch Linux,Docker,Calibre"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-hashtag="Arch Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8docker&#43;calibre-web%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E4%B9%A6%E9%A6%86/" data-title="使用Docker&#43;Calibre-Web搭建数字图书馆"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/arch-linux/">Arch Linux</a>,&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/calibre/">Calibre</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" class="prev" rel="prev" title="ArchLinux安装Elasticsearch"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>ArchLinux安装Elasticsearch</a></div>
+    <div class="post-nav"><a href="/posts/archlinux%E5%AE%89%E8%A3%85elasticsearch/" class="prev" rel="prev" title="ArchLinux安装Elasticsearch"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>ArchLinux安装Elasticsearch</a>
+            <a href="/posts/archlinux%E5%AE%89%E8%A3%85docker/" class="next" rel="next" title="ArchLinux安装Docker">ArchLinux安装Docker<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

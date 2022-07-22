@@ -1,6 +1,7 @@
 ---
 title: "ArchLinux安装Docker无根模式"
 date: 2022-07-23T08:00:00+08:00
+tags: ["Arch Linux","Docker"]
 draft: false
 ---
 

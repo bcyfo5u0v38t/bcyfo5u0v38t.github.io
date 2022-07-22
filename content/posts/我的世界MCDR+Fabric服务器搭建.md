@@ -1,6 +1,7 @@
 ---
 title: "我的世界MCDR+Fabric服务器搭建"
 date: 2022-07-17T08:00:00+08:00
+tags: ["Arch Linux","Minecraft","MCDReforged","Fabric","Game Server"]
 draft: false
 ---
 

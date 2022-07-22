@@ -1,6 +1,7 @@
 ---
 title: "ArchLinux安装MariaDB"
 date: 2022-07-19T08:00:00+08:00
+tags: ["Arch Linux","MariaDB","SQL"]
 draft: false
 ---
 
