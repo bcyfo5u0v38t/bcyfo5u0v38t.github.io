@@ -1,7 +1,7 @@
 ---
 title: "使用Hugo搭建个人博客并部署在GitHubPages"
 date: 2022-07-16T08:00:00+08:00
-tags: ["Arch Linux","Hugo","GitHub Pages"]
+tags: ["Linux","Hugo","GitHub Pages"]
 draft: false
 ---
 

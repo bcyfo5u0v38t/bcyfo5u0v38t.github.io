@@ -1,7 +1,7 @@
 ---
 title: "ArchLinux安装Docker"
 date: 2022-07-22T08:00:00+08:00
-tags: ["Arch Linux","Docker"]
+tags: ["Linux","Docker"]
 draft: false
 ---
 

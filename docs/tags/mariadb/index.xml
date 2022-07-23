@@ -10,7 +10,7 @@
     <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85mariadb/</guid>
-    <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.安装MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组 sudo]]></description>
+    <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.初始化MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组]]></description>
 </item>
 </channel>
 </rss>

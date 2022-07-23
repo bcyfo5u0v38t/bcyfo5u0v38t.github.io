@@ -4,7 +4,15 @@
         <link>https://bcyfo5u0v38t.github.io/posts/</link>
         <description>All Posts | bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ArchLinux安装Docker无根模式</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.安装Docker(Rootless mode) Docker-Compose paru -S docker-rootless-extras docker-compose 2.重映射用户和组 写入 你的用户名:165536:65536 到下面文件 sudo nvim /etc/subuid 写入你的用户名:]]></description>
+</item>
+<item>
     <title>ArchLinux安装Docker</title>
     <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/</link>
     <pubDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</pubDate>
@@ -34,7 +42,7 @@
     <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85mariadb/</guid>
-    <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.安装MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组 sudo]]></description>
+    <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.初始化MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组]]></description>
 </item>
 <item>
     <title>ArchLinux安装qBittorrent-enhanced-nox</title>

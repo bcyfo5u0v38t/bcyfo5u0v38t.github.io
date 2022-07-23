@@ -1,7 +1,7 @@
 ---
 title: "ArchLinux安装Elasticsearch"
 date: 2022-07-20T08:00:00+08:00
-tags: ["Arch Linux","Elasticsearch","Search Engine"]
+tags: ["Linux","Elasticsearch","Search Engine"]
 draft: false
 ---
 

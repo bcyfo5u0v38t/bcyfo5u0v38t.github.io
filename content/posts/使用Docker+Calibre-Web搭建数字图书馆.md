@@ -1,7 +1,7 @@
 ---
 title: "使用Docker+Calibre-Web搭建数字图书馆"
 date: 2022-07-21T08:00:00+08:00
-tags: ["Arch Linux","Docker","Calibre"]
+tags: ["Linux","Docker","Calibre"]
 draft: false
 ---
 
