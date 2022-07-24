@@ -20,13 +20,13 @@ draft: false
 `cd MC/server`  
 运行服务端  
 `minecraftd start`  
-此时会报错一次 问你是否同意协议 修改文件夹中的eula.txt文件 把false改为true  
+此时会报错一次 问你是否同意协议 修改文件夹中的 eula.txt 文件 把 false 改为 true  
 `eula=true`  
 再次运行服务端  
 `minecraftd start`  
 出现 Done 说明服务器搭建成功  
 输入 stop 停止服务器  
-可以通过[server.properties](https://minecraft.fandom.com/wiki/Server.properties)文件对服务器进行一些配置  
+可以通过 [server.properties](https://minecraft.fandom.com/wiki/Server.properties) 文件对服务器进行一些配置  
 要调整默认设置(例如最大RAM 线程数等)  
 `sudo nvim /etc/conf.d/minecraft`
 

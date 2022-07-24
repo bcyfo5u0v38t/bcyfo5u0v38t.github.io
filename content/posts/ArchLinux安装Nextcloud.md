@@ -47,7 +47,7 @@ open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/web
 'htaccess.RewriteBase' => '/',
 ```
 
-示例主机名cloud.example.com  
+示例主机名<cloud.example.com>  
 设置环境变量  
 `sudo nvim /etc/environment`  
 `NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini`  
@@ -62,7 +62,7 @@ open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/web
 `sudo nvim /etc/my.cnf.d/server.cnf`
 
 ```
-[mysqld] 
+[mysqlcloud.example.comd] 
 transaction_isolation=READ-COMMITTED
 ```
 

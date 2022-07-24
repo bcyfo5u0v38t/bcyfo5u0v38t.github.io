@@ -11,15 +11,16 @@ draft: false
 
 ## 2.重映射用户和组
 
-写入 你的用户名:165536:65536 到下面文件  
 `sudo nvim /etc/subuid`  
-写入你的用户名:165536:65536 到下面文件  
-`sudo nvim /etc/subgid`
+`你的用户名:165536:65536`
+
+`sudo nvim /etc/subgid`  
+`你的用户名:165536:65536`
 
 ## 3.设置Docker Socket到环境变量
 
-写入 DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock 到下面文件  
-`sudo nvim /etc/environment`
+`sudo nvim /etc/environment`  
+`DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock`
 
 ## 4.启用并启动Docker
 

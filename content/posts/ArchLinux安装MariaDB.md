@@ -19,7 +19,9 @@ draft: false
 
 ## 4.把用户添加到mysql用户组
 
-`sudo usermod -a -G mysql username`
+`sudo usermod -a -G mysql username`  
+验证是否添加成功  
+`id 用户名`
 
 ## 5.打开MariaDB的服务
 
@@ -36,13 +38,15 @@ draft: false
 5.问你是否禁用远程root登录(如果你有从其他电脑连接数据库的需要 则应该输入n) 默认是y 回车即可  
 6.默认情况下 MariaDB带有一个名为“test”的数据库 任何人都可以使用 问你是否移除这个测试数据库 默认是y 回车即可  
 7.问你是否重新加载权限表将确保到目前为止所做的所有更改将立即生效(如果你反悔了 可以输入n重新来过) 默认是y 回车即可
-限制只能本地访问 使用Unix套接字
+限制只能本地访问 使用Unix套接字  
 `sudo nvim /etc/my.cnf.d/server.cnf`
+
 ```
 [mysqld]
 bind-address = localhost
 skip-networking
 ```
+
 ## 7.启用并启动MariaDB
 
 `sudo systemctl enable --now mariadb.service`

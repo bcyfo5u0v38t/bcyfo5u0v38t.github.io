@@ -23,10 +23,28 @@ Elasticsearch需要JDK10以上版本 安装JDK
 `sudo elasticsearch-keystore create`  
 可能会有报错  
 `could not find java in bundled JDK at /usr/share/elasticsearch/jdk/bin/java`  
-解决办法 设置ES_JAVA_HOME变量  
-`sudo nvim /etc/environment`  
-把下面这条变量加进去  
-`ES_JAVA_HOME=/usr/lib/jvm/default`
+解决办法 修改软连接  
+`sudo ln -snf /usr/lib/jvm/default /usr/share/elasticsearch/jdk`
+
+只配置一个节点 只允许在主机上访问并设置端口号  
+`sudo nvim /etc/elasticsearch/elasticsearch.yml`
+
+```
+cluster.name: my-application
+node.name: node-1
+network.host: 127.0.0.1
+http.port: 22333
+discovery.seed_hosts: ["127.0.0.1"]
+cluster.initial_master_nodes: ["node-1"]
+```
+
+修改内存使用量  
+`sudo nvim /etc/elasticsearch/jvm.options.d/.options`
+
+```
+-Xms2g
+-Xmx2g
+```
 
 ## 4.启用并启动Elasticsearch
 
