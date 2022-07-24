@@ -5,9 +5,9 @@ tags: ["Linux","Nextcloud","Storage"]
 draft: false
 ---
 
-## 1.安装Nextcloud 还需要MariaDB Nginx...
+## 1.安装Nextcloud 还需要MariaDB Nginx Redis...
 
-`paru -S nextcloud php-imagick php-intl php-fpm`
+`paru -S nextcloud php-imagick php-intl php-fpm php-redis`
 
 ## 2.配置
 
@@ -34,7 +34,10 @@ memory_limit = 512M
 open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/webapps/nextcloud:/etc/webapps/nextcloud:/dev/urandom:/usr/lib/php/modules:/var/log/nextcloud:/proc/meminfo
 ```
 
-配置Nextcloud  
+在配置中启用Redis   
+`sudo nvim /etc/php/conf.d/redis.ini`  
+`extension=redis`  
+配置Nextcloud    
 `sudo nvim /etc/webapps/nextcloud/config/config.php`
 
 ```
@@ -45,6 +48,15 @@ open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/web
   ),    
 'overwrite.cli.url' => 'https://cloud.example.org/',
 'htaccess.RewriteBase' => '/',
+'memcache.local' => '\OC\Memcache\APCu',
+'memcache.distributed' => '\OC\Memcache\Redis',
+'redis' => [
+     'host'     => '/run/redis/redis-server.sock',
+     'port'     => 0,
+     'dbindex'  => 0,
+     'password' => 'secret',
+     'timeout'  => 1.5,
+],
 ```
 
 示例主机名<cloud.example.com>  

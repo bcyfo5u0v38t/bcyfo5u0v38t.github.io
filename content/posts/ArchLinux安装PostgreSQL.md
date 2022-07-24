@@ -45,7 +45,7 @@ local   all             postgres                                peer
 
 回到有root权限的用户  
 `exit`  
-启用PostgreSQL的服务  
+启用PostgreSQL服务  
 `sudo systemctl enable postgresql.service`
 
 ## 也可以看看
