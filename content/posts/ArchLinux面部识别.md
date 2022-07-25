@@ -1,7 +1,7 @@
 ---
 title: "ArchLinux面部识别"
 date: 2022-08-15T08:00:00+08:00
-tags: ["Linux","Howdy","Authentication]
+tags: ["Linux","Howdy","Authentication"]
 draft: false
 ---
 
@@ -18,7 +18,7 @@ auth sufficient pam_unix.so try_first_pass likeauth nullok    #这行应当放�
 auth sufficient pam_python.so /lib/security/howdy/pam.py
 ```
 
-示例
+示例  
 `sudo nvim /etc/pam.d/sudo`
 
 ```

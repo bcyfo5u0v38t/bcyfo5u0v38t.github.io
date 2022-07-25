@@ -4,20 +4,36 @@
         <link>https://bcyfo5u0v38t.github.io/tags/</link>
         <description>Tags - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>KWin</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/kwin/</link>
-    <pubDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</pubDate>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Kexec</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/kexec/</link>
+    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/kwin/</guid>
+    <guid>https://bcyfo5u0v38t.github.io/tags/kexec/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Linux</title>
     <link>https://bcyfo5u0v38t.github.io/tags/linux/</link>
-    <pubDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/linux/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Linux Kernel</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</link>
+    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>KWin</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/kwin/</link>
+    <pubDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/kwin/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -66,22 +82,6 @@
     <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/mariadb/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>SQL</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/sql/</link>
-    <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/sql/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>BT</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/bt/</link>
-    <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/bt/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

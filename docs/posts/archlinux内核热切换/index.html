@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ArchLinux内核热切换 - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="ArchLinux内核热切换" />
+<meta property="og:description" content="1.安装Kexec paru -S kexec-tools 重新启动以使用Kexec 2.使用 可以手动调用Kexec使用 直接运行 kexec -e 不会卸载活动文件系统或正常终止任何正在运行的服" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-25T08:00:00+08:00" />
+<meta property="article:modified_time" content="2022-07-25T08:00:00+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ArchLinux内核热切换"/>
+<meta name="twitter:description" content="1.安装Kexec paru -S kexec-tools 重新启动以使用Kexec 2.使用 可以手动调用Kexec使用 直接运行 kexec -e 不会卸载活动文件系统或正常终止任何正在运行的服"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/plasma-kwin%E9%9A%90%E8%97%8F%E5%BA%94%E7%94%A8%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87%E6%8C%89%E9%92%AE%E5%B9%B6%E5%9C%A8%E6%A0%87%E9%A2%98%E6%A0%8F%E4%B8%AD%E7%BB%98%E5%88%B6%E8%8F%9C%E5%8D%95/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ArchLinux内核热切换",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2\/"
+        },"genre": "posts","keywords": "Linux, Linux Kernel, Kexec","wordcount":  343 ,
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2\/","datePublished": "2022-07-25T08:00:00+08:00","dateModified": "2022-07-25T08:00:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "bcyfo5u0v38t"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ArchLinux内核热切换</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-25">2022-07-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;343 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1安装kexec">1.安装Kexec</a></li>
+    <li><a href="#2使用">2.使用</a></li>
+    <li><a href="#也可以看看">也可以看看</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1安装kexec">1.安装Kexec</h2>
+<p><code>paru -S kexec-tools</code><br>
+重新启动以使用Kexec</p>
+<h2 id="2使用">2.使用</h2>
+<p>可以手动调用Kexec使用<br>
+直接运行 kexec -e 不会卸载活动文件系统或正常终止任何正在运行的服务</p>
+<pre tabindex="0"><code>kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline
+kexec -e 
+</code></pre><p>也可以手动加载内核 然后让systemd处理服务关闭和kexec</p>
+<pre tabindex="0"><code>kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline
+systemctl kexec
+</code></pre><p>如果你的启动程序是systemd-boot 并且之前从未使用过手动加载内核 kexec -l 则systemd将默认加载默认引导加载程序条目中指定的内核 比如要在更新系统后重新启动到新内核 只需运行以下命令<br>
+<code>systemctl kexec</code><br>
+如果有多个当前不支持initrd条目 比如微码(Microcode)更新 该命令将拒绝执行<br>
+图形驱动程序需要在kexec之前卸载 否则下一个内核将无法获得设备的独占控制权 任何需要对GPU进行独占控制的程序(Xorg 显示管理器)都不得运行</p>
+<h2 id="也可以看看">也可以看看</h2>
+<p><a href="https://wiki.archlinux.org/title/kexec" target="_blank" rel="noopener noreffer ">Kexec的ArchWiki</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-07-25</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" data-title="ArchLinux内核热切换" data-hashtags="Linux,Linux Kernel,Kexec"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" data-title="ArchLinux内核热切换"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" data-title="ArchLinux内核热切换"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" data-title="ArchLinux内核热切换"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/linux-kernel/">Linux Kernel</a>,&nbsp;<a href="/tags/kexec/">Kexec</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/plasma-kwin%E9%9A%90%E8%97%8F%E5%BA%94%E7%94%A8%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87%E6%8C%89%E9%92%AE%E5%B9%B6%E5%9C%A8%E6%A0%87%E9%A2%98%E6%A0%8F%E4%B8%AD%E7%BB%98%E5%88%B6%E8%8F%9C%E5%8D%95/" class="prev" rel="prev" title="Plasma-KWin隐藏应用菜单图标按钮并在标题栏中绘制菜单"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Plasma-KWin隐藏应用菜单图标按钮并在标题栏中绘制菜单</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
