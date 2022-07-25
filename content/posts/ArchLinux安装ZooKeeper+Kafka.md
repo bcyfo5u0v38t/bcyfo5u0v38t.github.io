@@ -2,6 +2,7 @@
 title: "ArchLinux安装ZooKeeper+Kafka"
 date: 2022-08-12T08:00:00+08:00
 tags: ["Linux","ZooKeeper","Kafka","Message queue"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -17,5 +18,5 @@ draft: false
 
 ## 也可以看看
 
-[ZooKeeper的官方文档](https://zookeeper.apache.org/doc/current/index.html)  
-[Kafka的官方文档](https://kafka.apache.org/quickstart)
+[ZooKeeper的文档](https://zookeeper.apache.org/doc/current/index.html)  
+[Kafka的文档](https://kafka.apache.org/quickstart)

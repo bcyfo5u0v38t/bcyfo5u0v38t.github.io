@@ -2,6 +2,7 @@
 title: "ArchLinux安装PostgreSQL"
 date: 2022-07-27T08:00:00+08:00
 tags: ["Linux","PostgreSQL","SQL"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -50,5 +51,5 @@ local   all             postgres                                peer
 
 ## 也可以看看
 
-[PostgreSQL的官方文档](https://www.postgresql.org/docs/)  
+[PostgreSQL的文档](https://www.postgresql.org/docs/)  
 [PostgreSQL的ArchWiki](https://wiki.archlinux.org/title/PostgreSQL)

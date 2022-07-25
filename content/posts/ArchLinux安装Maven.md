@@ -2,6 +2,7 @@
 title: "ArchLinux安装Maven"
 date: 2022-08-08T08:00:00+08:00
 tags: ["Linux","Maven"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -24,4 +25,4 @@ draft: false
 
 ## 也可以看看
 
-[Maven的官方文档](https://maven.apache.org/guides/index.html)
+[Maven的文档](https://maven.apache.org/guides/index.html)

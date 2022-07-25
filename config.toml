@@ -33,3 +33,6 @@ post = ""
 name = "分类"
 url = "/categories/"
 title = ""
+[taxonomies]
+category = "categories"
+tag = "tags"

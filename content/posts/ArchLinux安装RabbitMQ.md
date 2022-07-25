@@ -2,6 +2,7 @@
 title: "ArchLinux安装RabbitMQ"
 date: 2022-08-02T08:00:00+08:00
 tags: ["Linux","RabbitMQ","Message queue"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -37,5 +38,5 @@ NODE_PORT=5672
 
 ## 也可以看看
 
-[RabbitMQ的官方文档](https://www.rabbitmq.com/documentation.html)  
+[RabbitMQ的文档](https://www.rabbitmq.com/documentation.html)  
 [RabbitMQ的ArchWiki](https://wiki.archlinux.org/title/RabbitMQ)

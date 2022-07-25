@@ -1,7 +1,8 @@
 ---
 title: "ArchLinux安装Docker无根模式"
 date: 2022-07-23T08:00:00+08:00
-tags: ["Linux","Docker"]
+tags: ["Linux","Docker","Container"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -22,8 +23,9 @@ draft: false
 `sudo nvim /etc/environment`  
 `DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock`
 
-## 4.启用并启动Docker
+## 4.重启Docker服务或启用并启动Docker服务
 
+`sudo systemctl restart docker.service`  
 `sudo systemctl enable --now docker.service`
 
 ## 也可以看看

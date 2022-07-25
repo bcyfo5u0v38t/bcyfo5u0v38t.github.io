@@ -2,6 +2,7 @@
 title: "ArchLinux安装Nextcloud"
 date: 2022-07-29T08:00:00+08:00
 tags: ["Linux","Nextcloud","Storage"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -152,5 +153,5 @@ ReadWritePaths=/etc/webapps/nextcloud/config
 ## 也可以看看
 
 [Nextcloud的ArchWiki](https://wiki.archlinux.org/title/Nextcloud)  
-[Nextcloud的官方文档](https://docs.nextcloud.com/)  
+[Nextcloud的文档](https://docs.nextcloud.com/)  
 [Nextcloud的管理员手册](https://docs.nextcloud.com/server/latest/admin_manual/)

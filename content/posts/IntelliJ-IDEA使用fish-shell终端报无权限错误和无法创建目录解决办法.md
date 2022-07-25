@@ -2,6 +2,7 @@
 title: "IntelliJ IDEA使用fish Shell终端报无权限错误和无法创建目录解决办法"
 date: 2022-08-11T08:00:00+08:00
 tags: ["fish shell","shell","IntelliJ IDEA"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -14,5 +15,5 @@ draft: false
 
 ## 也可以看看
 
-[JetBrains产品文档](https://www.jetbrains.com/help/)  
-[fishshell官方文档](https://fishshell.com/docs/current/index.html)
+[JetBrains的产品文档](https://www.jetbrains.com/help/)  
+[fishshell的文档](https://fishshell.com/docs/current/index.html)

@@ -2,6 +2,7 @@
 title: "Waifu2x 用于动漫风格图像的图像缩放和图像降噪程序"
 date: 2022-07-31T08:00:00+08:00
 tags: ["Linux","Waifu2x","Anime","Picture"]
+categories: ["Linux"]
 draft: false
 ---
 

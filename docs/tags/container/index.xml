@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Container - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/container/</link>
+        <description>Container - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/container/" rel="self" type="application/rss+xml" /><item>
+    <title>ArchLinux安装Docker无根模式</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.安装Docker(Rootless mode) Docker-Compose paru -S docker-rootless-extras docker-compose 2.重映射用户和组 sudo nvim /etc/subuid 你的用户名:165536:65536 sudo nvim /etc/subgid 你的用户名:165536]]></description>
+</item>
+<item>
+    <title>ArchLinux安装Docker</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/</link>
+    <pubDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/</guid>
+    <description><![CDATA[1.安装Docker Docker-Compose paru -S docker docker-compose 把用户添加到docker组 sudo usermod -a -G docker username 2.启用并启动Docker sudo systemctl enable --now docker.service 也可以看看 Docker的ArchWi]]></description>
+</item>
+</channel>
+</rss>

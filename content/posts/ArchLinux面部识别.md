@@ -2,6 +2,7 @@
 title: "ArchLinux面部识别"
 date: 2022-08-15T08:00:00+08:00
 tags: ["Linux","Howdy","Authentication"]
+categories: ["Linux"]
 draft: false
 ---
 

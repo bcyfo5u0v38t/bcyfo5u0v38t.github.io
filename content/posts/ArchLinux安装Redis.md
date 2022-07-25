@@ -2,6 +2,7 @@
 title: "ArchLinux安装Redis"
 date: 2022-07-28T08:00:00+08:00
 tags: ["Linux","Redis","SQL"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -25,5 +26,5 @@ draft: false
 
 ## 也可以看看
 
-[Redis的官方文档](https://redis.io/docs)  
+[Redis的文档](https://redis.io/docs)  
 [Redis的ArchWiki](https://wiki.archlinux.org/title/redis)

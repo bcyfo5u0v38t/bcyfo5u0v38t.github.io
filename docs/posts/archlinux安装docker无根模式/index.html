@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F\/"
-        },"genre": "posts","keywords": "Linux, Docker","wordcount":  149 ,
+        },"genre": "posts","keywords": "Linux, Docker, Container","wordcount":  166 ,
         "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F\/","datePublished": "2022-07-23T08:00:00+08:00","dateModified": "2022-07-23T08:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -69,8 +69,8 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ArchLinux安装Docker无根模式</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-23">2022-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;149 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span>&nbsp;<span class="post-category">included in <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-23">2022-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;166 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -82,7 +82,7 @@
     <li><a href="#1安装dockerrootless-mode-docker-compose">1.安装Docker(Rootless mode) Docker-Compose</a></li>
     <li><a href="#2重映射用户和组">2.重映射用户和组</a></li>
     <li><a href="#3设置docker-socket到环境变量">3.设置Docker Socket到环境变量</a></li>
-    <li><a href="#4启用并启动docker">4.启用并启动Docker</a></li>
+    <li><a href="#4重启docker服务或启用并启动docker服务">4.重启Docker服务或启用并启动Docker服务</a></li>
     <li><a href="#也可以看看">也可以看看</a></li>
   </ul>
 </nav></div>
@@ -96,8 +96,9 @@
 <h2 id="3设置docker-socket到环境变量">3.设置Docker Socket到环境变量</h2>
 <p><code>sudo nvim /etc/environment</code><br>
 <code>DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock</code></p>
-<h2 id="4启用并启动docker">4.启用并启动Docker</h2>
-<p><code>sudo systemctl enable --now docker.service</code></p>
+<h2 id="4重启docker服务或启用并启动docker服务">4.重启Docker服务或启用并启动Docker服务</h2>
+<p><code>sudo systemctl restart docker.service</code><br>
+<code>sudo systemctl enable --now docker.service</code></p>
 <h2 id="也可以看看">也可以看看</h2>
 <p><a href="https://wiki.archlinux.org/title/Docker" target="_blank" rel="noopener noreffer ">Docker的ArchWiki</a><br>
 <a href="https://docs.docker.com/" target="_blank" rel="noopener noreffer ">Docker官方文档</a></p>
@@ -110,13 +111,13 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式" data-hashtags="Linux,Docker"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式" data-hashtags="Linux,Docker,Container"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="ArchLinux安装Docker无根模式"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/docker/">Docker</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/container/">Container</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>

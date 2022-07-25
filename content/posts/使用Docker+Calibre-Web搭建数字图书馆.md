@@ -2,6 +2,7 @@
 title: "使用Docker+Calibre-Web搭建数字图书馆"
 date: 2022-07-21T08:00:00+08:00
 tags: ["Linux","Docker","Calibre"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -37,4 +38,4 @@ johngong/calibre-web:latest
 ## 也可以看看
 
 [Calibre-Web的Docker镜像](https://hub.docker.com/r/johngong/calibre-web)  
-[Docker官方文档](https://docs.docker.com/)
+[Docker的文档](https://docs.docker.com/)

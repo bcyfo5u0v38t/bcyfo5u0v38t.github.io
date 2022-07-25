@@ -1,7 +1,8 @@
 ---
 title: "ArchLinux安装Docker"
 date: 2022-07-22T08:00:00+08:00
-tags: ["Linux","Docker"]
+tags: ["Linux","Docker","Container"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -18,4 +19,4 @@ draft: false
 ## 也可以看看
 
 [Docker的ArchWiki](https://wiki.archlinux.org/title/Docker)  
-[Docker官方文档](https://docs.docker.com/)
+[Docker的文档](https://docs.docker.com/)

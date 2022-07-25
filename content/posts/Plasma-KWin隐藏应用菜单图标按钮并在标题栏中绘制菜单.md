@@ -2,6 +2,7 @@
 title: "Plasma-KWin隐藏应用菜单图标按钮并在标题栏中绘制菜单"
 date: 2022-07-24T08:00:00+08:00
 tags: ["Linux","Plasma","KWin"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -13,6 +14,6 @@ draft: false
 
 ## 也可以看看
 
-[material-decoration的Github地址](https://github.com/Zren/material-decoration)  
-[material-decoration的AUR地址](https://aur.archlinux.org/packages/material-kwin-decoration-git)  
+[material-decoration的Github](https://github.com/Zren/material-decoration)  
+[material-decoration的AUR](https://aur.archlinux.org/packages/material-kwin-decoration-git)  
 [KDE的ArchWiki](https://wiki.archlinux.org/title/KDE)

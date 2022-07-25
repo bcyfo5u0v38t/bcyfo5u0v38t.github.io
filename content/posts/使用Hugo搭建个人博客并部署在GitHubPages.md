@@ -2,6 +2,7 @@
 title: "使用Hugo搭建个人博客并部署在GitHubPages"
 date: 2022-07-16T08:00:00+08:00
 tags: ["Linux","Hugo","GitHub Pages"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -61,7 +62,7 @@ git push origin
 
 ## 也可以看看
 
-[Hugo官方文档](https://gohugo.io/documentation/)  
-[Markdown基本语法](https://www.markdownguide.org/basic-syntax/)  
-[LoveIt主题](https://github.com/dillonzq/LoveIt)  
-[LoveIt主题的博客](https://hugoloveit.com/)
+[Hugo的文档](https://gohugo.io/documentation/)  
+[Markdown的基本语法](https://www.markdownguide.org/basic-syntax/)  
+[LoveIt的主题](https://github.com/dillonzq/LoveIt)  
+[LoveIt的主题博客](https://hugoloveit.com/)

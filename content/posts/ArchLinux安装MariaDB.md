@@ -2,6 +2,7 @@
 title: "ArchLinux安装MariaDB"
 date: 2022-07-19T08:00:00+08:00
 tags: ["Linux","MariaDB","SQL"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -54,6 +55,6 @@ skip-networking
 ## 也可以看看
 
 [MariaDB的ArchWiki](https://wiki.archlinux.org/title/MariaDB)  
-[MariaDB官方网站](https://mariadb.com/)  
-[MariaDB知识库](https://mariadb.com/kb/en/)  
-[MySQL性能调优脚本和专有技术](https://www.askapache.com/mysql/mysql-performance-tuning/)
+[MariaDB的网站](https://mariadb.com/)  
+[MariaDB的知识库](https://mariadb.com/kb/en/)  
+[MySQL的性能调优脚本和专有技术](https://www.askapache.com/mysql/mysql-performance-tuning/)

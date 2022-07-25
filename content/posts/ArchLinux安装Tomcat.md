@@ -2,6 +2,7 @@
 title: "ArchLinux安装Tomcat"
 date: 2022-08-03T08:00:00+08:00
 tags: ["Linux","Tomcat","Java"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -44,5 +45,5 @@ draft: false
 
 ## 也可以看看
 
-[Tomcat的官方网站](https://tomcat.apache.org/)  
+[Tomcat的网站](https://tomcat.apache.org/)  
 [Tomcat的ArchWiki](https://wiki.archlinux.org/title/Tomcat)

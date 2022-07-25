@@ -2,6 +2,7 @@
 title: "ArchLinux使用Droidcam让手机做电脑摄像头"
 date: 2022-08-16T08:00:00+08:00
 tags: ["Linux","Droidcam","Webcam"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -28,4 +29,4 @@ sudo modprobe v4l2loopback_dc 1920 1080   #分辨率
 
 [Droidcam的Github](https://github.com/dev47apps/droidcam)  
 [Droidcam的ArchWiki](https://wiki.archlinux.de/title/Droidcam)  
-[Droidcam的官方网站](https://www.dev47apps.com/)
+[Droidcam的网站](https://www.dev47apps.com/)

@@ -2,6 +2,7 @@
 title: "ArchLinux安装Elasticsearch"
 date: 2022-07-20T08:00:00+08:00
 tags: ["Linux","Elasticsearch","Search Engine"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -52,5 +53,5 @@ cluster.initial_master_nodes: ["node-1"]
 
 ## 也可以看看
 
-[Elasticsearch的官方文档](https://www.elastic.co/guide/index.html)  
+[Elasticsearch的文档](https://www.elastic.co/guide/index.html)  
 [Elasticsearch的ArchWiki](https://wiki.archlinux.org/title/Elasticsearch)

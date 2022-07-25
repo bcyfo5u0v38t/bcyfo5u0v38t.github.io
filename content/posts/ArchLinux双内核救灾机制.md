@@ -2,6 +2,7 @@
 title: "ArchLinux双内核救灾机制"
 date: 2022-08-17T08:00:00+08:00
 tags: ["Linux","Linux Kernel","Kexec","Kdump"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -96,7 +97,7 @@ Kdump_Kernel/linux-lts下面应该有两个.tar.xz文件
 告诉Kexec要使用的转储捕获内核  
 `sudo kexec -p /boot/vmlinuz-linux-lts-kdump`  
 如果需要 还可以指定内核 initramfs文件 根设备和其他参数   
-`sudo kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append="root=[root-device] single irqpoll maxcpus=1 reset_devices"`  
+`sudo kexec -p [/boot/vmlinuz-linux-lts-kdump] --initrd=[/boot/initramfs-linux-lts-kdump.img] --append="root=[root-device] single irqpoll maxcpus=1 reset_devices"`  
 它将内核加载到保留区域 没有-p标志kexec会立即启动内核 但如果存在标志 内核将被加载到保留内存中 启动会推迟到崩溃
 
 ## 8.制作并启用启动Kdump服务
@@ -133,7 +134,7 @@ After=local-fs.target
 [Service]
 Type=oneshot
 RemainAfterExit=true
-ExecStart=/usr/bin/kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append="root=[root-device] systemd.unit=kdump-save.service irqpoll maxcpus=1 reset_devices"
+ExecStart=/usr/bin/kexec -p [/boot/vmlinuz-linux-lts-kdump] --initrd=[/boot/initramfs-linux-lts-kdump.img] --append="root=[root-device] systemd.unit=kdump-save.service irqpoll maxcpus=1 reset_devices"
 # convenience
 ExecStartPost=/bin/sh -c 'mkdir -p /var/crash/ && /usr/bin/makedumpfile --dump-dmesg /proc/vmcore "/var/crash/crashdump-$$(date +%%F-%%T)".dmesg'
 ExecStop=/usr/bin/kexec -p -u
@@ -153,7 +154,7 @@ WantedBy=multi-user.target
 [Kdump的ArchWiki](https://wiki.archlinux.org/title/Kdump)  
 [Kexec的ArchWiki](https://wiki.archlinux.org/title/kexec)  
 [内核的ArchWiki](https://wiki.archlinux.org/title/Kernel#Compilation)  
-[内核的传统编译部分ArchWiki](https://wiki.archlinux.org/title/Kernel/Traditional_compilation)  
+[内核传统编译部分的ArchWiki](https://wiki.archlinux.org/title/Kernel/Traditional_compilation)  
 [Modprobed-db的ArchWiki](https://wiki.archlinux.org/title/Modprobed-db)  
 [GRUB的ArchWiki](https://wiki.archlinux.org/title/GRUB)  
 [systemd的ArchWiki](https://wiki.archlinux.org/title/systemd)

@@ -2,6 +2,7 @@
 title: "ArchLinux安装JDK"
 date: 2022-08-04T08:00:00+08:00
 tags: ["Linux","JDK","Java"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -25,4 +26,4 @@ draft: false
 ## 也可以看看
 
 [Java的ArchWiki](https://wiki.archlinux.org/title/java)  
-[Oracle的文档](https://docs.oracle.com/en/java/javase/)
+[Oracle的JDK文档](https://docs.oracle.com/en/java/javase/)

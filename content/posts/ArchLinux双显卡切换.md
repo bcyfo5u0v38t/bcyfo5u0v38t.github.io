@@ -2,6 +2,7 @@
 title: "ArchLinux双显卡切换"
 date: 2022-08-14T08:00:00+08:00
 tags: ["Linux","GPU","Optimus"]
+categories: ["Linux"]
 draft: false
 ---
 

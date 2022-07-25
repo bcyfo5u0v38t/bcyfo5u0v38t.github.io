@@ -2,6 +2,7 @@
 title: "ArchLinux内核热切换"
 date: 2022-07-25T08:00:00+08:00
 tags: ["Linux","Linux Kernel","Kexec"]
+categories: ["Linux"]
 draft: false
 ---
 

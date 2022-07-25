@@ -2,6 +2,7 @@
 title: "ArchLinux安装Gradle"
 date: 2022-08-09T08:00:00+08:00
 tags: ["Linux","Gradle"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -25,4 +26,4 @@ allprojects {
 
 ## 也可以看看
 
-[Gradle的官方文档](https://docs.gradle.org/current/userguide/userguide.html)
+[Gradle的文档](https://docs.gradle.org/current/userguide/userguide.html)

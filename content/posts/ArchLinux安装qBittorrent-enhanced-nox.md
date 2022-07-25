@@ -2,6 +2,7 @@
 title: "ArchLinux安装qBittorrent-enhanced-nox"
 date: 2022-07-18T08:00:00+08:00
 tags: ["Linux","qBittorrent","BT"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -32,4 +33,4 @@ http://localhost:8080/
 ## 也可以看看
 
 [热门Tracker服务器列表](https://github.com/XIU2/TrackersListCollection)  
-[qBittorrent官方Wiki](https://github.com/qbittorrent/qBittorrent/wiki)
+[qBittorrent的Wiki](https://github.com/qbittorrent/qBittorrent/wiki)

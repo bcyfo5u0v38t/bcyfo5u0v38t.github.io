@@ -2,6 +2,7 @@
 title: "红米K50刷Magisk"
 date: 2022-07-30T08:00:00+08:00
 tags: ["Linux","K50","Phone","Magisk","ROOT"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -29,5 +30,5 @@ draft: false
 
 ## 也可以看看
 
-[Magisk的官方文档](https://topjohnwu.github.io/Magisk)  
+[Magisk的文档](https://topjohnwu.github.io/Magisk)  
 [Android的ArchWiki](https://wiki.archlinux.org/title/android)  

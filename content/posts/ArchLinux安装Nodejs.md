@@ -2,6 +2,7 @@
 title: "ArchLinux安装Nodejs"
 date: 2022-08-06T08:00:00+08:00
 tags: ["Linux","Nodejs"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -11,6 +12,6 @@ draft: false
 
 ## 也可以看看
 
-[Nodejs官方文档](https://nodejs.org/en/docs/)    
-[pnpm的官方文档](https://pnpm.io/motivation)  
+[Nodejs的文档](https://nodejs.org/en/docs/)    
+[pnpm的文档](https://pnpm.io/motivation)  
 [Nodejs的ArchWiki](https://wiki.archlinux.org/title/Node.js)

@@ -2,6 +2,7 @@
 title: "ArchLinux安装Git"
 date: 2022-08-05T08:00:00+08:00
 tags: ["Linux","Git"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -17,5 +18,5 @@ draft: false
 
 ## 也可以看看
 
-[Git官方文档](https://git-scm.com/doc)  
+[Git的文档](https://git-scm.com/doc)  
 [Git的ArchWiki](https://wiki.archlinux.org/title/git)

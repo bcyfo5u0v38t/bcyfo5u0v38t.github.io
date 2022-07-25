@@ -2,6 +2,7 @@
 title: "ArchLinux安装OneDrive"
 date: 2022-07-26T08:00:00+08:00
 tags: ["Linux","OneDrive","Storage"]
+categories: ["Linux"]
 draft: false
 ---
 

@@ -2,6 +2,7 @@
 title: "ArchLinux安装Kubernetes"
 date: 2022-08-13T08:00:00+08:00
 tags: ["Linux","kubernetes"]
+categories: ["Linux"]
 draft: false
 ---
 
@@ -17,5 +18,5 @@ draft: false
 
 ## 也可以看看
 
-[Kubernetes的官方文档](https://kubernetes.io/docs/home/)  
+[Kubernetes的文档](https://kubernetes.io/docs/home/)  
 [Kubernetes的ArchWiki](https://wiki.archlinux.org/title/Kubernetes)
