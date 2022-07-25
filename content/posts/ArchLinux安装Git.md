@@ -16,6 +16,11 @@ draft: false
 `git config --global user.name "名字"`  
 `git config --global user.email "电子邮件"`
 
+## 3.安装GitHub-Desktop
+
+这是一个用于GitHub的桌面版本  
+`paru -S github-desktop`
+
 ## 也可以看看
 
 [Git的文档](https://git-scm.com/doc)  
