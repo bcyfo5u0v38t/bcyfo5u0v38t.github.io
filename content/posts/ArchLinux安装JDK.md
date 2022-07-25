@@ -19,7 +19,7 @@ draft: false
 查看Java环境变量  
 `archlinux-java status`  
 切换到JDK8  
-`archlinux-java liberica-jdk-8-full`  
+`sudo archlinux-java liberica-jdk-8-full`  
 链接/usr/lib/jvm/default和/usr/lib/jvm/default-runtime应始终使用 archlinux-java
 
 ## 也可以看看

@@ -16,19 +16,19 @@ draft: false
 直接运行 kexec -e 不会卸载活动文件系统或正常终止任何正在运行的服务
 
 ```
-kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline
-kexec -e 
+sudo kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline
+sudo kexec -e 
 ```
 
 也可以手动加载内核 然后让systemd处理服务关闭和kexec
 
 ```
-kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline
-systemctl kexec
+sudp kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline
+sudo systemctl kexec
 ```
 
 如果你的启动程序是systemd-boot 并且之前从未使用过手动加载内核 kexec -l 则systemd将默认加载默认引导加载程序条目中指定的内核 比如要在更新系统后重新启动到新内核 只需运行以下命令  
-`systemctl kexec`  
+`sudo systemctl kexec`  
 如果有多个当前不支持initrd条目 比如微码(Microcode)更新 该命令将拒绝执行  
 图形驱动程序需要在kexec之前卸载 否则下一个内核将无法获得设备的独占控制权 任何需要对GPU进行独占控制的程序(Xorg 显示管理器)都不得运行
 

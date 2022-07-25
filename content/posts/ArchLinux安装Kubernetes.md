@@ -12,8 +12,8 @@ draft: false
 ## 2.启用并启动kubelet服务
 
 启动服务前应禁用Swap  
-`swapoff /dev/sdxy`  
-`systemctl enable --now kubelet.service`
+`sudo swapoff /dev/sdxy`  
+`sudo systemctl enable --now kubelet.service`
 
 ## 也可以看看
 
