@@ -4,84 +4,84 @@
         <link>https://bcyfo5u0v38t.github.io/tags/</link>
         <description>Tags - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 26 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Linux</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/linux/</link>
-    <pubDate>Tue, 26 Jul 2022 08:00:00 &#43;0800</pubDate>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>ArchLinux</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/archlinux/</link>
+    <pubDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/linux/</guid>
+    <guid>https://bcyfo5u0v38t.github.io/tags/archlinux/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>OneDrive</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/onedrive/</link>
-    <pubDate>Tue, 26 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <title>Fcitx</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/fcitx/</link>
+    <pubDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/onedrive/</guid>
+    <guid>https://bcyfo5u0v38t.github.io/tags/fcitx/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>IntelliJ</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/intellij/</link>
+    <pubDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/intellij/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>故障排除</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/</link>
+    <pubDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Java</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/java/</link>
+    <pubDate>Sat, 25 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/java/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Tomcat</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/tomcat/</link>
+    <pubDate>Sat, 25 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/tomcat/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Authentication</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/authentication/</link>
+    <pubDate>Fri, 17 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/authentication/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Howdy</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/howdy/</link>
+    <pubDate>Fri, 17 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/howdy/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Nextcloud</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/nextcloud/</link>
+    <pubDate>Thu, 09 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/nextcloud/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Storage</title>
     <link>https://bcyfo5u0v38t.github.io/tags/storage/</link>
-    <pubDate>Tue, 26 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Thu, 09 Sep 2021 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/storage/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Kexec</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/kexec/</link>
-    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/kexec/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Linux Kernel</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</link>
-    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>KWin</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/kwin/</link>
-    <pubDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/kwin/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Plasma</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/plasma/</link>
-    <pubDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/plasma/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Container</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/container/</link>
-    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/container/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Docker</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/docker/</link>
-    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/docker/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Calibre</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/calibre/</link>
-    <pubDate>Thu, 21 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/calibre/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

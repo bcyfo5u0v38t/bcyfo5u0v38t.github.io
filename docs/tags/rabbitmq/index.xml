@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>RabbitMQ - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/rabbitmq/</link>
+        <description>RabbitMQ - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Sat, 17 Jul 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/rabbitmq/" rel="self" type="application/rss+xml" /><item>
+    <title>安装RabbitMQ</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85rabbitmq/</link>
+    <pubDate>Sat, 17 Jul 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85rabbitmq/</guid>
+    <description><![CDATA[1.安装RabbitMQ paru -S rabbitmq 2.启用并启动RabbitMQ sudo systemctl enable --now rabbitmq.service 3.启用WEB管理界面 sudo rabbitmq-plugins enable rabbitmq_management 在 你的主机ip地址:15672 上访问管理]]></description>
+</item>
+</channel>
+</rss>

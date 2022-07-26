@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/python/</link>
+        <description>Python - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Sun, 09 May 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>安装Python</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85python/</link>
+    <pubDate>Sun, 09 May 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85python/</guid>
+    <description><![CDATA[1.安装Python 和包管理pip paru -S python python-pip 也可以看看 Python的文档 Python的ArchWiki]]></description>
+</item>
+</channel>
+</rss>

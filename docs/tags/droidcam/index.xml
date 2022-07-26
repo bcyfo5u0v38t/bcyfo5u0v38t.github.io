@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Droidcam - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/droidcam/</link>
+        <description>Droidcam - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 01 Jun 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/droidcam/" rel="self" type="application/rss+xml" /><item>
+    <title>使用Droidcam让手机做电脑摄像头</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8droidcam%E8%AE%A9%E6%89%8B%E6%9C%BA%E5%81%9A%E7%94%B5%E8%84%91%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+    <pubDate>Tue, 01 Jun 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8droidcam%E8%AE%A9%E6%89%8B%E6%9C%BA%E5%81%9A%E7%94%B5%E8%84%91%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+    <description><![CDATA[1.安装Droidcam paru -S droidcam 手机端搜索安装droidcamx 2.载入所需模块 sudo modprobe videodev sudo modprobe v4l2loopback sudo modprobe v4l2loopback_dc 1920 1080 #分辨率 3.使用 将电脑和手机连入同一个局]]></description>
+</item>
+</channel>
+</rss>

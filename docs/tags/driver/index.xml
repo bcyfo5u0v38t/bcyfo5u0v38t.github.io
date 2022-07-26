@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Driver - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/driver/</link>
+        <description>Driver - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Thu, 17 Jun 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/driver/" rel="self" type="application/rss+xml" /><item>
+    <title>安装USB无线网卡MW300UH驱动</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85usb%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1mw300uh%E9%A9%B1%E5%8A%A8/</link>
+    <pubDate>Thu, 17 Jun 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85usb%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1mw300uh%E9%A9%B1%E5%8A%A8/</guid>
+    <description><![CDATA[1.查看USB设备信息 sudo lsusb 通过ID 0bda:f192 浏览器搜索得知对应驱动是 8192fu 2.安装驱动 paru -S rtl8192fu-dkms-git 3.USB无线网卡工作模式切换 一些所谓的免驱USB无线网卡 可]]></description>
+</item>
+</channel>
+</rss>

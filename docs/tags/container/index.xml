@@ -4,20 +4,36 @@
         <link>https://bcyfo5u0v38t.github.io/tags/container/</link>
         <description>Container - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/container/" rel="self" type="application/rss+xml" /><item>
-    <title>ArchLinux安装Docker无根模式</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Wed, 17 Mar 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/container/" rel="self" type="application/rss+xml" /><item>
+    <title>安装LXD无根模式</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Wed, 17 Mar 2021 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</guid>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.安装arch-install-scripts paru -S arch-install-scripts 2.启用支持 sudo nvim /etc/lxc/default.conf lxc.idmap = u 0 100000 65536 lxc.idmap = g 0 100000 65536 3重新映射用户和组 sudo nvim /etc/subuid root:10000]]></description>
+</item>
+<item>
+    <title>安装LXD</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd/</link>
+    <pubDate>Tue, 09 Mar 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd/</guid>
+    <description><![CDATA[1. 安装LXD paru -S lxd 2.用户添加到组 sudo usermod -a -G lxd 用户名 3.启用并启动LXD sudo systemctl enable --now lxd.service 也可以看看 LXD的ArchWiki LXD的文档 Linux容器]]></description>
+</item>
+<item>
+    <title>安装Docker无根模式</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Mon, 01 Mar 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85docker%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[1.安装Docker(Rootless mode) Docker-Compose paru -S docker-rootless-extras docker-compose 2.重映射用户和组 sudo nvim /etc/subuid 你的用户名:165536:65536 sudo nvim /etc/subgid 你的用户名:165536]]></description>
 </item>
 <item>
-    <title>ArchLinux安装Docker</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/</link>
-    <pubDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <title>安装Docker</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85docker/</link>
+    <pubDate>Mon, 01 Feb 2021 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/archlinux%E5%AE%89%E8%A3%85docker/</guid>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85docker/</guid>
     <description><![CDATA[1.安装Docker Docker-Compose paru -S docker docker-compose 把用户添加到docker组 sudo usermod -a -G docker username 2.启用并启动Docker sudo systemctl enable --now docker.service 也可以看看 Docker的ArchWi]]></description>
 </item>
 </channel>

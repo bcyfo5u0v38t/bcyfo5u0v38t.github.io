@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>安装LXD无根模式 - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="安装LXD无根模式" />
+<meta property="og:description" content="1.安装arch-install-scripts paru -S arch-install-scripts 2.启用支持 sudo nvim /etc/lxc/default.conf lxc.idmap = u 0 100000 65536 lxc.idmap = g 0 100000 65536 3重新映射用户和组 sudo nvim /etc/subuid root:10000" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-17T08:00:00+08:00" />
+<meta property="article:modified_time" content="2021-03-17T08:00:00+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="安装LXD无根模式"/>
+<meta name="twitter:description" content="1.安装arch-install-scripts paru -S arch-install-scripts 2.启用支持 sudo nvim /etc/lxc/default.conf lxc.idmap = u 0 100000 65536 lxc.idmap = g 0 100000 65536 3重新映射用户和组 sudo nvim /etc/subuid root:10000"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85git/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "安装LXD无根模式",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F\/"
+        },"genre": "posts","keywords": "ArchLinux, LXD, Container","wordcount":  235 ,
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F\/","datePublished": "2021-03-17T08:00:00+08:00","dateModified": "2021-03-17T08:00:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "bcyfo5u0v38t"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装LXD无根模式</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span>&nbsp;<span class="post-category">included in <a href="/categories/archlinux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ArchLinux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-03-17">2021-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;235 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1安装arch-install-scripts">1.安装arch-install-scripts</a></li>
+    <li><a href="#2启用支持">2.启用支持</a></li>
+    <li><a href="#3重新映射用户和组">3重新映射用户和组</a></li>
+    <li><a href="#4委派非特权cgroups">4.委派非特权Cgroups</a></li>
+    <li><a href="#5重启或启用并启动lxd服务">5.重启或启用并启动LXD服务</a></li>
+    <li><a href="#也可以看看">也可以看看</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1安装arch-install-scripts">1.安装arch-install-scripts</h2>
+<p><code>paru -S arch-install-scripts</code></p>
+<h2 id="2启用支持">2.启用支持</h2>
+<p><code>sudo nvim /etc/lxc/default.conf</code></p>
+<pre tabindex="0"><code>lxc.idmap = u 0 100000 65536
+lxc.idmap = g 0 100000 65536
+</code></pre><h2 id="3重新映射用户和组">3重新映射用户和组</h2>
+<p><code>sudo nvim /etc/subuid</code><br>
+<code>root:100000：65536</code></p>
+<p><code>sudo nvim /etc/subgid</code><br>
+<code>root:100000：65536</code></p>
+<h2 id="4委派非特权cgroups">4.委派非特权Cgroups</h2>
+<p><code>systemd-run --unit= myshell --user --scope -p &quot;Delegate=yes&quot; lxc-start container_name</code><br>
+或创建一个Systemd单元来委派非特权Cgroups<br>
+<code>sudo nvim /etc/systemd/system/user@.service.d/delegate.conf</code></p>
+<pre tabindex="0"><code>[Service]
+Delegate=cpu cpuset io memory pids
+</code></pre><h2 id="5重启或启用并启动lxd服务">5.重启或启用并启动LXD服务</h2>
+<p><code>sudo systemctl restart lxd.service</code><br>
+<code>sudo systemctl enable --now lxd.service</code></p>
+<h2 id="也可以看看">也可以看看</h2>
+<p><a href="https://wiki.archlinux.org/title/LXD" target="_blank" rel="noopener noreffer ">LXD的ArchWiki</a><br>
+<a href="https://linuxcontainers.org/lxd/docs/master/" target="_blank" rel="noopener noreffer ">LXD的文档</a><br>
+<a href="https://wiki.archlinux.org/title/Linux_Containers" target="_blank" rel="noopener noreffer ">Linux容器的ArchWiki</a><br>
+<a href="https://wiki.archlinux.org/title/Cgroups" target="_blank" rel="noopener noreffer ">Cgroups的ArchWiki</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-03-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="安装LXD无根模式" data-hashtags="ArchLinux,LXD,Container"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-hashtag="ArchLinux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="安装LXD无根模式"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="安装LXD无根模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85lxd%E6%97%A0%E6%A0%B9%E6%A8%A1%E5%BC%8F/" data-title="安装LXD无根模式"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/archlinux/">ArchLinux</a>,&nbsp;<a href="/tags/lxd/">LXD</a>,&nbsp;<a href="/tags/container/">Container</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%AE%89%E8%A3%85lxd/" class="prev" rel="prev" title="安装LXD"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>安装LXD</a>
+            <a href="/posts/%E5%AE%89%E8%A3%85git/" class="next" rel="next" title="安装Git">安装Git<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Fcitx - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/fcitx/</link>
+        <description>Fcitx - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/fcitx/" rel="self" type="application/rss+xml" /><item>
+    <title>IntelliJ系IDE使用Fcitx输入法候选框不跟随光标解决办法</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fcitx%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E4%B8%8D%E8%B7%9F%E9%9A%8F%E5%85%89%E6%A0%87%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+    <pubDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fcitx%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E4%B8%8D%E8%B7%9F%E9%9A%8F%E5%85%89%E6%A0%87%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+    <description><![CDATA[1.安装JetBrainsRuntime-for-Linux-x64 paru -S jbr-linux-x64 也可以看看 JetBrainsRuntime-for-Linux-x]]></description>
+</item>
+</channel>
+</rss>

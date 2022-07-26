@@ -1,15 +1,15 @@
 ---
 title: "我的世界MCDR+Fabric服务器搭建"
-date: 2022-07-17T08:00:00+08:00
-tags: ["Linux","Minecraft","MCDReforged","Fabric","Game Server"]
-categories: ["Linux"]
+date: 2021-01-17T08:00:00+08:00
+tags: ["ArchLinux","Minecraft","MCDReforged","Fabric","Game Server"]
+categories: ["ArchLinux"]
 draft: false
 ---
 
 ## 1.配置环境
 
 安装JDK Python pip ...  
-`paru -S --needed liberica-jdk-full-bin python python-pip minecraft-server fabric-server`  
+`paru -S liberica-jdk-full-bin python python-pip minecraft-server fabric-server`  
 安装MCDR  
 `pip install mcdreforged`
 

@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Gradle - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/gradle/</link>
+        <description>Gradle - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 09 Apr 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/gradle/" rel="self" type="application/rss+xml" /><item>
+    <title>安装Gradle</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85gradle/</link>
+    <pubDate>Fri, 09 Apr 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85gradle/</guid>
+    <description><![CDATA[1.安装Gradle paru -S gradle 2.配置Gradle镜像源 sudo nvim 家目录/.gradle/init.gradle allprojects { repositories { maven { url &#39;https://maven.aliyun.com/repository/public/&#39; } mavenLocal() mavenCentral() } } 也可以看看 G]]></description>
+</item>
+</channel>
+</rss>

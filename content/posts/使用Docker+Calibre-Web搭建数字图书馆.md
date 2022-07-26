@@ -1,8 +1,8 @@
 ---
 title: "使用Docker+Calibre-Web搭建数字图书馆"
-date: 2022-07-21T08:00:00+08:00
-tags: ["Linux","Docker","Calibre"]
-categories: ["Linux"]
+date: 2021-01-09T08:00:00+08:00
+tags: ["Docker","Calibre"]
+categories: ["Docker"]
 draft: false
 ---
 

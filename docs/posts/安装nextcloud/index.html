@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>安装Nextcloud - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="安装Nextcloud" />
+<meta property="og:description" content="1.安装Nextcloud 还需要MariaDB Nginx Redis&hellip; paru -S nextcloud php-imagick php-intl php-fpm php-redis 2.配置 复制/etc/php/php.ini到/etc/webapps/ne" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-09T08:00:00+08:00" />
+<meta property="article:modified_time" content="2021-09-09T08:00:00+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="安装Nextcloud"/>
+<meta name="twitter:description" content="1.安装Nextcloud 还需要MariaDB Nginx Redis&hellip; paru -S nextcloud php-imagick php-intl php-fpm php-redis 2.配置 复制/etc/php/php.ini到/etc/webapps/ne"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85mpv/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "安装Nextcloud",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E5%AE%89%E8%A3%85nextcloud\/"
+        },"genre": "posts","keywords": "ArchLinux, Nextcloud, Storage","wordcount":  649 ,
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E5%AE%89%E8%A3%85nextcloud\/","datePublished": "2021-09-09T08:00:00+08:00","dateModified": "2021-09-09T08:00:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "bcyfo5u0v38t"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装Nextcloud</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span>&nbsp;<span class="post-category">included in <a href="/categories/archlinux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ArchLinux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-09-09">2021-09-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;649 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1安装nextcloud-还需要mariadb-nginx-redis">1.安装Nextcloud 还需要MariaDB Nginx Redis&hellip;</a></li>
+    <li><a href="#2配置">2.配置</a></li>
+    <li><a href="#3数据库">3.数据库</a></li>
+    <li><a href="#4应用服务器">4.应用服务器</a></li>
+    <li><a href="#5网络服务器">5.网络服务器</a></li>
+    <li><a href="#6客户端">6.客户端</a></li>
+    <li><a href="#也可以看看">也可以看看</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1安装nextcloud-还需要mariadb-nginx-redis">1.安装Nextcloud 还需要MariaDB Nginx Redis&hellip;</h2>
+<p><code>paru -S nextcloud php-imagick php-intl php-fpm php-redis</code></p>
+<h2 id="2配置">2.配置</h2>
+<p>复制/etc/php/php.ini到/etc/webapps/nextcloud<br>
+<code>sudo cp /etc/php/php.ini /etc/webapps/nextcloud/php.ini</code><br>
+更改副本的所有权<br>
+<code>chown nextcloud:nextcloud /etc/webapps/nextcloud/php.ini</code><br>
+配置PHP启用所需模块<br>
+<code>sudo nvim /etc/webapps/nextcloud/php.ini</code></p>
+<pre tabindex="0"><code>extension=pdo_mysql
+extension=bcmath
+extension=bz2
+extension=exif
+extension=gd
+extension=iconv
+; in case you installed php-imagick (as recommended)
+extension=imagick
+; in case you also installed php-intl (as recommended)
+extension=intl
+date.timezone = Asia/Shanghai
+memory_limit = 512M
+open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/webapps/nextcloud:/etc/webapps/nextcloud:/dev/urandom:/usr/lib/php/modules:/var/log/nextcloud:/proc/meminfo
+</code></pre><p>在配置中启用Redis<br>
+<code>sudo nvim /etc/php/conf.d/redis.ini</code><br>
+<code>extension=redis</code><br>
+配置Nextcloud <br>
+<code>sudo nvim /etc/webapps/nextcloud/config/config.php</code></p>
+<pre tabindex="0"><code>&#39;trusted_domains&#39; =&gt;
+  array (
+    0 =&gt; &#39;localhost&#39;,
+    1 =&gt; &#39;cloud.example.org&#39;,
+  ),    
+&#39;overwrite.cli.url&#39; =&gt; &#39;https://cloud.example.org/&#39;,
+&#39;htaccess.RewriteBase&#39; =&gt; &#39;/&#39;,
+&#39;memcache.local&#39; =&gt; &#39;\OC\Memcache\APCu&#39;,
+&#39;memcache.distributed&#39; =&gt; &#39;\OC\Memcache\Redis&#39;,
+&#39;redis&#39; =&gt; [
+     &#39;host&#39;     =&gt; &#39;/run/redis/redis-server.sock&#39;,
+     &#39;port&#39;     =&gt; 0,
+     &#39;dbindex&#39;  =&gt; 0,
+     &#39;password&#39; =&gt; &#39;secret&#39;,
+     &#39;timeout&#39;  =&gt; 1.5,
+],
+</code></pre><p>示例主机名&lt;cloud.example.com&gt;<br>
+设置环境变量<br>
+<code>sudo nvim /etc/environment</code><br>
+<code>NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini</code><br>
+临时设置<br>
+<code>export NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini</code><br>
+创建专有目录<br>
+<code>install --owner=nextcloud --group=nextcloud --mode=700 -d /var/lib/nextcloud/sessions</code></p>
+<h2 id="3数据库">3.数据库</h2>
+<p>修改事务隔离级别<br>
+<code>sudo nvim /etc/my.cnf.d/server.cnf</code></p>
+<pre tabindex="0"><code>[mysqlcloud.example.comd] 
+transaction_isolation=READ-COMMITTED
+</code></pre><p>启动CLI工具<br>
+<code>mysql -u root -p</code><br>
+Nextcloud创建用户和数据库</p>
+<pre tabindex="0"><code>CREATE USER &#39;nextcloud&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xxxxxxxx&#39;;
+CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+GRANT ALL PRIVILEGES on nextcloud.* to &#39;nextcloud&#39;@&#39;localhost&#39;;
+FLUSH privileges;
+</code></pre><p>设置Nextcloud的数据库架构</p>
+<pre tabindex="0"><code>occ maintenance:install \
+    --database=mysql \
+    --database-name=nextcloud \
+    --database-host=localhost:/run/mysqld/mysqld.sock \
+    --database-user=nextcloud \
+    --database-pass=xxxxxxxx \
+    --admin-pass=zzzzzzzz \
+    --admin-email=aaaa@bbbbb \
+    --data-dir=/var/lib/nextcloud/data
+</code></pre><h2 id="4应用服务器">4.应用服务器</h2>
+<p>创建一个php-fpm特定的副本(应确保此文件只能由root写入)<br>
+<code>cp /etc/php/php.ini /etc/php/php-fpm.ini</code><br>
+配置php-fpm<br>
+<code>sudo nvim /etc/php/php-fpm.ini</code><br>
+<code>;zend_extension=opcache</code><br>
+并把以下参数放在[opcache]下方</p>
+<pre tabindex="0"><code>opcache.enable = 1
+opcache.interned_strings_buffer = 8
+opcache.max_accelerated_files = 10000
+opcache.memory_consumption = 128
+opcache.save_comments = 1
+opcache.revalidate_freq = 1
+</code></pre><p>创建池文件 <a href="https://gist.github.com/wolegis/0d9c83acd0c8bf83bcfb3983931bc364" target="_blank" rel="noopener noreffer ">参考</a> (应确保此文件只能由root写入)<br>
+<code>sudo nvim /etc/php/php-fpm.d/nextcloud.conf</code><br>
+设置php-fpm服务<br>
+<code>sudo nvim /etc/systemd/system/php-fpm.service.d/override.conf</code></p>
+<pre tabindex="0"><code>[Service]
+ExecStart=
+ExecStart=/usr/bin/php-fpm --nodaemonize --fpm-config /etc/php/php-fpm.conf --php-ini /etc/php/php-fpm.ini
+ReadWritePaths=/var/lib/nextcloud
+ReadWritePaths=/etc/webapps/nextcloud/config
+</code></pre><p>启用并启动php-fpm服务<br>
+<code>sudo systemctl enable --now php-fpm.service</code></p>
+<h2 id="5网络服务器">5.网络服务器</h2>
+<p><a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/nginx.html" target="_blank" rel="noopener noreffer ">参考</a><br>
+把文件复制到 /etc/nginx/sites-available /etc/nginx/sites-enabled <br>
+根目录应该更改到根目录应更改为root /user/share/webapps/nextcloud;<br>
+启用并启动nginx服务<br>
+<code>sudo systemctl enable --now nginx.service</code></p>
+<h2 id="6客户端">6.客户端</h2>
+<p><code>paru -S nextcloud-client</code></p>
+<h2 id="也可以看看">也可以看看</h2>
+<p><a href="https://wiki.archlinux.org/title/Nextcloud" target="_blank" rel="noopener noreffer ">Nextcloud的ArchWiki</a><br>
+<a href="https://docs.nextcloud.com/" target="_blank" rel="noopener noreffer ">Nextcloud的文档</a><br>
+<a href="https://docs.nextcloud.com/server/latest/admin_manual/" target="_blank" rel="noopener noreffer ">Nextcloud的管理员手册</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-09-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/" data-title="安装Nextcloud" data-hashtags="ArchLinux,Nextcloud,Storage"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/" data-hashtag="ArchLinux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/" data-title="安装Nextcloud"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/" data-title="安装Nextcloud"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/" data-title="安装Nextcloud"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/archlinux/">ArchLinux</a>,&nbsp;<a href="/tags/nextcloud/">Nextcloud</a>,&nbsp;<a href="/tags/storage/">Storage</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%AE%89%E8%A3%85mpv/" class="prev" rel="prev" title="安装mpv"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>安装mpv</a>
+            <a href="/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/" class="next" rel="next" title="Howdy面部识别">Howdy面部识别<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

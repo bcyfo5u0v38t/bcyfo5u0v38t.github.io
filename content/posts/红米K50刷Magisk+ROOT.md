@@ -1,8 +1,8 @@
 ---
 title: "红米K50刷Magisk"
-date: 2022-07-30T08:00:00+08:00
-tags: ["Linux","K50","Phone","Magisk","ROOT"]
-categories: ["Linux"]
+date: 2021-01-25T08:00:00+08:00
+tags: ["ArchLinux","K50","Phone","Magisk","ROOT"]
+categories: ["ArchLinux"]
 draft: false
 ---
 

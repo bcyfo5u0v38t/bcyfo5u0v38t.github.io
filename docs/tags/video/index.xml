@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Video - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/video/</link>
+        <description>Video - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Wed, 01 Sep 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/video/" rel="self" type="application/rss+xml" /><item>
+    <title>安装mpv</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85mpv/</link>
+    <pubDate>Wed, 01 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85mpv/</guid>
+    <description><![CDATA[1.安装mpv paru -S mpv 2.配置 复制默认设置的示例配置文件 cp -r /usr/share/doc/mpv/ ~/.config/ 配置 nvim ~/.config/mpv/mpv.conf 一些通用配置 sub-auto=fuzzy #字幕模糊搜索 sub-bold=yes #加粗字幕增加可读性 高品质配置 profile=gpu-hq #在视频]]></description>
+</item>
+</channel>
+</rss>
