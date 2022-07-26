@@ -4,10 +4,10 @@
         <link>https://bcyfo5u0v38t.github.io/tags/anime/</link>
         <description>Anime - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 09 Feb 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/anime/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/anime/" rel="self" type="application/rss+xml" /><item>
     <title>Waifu2x 一个用于动漫风格图像的图像缩放和图像降噪的程序</title>
     <link>https://bcyfo5u0v38t.github.io/posts/waifu2x_%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8E%E5%8A%A8%E6%BC%AB%E9%A3%8E%E6%A0%BC%E5%9B%BE%E5%83%8F%E7%9A%84%E5%9B%BE%E5%83%8F%E7%BC%A9%E6%94%BE%E5%92%8C%E5%9B%BE%E5%83%8F%E9%99%8D%E5%99%AA%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
-    <pubDate>Tue, 09 Feb 2021 08:00:00 &#43;0800</pubDate>
+    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/waifu2x_%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8E%E5%8A%A8%E6%BC%AB%E9%A3%8E%E6%A0%BC%E5%9B%BE%E5%83%8F%E7%9A%84%E5%9B%BE%E5%83%8F%E7%BC%A9%E6%94%BE%E5%92%8C%E5%9B%BE%E5%83%8F%E9%99%8D%E5%99%AA%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
     <description><![CDATA[1.安装waifu2x-ncnn-Vulkan paru -S waifu2x-ncnn-vulkan 2.使用 waifu2x-ncnn-vulkan -i origin.jpg -o output.png -n 2 -s 2 也可以看看 Waifu2x-ncnn-vulkan的Github]]></description>

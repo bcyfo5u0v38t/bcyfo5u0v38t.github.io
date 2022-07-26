@@ -1,6 +1,6 @@
 ---
 title: "安装Nextcloud"
-date: 2021-09-09T08:00:00+08:00
+date: 2022-08-11T08:00:00+08:00
 tags: ["ArchLinux","Nextcloud","Storage"]
 categories: ["ArchLinux"]
 draft: false

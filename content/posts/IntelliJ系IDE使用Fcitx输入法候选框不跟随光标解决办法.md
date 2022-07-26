@@ -1,6 +1,6 @@
 ---
 title: "IntelliJ系IDE使用Fcitx输入法候选框不跟随光标解决办法"
-date: 2021-10-01T08:00:00+08:00
+date: 2022-07-20T08:00:00+08:00
 tags: ["ArchLinux","IntelliJ","Fcitx","故障排除"]
 categories: ["ArchLinux"]
 draft: false

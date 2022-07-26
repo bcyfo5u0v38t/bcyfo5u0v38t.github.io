@@ -1,6 +1,6 @@
 ---
 title: "安装Gradle"
-date: 2021-04-09T08:00:00+08:00
+date: 2022-08-03T08:00:00+08:00
 tags: ["ArchLinux","Gradle"]
 categories: ["ArchLinux"]
 draft: false

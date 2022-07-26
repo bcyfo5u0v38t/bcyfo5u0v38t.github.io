@@ -1,6 +1,6 @@
 ---
 title: "安装nginx"
-date: 2021-04-25T08:00:00+08:00
+date: 2022-08-12T08:00:00+08:00
 tags: ["ArchLinux","nginx"]
 categories: ["ArchLinux"]
 draft: false

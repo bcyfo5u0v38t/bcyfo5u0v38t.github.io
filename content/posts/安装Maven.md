@@ -1,6 +1,6 @@
 ---
 title: "安装Maven"
-date: 2021-04-01T08:00:00+08:00
+date: 2022-08-09T08:00:00+08:00
 tags: ["ArchLinux","Maven"]
 categories: ["ArchLinux"]
 draft: false

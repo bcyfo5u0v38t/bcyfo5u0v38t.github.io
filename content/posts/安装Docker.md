@@ -1,6 +1,6 @@
 ---
 title: "安装Docker"
-date: 2021-02-01T08:00:00+08:00
+date: 2022-07-30T08:00:00+08:00
 tags: ["ArchLinux","Docker","Container"]
 categories: ["ArchLinux"]
 draft: false

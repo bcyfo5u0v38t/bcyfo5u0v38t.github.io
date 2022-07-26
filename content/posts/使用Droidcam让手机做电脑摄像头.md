@@ -1,6 +1,6 @@
 ---
 title: "使用Droidcam让手机做电脑摄像头"
-date: 2021-06-01T08:00:00+08:00
+date: 2022-07-25T08:00:00+08:00
 tags: ["ArchLinux","Droidcam","Webcam"]
 categories: ["ArchLinux"]
 draft: false

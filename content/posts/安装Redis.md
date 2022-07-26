@@ -1,6 +1,6 @@
 ---
 title: "安装Redis"
-date: 2021-07-25T08:00:00+08:00
+date: 2022-08-19T08:00:00+08:00
 tags: ["ArchLinux","Redis","SQL"]
 categories: ["ArchLinux"]
 draft: false

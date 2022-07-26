@@ -1,6 +1,6 @@
 ---
 title: "安装PostgreSQL"
-date: 2021-07-09T08:00:00+08:00
+date: 2022-08-15T08:00:00+08:00
 tags: ["ArchLinux","PostgreSQL","SQL"]
 categories: ["ArchLinux"]
 draft: false

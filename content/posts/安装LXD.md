@@ -1,6 +1,6 @@
 ---
 title: "安装LXD"
-date: 2021-03-09T08:00:00+08:00
+date: 2022-08-06T08:00:00+08:00
 tags: ["ArchLinux","LXD","Container"]
 categories: ["ArchLinux"]
 draft: false

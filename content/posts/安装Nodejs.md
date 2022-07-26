@@ -1,6 +1,6 @@
 ---
 title: "安装Nodejs"
-date: 2021-05-17T08:00:00+08:00
+date: 2022-08-13T08:00:00+08:00
 tags: ["ArchLinux","Nodejs"]
 categories: ["ArchLinux"]
 draft: false

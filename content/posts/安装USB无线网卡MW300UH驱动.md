@@ -1,6 +1,6 @@
 ---
 title: "安装USB无线网卡MW300UH驱动"
-date: 2021-06-17T08:00:00+08:00
+date: 2022-08-21T08:00:00+08:00
 tags: ["ArchLinux","MW300UH","8192fu","Wireless","Driver"]
 categories: ["ArchLinux"]
 draft: false

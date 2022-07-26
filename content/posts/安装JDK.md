@@ -1,6 +1,6 @@
 ---
 title: "安装JDK"
-date: 2021-04-17T08:00:00+08:00
+date: 2022-08-04T08:00:00+08:00
 tags: ["ArchLinux","JDK","Java"]
 categories: ["ArchLinux"]
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "安装Kubernetes"
-date: 2021-05-01T08:00:00+08:00
+date: 2022-08-05T08:00:00+08:00
 tags: ["ArchLinux","kubernetes"]
 categories: ["ArchLinux"]
 draft: false

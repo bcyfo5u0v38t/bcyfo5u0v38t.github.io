@@ -1,6 +1,6 @@
 ---
 title: "安装LXD无根模式"
-date: 2021-03-17T08:00:00+08:00
+date: 2022-08-07T08:00:00+08:00
 tags: ["ArchLinux","LXD","Container"]
 categories: ["ArchLinux"]
 draft: false

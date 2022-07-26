@@ -1,6 +1,6 @@
 ---
 title: "安装mpv"
-date: 2021-09-01T08:00:00+08:00
+date: 2022-08-10T08:00:00+08:00
 tags: ["ArchLinux","mpv","Video"]
 categories: ["ArchLinux"]
 draft: false

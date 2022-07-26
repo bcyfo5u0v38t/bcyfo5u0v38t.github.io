@@ -1,6 +1,6 @@
 ---
 title: "安装Docker无根模式"
-date: 2021-03-01T08:00:00+08:00
+date: 2022-07-31T08:00:00+08:00
 tags: ["ArchLinux","Docker","Container"]
 categories: ["ArchLinux"]
 draft: false

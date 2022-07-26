@@ -1,6 +1,6 @@
 ---
 title: "安装Tomcat"
-date: 2021-09-25T08:00:00+08:00
+date: 2022-08-20T08:00:00+08:00
 tags: ["ArchLinux","Tomcat","Java"]
 categories: ["ArchLinux"]
 draft: false

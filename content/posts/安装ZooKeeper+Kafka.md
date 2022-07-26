@@ -1,6 +1,6 @@
 ---
 title: "安装ZooKeeper+Kafka"
-date: 2021-06-25T08:00:00+08:00
+date: 2022-08-22T08:00:00+08:00
 tags: ["ArchLinux","ZooKeeper","Kafka","Message queue"]
 categories: ["ArchLinux"]
 draft: false

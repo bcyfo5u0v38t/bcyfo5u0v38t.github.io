@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>KVM单显卡直通 - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="KVM单显卡直通" />
+<meta property="og:description" content="1.配置一个KVM虚拟机 1.1启用IOMMU 重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-26T15:07:20+08:00" />
+<meta property="article:modified_time" content="2022-07-26T15:07:20+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="KVM单显卡直通"/>
+<meta name="twitter:description" content="1.配置一个KVM虚拟机 1.1启用IOMMU 重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8droidcam%E8%AE%A9%E6%89%8B%E6%9C%BA%E5%81%9A%E7%94%B5%E8%84%91%E6%91%84%E5%83%8F%E5%A4%B4/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "KVM单显卡直通",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A\/"
+        },"genre": "posts","keywords": "ArchLinux, KVM, GPU, Libvirt, QEMU","wordcount":  2099 ,
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A\/","datePublished": "2022-07-26T15:07:20+08:00","dateModified": "2022-07-26T15:07:20+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "bcyfo5u0v38t"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">KVM单显卡直通</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span>&nbsp;<span class="post-category">included in <a href="/categories/archlinux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ArchLinux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-26">2022-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2099 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1配置一个kvm虚拟机">1.配置一个KVM虚拟机</a>
+      <ul>
+        <li><a href="#11启用iommu">1.1启用IOMMU</a></li>
+        <li><a href="#12检查iommu组是否有效">1.2检查IOMMU组是否有效</a></li>
+        <li><a href="#13添加modprobe模块">1.3添加modprobe模块</a></li>
+        <li><a href="#14安装需要的软件包">1.4安装需要的软件包</a></li>
+        <li><a href="#15启用并启动服务">1.5启用并启动服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#2设置libvirt钩子">2.设置Libvirt钩子</a>
+      <ul>
+        <li><a href="#21设置libvirt钩子">2.1设置Libvirt钩子</a></li>
+        <li><a href="#22启动脚本">2.2启动脚本</a></li>
+        <li><a href="#23拆解脚本">2.3拆解脚本</a></li>
+        <li><a href="#24libvirt无睡眠服务">2.4Libvirt无睡眠服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#3配置libvirt">3配置Libvirt</a>
+      <ul>
+        <li><a href="#31libvirt">3.1Libvirt</a></li>
+        <li><a href="#32qemu">3.2QEMU</a></li>
+      </ul>
+    </li>
+    <li><a href="#4设置直通">4.设置直通</a>
+      <ul>
+        <li><a href="#41获取gpu-vbios">4.1获取GPU VBIOS</a></li>
+        <li><a href="#42给vbios打补丁仅限nvidia">4.2给VBIOS打补丁(仅限NVIDIA)</a></li>
+        <li><a href="#43配置虚拟机">4.3配置虚拟机</a></li>
+        <li><a href="#44绕过nvidia-vm检测或许从2021年4月起不再需要">4.4绕过Nvidia VM检测(或许从2021年4月起不再需要)</a></li>
+      </ul>
+    </li>
+    <li><a href="#也可以看看">也可以看看</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1配置一个kvm虚拟机">1.配置一个KVM虚拟机</h2>
+<h3 id="11启用iommu">1.1启用IOMMU</h3>
+<p>重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一般叫Virtualization Technology或AMD-Vi 英特尔的叫VT-x或VT-d<br>
+添加<a href="https://wiki.archlinux.org/title/Kernel_parameters" target="_blank" rel="noopener noreffer ">内核参数</a>到引导程序<br>
+AMD处理器 amd_iommu=on<br>
+英特尔处理器 intel_iommu=on<br>
+防止Linux接触无法通过的设备 iommu=pt<br>
+如果您有不想通过的PCI设备 可以使用ACS补丁来隔离这些设备 pcie_acs_override=downstream,multifunction<br>
+这样做会有<a href="https://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html" target="_blank" rel="noopener noreffer ">潜在风险</a><br>
+以GRUB为例<br>
+<code>sudo nvim /etc/default/grub</code><br>
+<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=5 nowatchdog nvidia-drm.modeset=1 intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunctiom&quot;</code><br>
+重启后 查看启动日志检查IOMMU是否已经启用<br>
+<code>sudo dmesg | grep -e DMAR -e IOMMU</code><br>
+应当有类似的信息<br>
+AMD处理器 amd_IOMMU:Detected<br>
+英特尔处理器 Intel-IOMMU: enabled</p>
+<h3 id="12检查iommu组是否有效">1.2检查IOMMU组是否有效</h3>
+<p>运行脚本检查IOMMU组是否有效</p>
+<pre tabindex="0"><code>#!/bin/bash
+shopt -s nullglob
+for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
+    echo &#34;IOMMU Group ${g##*/}:&#34;
+    for d in $g/devices/*; do
+        echo -e &#34;\t$(lspci -nns ${d##*/})&#34;
+    done;
+done;
+</code></pre><p>或者使用这个脚本</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+useColors=true
+usePager=true
+
+usage() {
+	echo &#34;\
+Usage: $(basename $0) [OPTIONS]
+Shows information about IOMMU groups relevant for working with PCI-passthrough
+
+  -c -C 	enables/disables colored output, respectively
+  -p -P 	enables/disables pager (less), respectively
+
+  -h 		display this help message&#34;
+}
+
+color() {
+	if ! $useColors; then
+		cat
+		return
+	fi
+
+	rset=$&#39;\E[0m&#39;
+	case &#34;$1&#34; in
+		black) colr=$&#39;\E[22;30m&#39; ;;
+		red) colr=$&#39;\E[22;31m&#39; ;;
+		green) colr=$&#39;\E[22;32m&#39; ;;
+		yellow) colr=$&#39;\E[22;33m&#39; ;;
+		blue) colr=$&#39;\E[22;34m&#39; ;;
+		magenta) colr=$&#39;\E[22;35m&#39; ;;
+		cyan) colr=$&#39;\E[22;36m&#39; ;;
+		white) colr=$&#39;\E[22;37m&#39; ;;
+		intenseBlack) colr=$&#39;\E[01;30m&#39; ;;
+		intenseRed) colr=$&#39;\E[01;31m&#39; ;;
+		intenseGreen) colr=$&#39;\E[01;32m&#39; ;;
+		intenseYellow) colr=$&#39;\E[01;33m&#39; ;;
+		intenseBlue) colr=$&#39;\E[01;34m&#39; ;;
+		intenseMagenta) colr=$&#39;\E[01;35m&#39; ;;
+		intenseCyan) colr=$&#39;\E[01;36m&#39; ;;
+		intenseWhite) colr=$&#39;\E[01;37m&#39; ;;
+	esac
+
+	sed &#34;s/^/$colr/;s/\$/$rset/&#34;
+}
+
+indent() {
+	sed &#39;s/^/\t/&#39;
+}
+
+pager() {
+	if $usePager; then
+		less -SR
+	else
+		cat
+	fi
+}
+
+while getopts cCpPh opt; do
+	case $opt in
+		c)
+			useColors=true
+			;;
+		C)
+			useColors=false
+			;;
+		p)
+			usePager=true
+			;;
+		P)
+			usePager=false
+			;;
+		h)
+			usage
+			exit
+			;;
+	esac
+done
+
+iommuGroups=$(find &#39;/sys/kernel/iommu_groups/&#39; -maxdepth 1 -mindepth 1 -type d)
+
+if [ -z &#34;$iommuGroups&#34; ]; then
+	echo &#34;No IOMMU groups found. Are you sure IOMMU is enabled?&#34;
+	exit
+fi
+
+for iommuGroup in $iommuGroups; do
+	echo &#34;IOMMU group $(basename &#34;$iommuGroup&#34;)&#34; | color red
+
+	for device in $(ls -1 &#34;$iommuGroup/devices/&#34;); do
+		devicePath=&#34;$iommuGroup/devices/$device/&#34;
+
+		# Print pci device
+		lspci -nns &#34;$device&#34; | color blue
+
+		# Print drivers
+		driverPath=$(readlink &#34;$devicePath/driver&#34;)
+		if [ -z &#34;$driverPath&#34; ]; then
+			echo &#34;Driver: none&#34;
+		else
+			echo &#34;Driver: $(basename $driverPath)&#34;
+		fi | indent | color cyan
+
+		# Print usb devices
+		usbBuses=$(find $devicePath -maxdepth 2 -path &#39;*usb*/busnum&#39;)
+		for usb in $usbBuses; do
+			echo &#39;Usb bus:&#39; | color cyan
+			lsusb -s $(cat &#34;$usb&#34;): | indent | color green
+		done | indent
+
+		# Print block devices
+		blockDevices=$(find $devicePath -mindepth 5 -maxdepth 5 -name &#39;block&#39;)
+		for blockDevice in $blockDevices; do
+			echo &#39;Block device:&#39; | color cyan
+			echo &#34;Model: $(cat &#34;$blockDevice/../model&#34;)&#34; | indent | color green
+			lsblk -no NAME,SIZE,MOUNTPOINT &#34;/dev/$(ls -1 $blockDevice)&#34; | indent | color green
+		done | indent
+	done | indent
+done | pager
+</code></pre><p>检查显卡是否自己的一个组里面</p>
+<pre tabindex="0"><code>IOMMU group 11
+        01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2060] [10de:1e89] (rev a1)
+                Driver: nvidia
+        01:00.1 Audio device [0403]: NVIDIA Corporation TU104 HD Audio Controller [10de:10f8] (rev a1)
+                Driver: snd_hda_intel
+</code></pre><p>复制 保存下来</p>
+<h3 id="13添加modprobe模块">1.3添加modprobe模块</h3>
+<p>ids=后面应该是刚才查看的显卡的那些id 每个值之间用 , 隔开<br>
+<code>sudo nvim /etc/modprobe.d/vfio.conf</code></p>
+<pre tabindex="0"><code>options vfio-pci ids=10de:1e89,10de:10f8
+options vfio-pci disable_idle_d3=1
+options vfio-pci disable_vga=1
+</code></pre><h3 id="14安装需要的软件包">1.4安装需要的软件包</h3>
+<p><code>paru -S qemu-desktop libvirt edk2-ovmf virt-manager dnsmasq ebtables iptables bridge-utils gnu-netcat openbsd-netcat</code></p>
+<h3 id="15启用并启动服务">1.5启用并启动服务</h3>
+<p>启动Libvirtd<br>
+<code>sudo systemctl enable --now libvirtd.service</code><br>
+启动默认虚拟网络<br>
+<code>sudo virsh net-start default &amp;&amp; sudo virsh net-autostart default</code><br>
+打开 virt-manager 并设置一个基本虚拟机</p>
+<h2 id="2设置libvirt钩子">2.设置Libvirt钩子</h2>
+<h3 id="21设置libvirt钩子">2.1设置Libvirt钩子</h3>
+<pre tabindex="0"><code>sudo mkdir /etc/libvirt/hooks
+sudo nvim /etc/libvirt/hooks/qemu
+</code></pre><pre tabindex="0"><code>#!/bin/bash
+
+OBJECT=&#34;$1&#34;
+OPERATION=&#34;$2&#34;
+
+if [[ $OBJECT == &#34;win10&#34; ]]; then
+	case &#34;$OPERATION&#34; in
+        	&#34;prepare&#34;)
+                systemctl start libvirt-nosleep@&#34;$OBJECT&#34;  2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
+                /bin/vfio-startup.sh 2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
+                ;;
+
+            &#34;release&#34;)
+                systemctl stop libvirt-nosleep@&#34;$OBJECT&#34;  2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log  
+                /bin/vfio-teardown.sh 2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
+                ;;
+	esac
+fi
+</code></pre><p>增加执行权限<br>
+<code>sudo chmod +x /etc/libvirt/hooks/qemu</code></p>
+<h3 id="22启动脚本">2.2启动脚本</h3>
+<p><code>sudo nvim /etc/libvirt/hooks/vfio-startup.sh</code></p>
+<pre tabindex="0"><code>#!/bin/bash
+# Helpful to read output when debugging
+set -x
+
+long_delay=10
+medium_delay=5
+short_delay=1
+echo &#34;Beginning of startup!&#34;
+
+function stop_display_manager_if_running {
+    # Stop dm using systemd
+    if command -v systemctl; then
+        if systemctl is-active --quiet &#34;$1.service&#34; ; then
+            echo $1 &gt;&gt; /tmp/vfio-store-display-manager
+            systemctl stop &#34;$1.service&#34;
+        fi
+
+        while systemctl is-active --quiet &#34;$1.service&#34; ; do
+            sleep &#34;${medium_delay}&#34;
+        done
+
+        return
+    fi
+
+    # Stop dm using runit
+    if command -v sv; then
+        if sv status $1 ; then
+            echo $1 &gt;&gt; /tmp/vfio-store-display-manager
+            sv stop $1
+        fi
+    fi
+}
+
+
+# Stop currently running display manager
+if test -e &#34;/tmp/vfio-store-display-manager&#34; ; then
+    rm -f /tmp/vfio-store-display-manager
+fi
+
+stop_display_manager_if_running sddm
+stop_display_manager_if_running gdm
+stop_display_manager_if_running lightdm
+stop_display_manager_if_running lxdm
+stop_display_manager_if_running xdm
+stop_display_manager_if_running mdm
+stop_display_manager_if_running display-manager
+
+sleep &#34;${medium_delay}&#34;
+
+# Unbind VTconsoles if currently bound (adapted from https://www.kernel.org/doc/Documentation/fb/fbcon.txt)
+if test -e &#34;/tmp/vfio-bound-consoles&#34; ; then
+    rm -f /tmp/vfio-bound-consoles
+fi
+for (( i = 0; i &lt; 16; i++))
+do
+  if test -x /sys/class/vtconsole/vtcon${i}; then
+      if [ `cat /sys/class/vtconsole/vtcon${i}/name | grep -c &#34;frame buffer&#34;` \
+           = 1 ]; then
+	       echo 0 &gt; /sys/class/vtconsole/vtcon${i}/bind
+           echo &#34;Unbinding console ${i}&#34;
+           echo $i &gt;&gt; /tmp/vfio-bound-consoles
+      fi
+  fi
+done
+
+# Unbind EFI-Framebuffer
+if test -e &#34;/tmp/vfio-is-nvidia&#34; ; then
+    rm -f /tmp/vfio-is-nvidia
+fi
+
+if lsmod | grep &#34;nvidia&#34; &amp;&gt; /dev/null ; then
+    echo &#34;true&#34; &gt;&gt; /tmp/vfio-is-nvidia
+    echo efi-framebuffer.0 &gt; /sys/bus/platform/drivers/efi-framebuffer/unbind
+fi
+
+echo &#34;End of startup!&#34;
+</code></pre><p>增加执行权限<br>
+<code>sudo chmod +x /etc/libvirt/hooks/vfio-startup.sh</code><br>
+软链接到/bin目录下<br>
+<code>sudo ln -s /etc/libvirt/hooks/vfio-startup.sh /bin/vfio-startup.sh</code></p>
+<h3 id="23拆解脚本">2.3拆解脚本</h3>
+<p><code>sudo nvim /etc/libvirt/hooks/vfio-teardown.sh</code></p>
+<pre tabindex="0"><code>#!/bin/bash
+set -x
+
+echo &#34;Beginning of teardown!&#34;
+
+sleep 10
+
+# Restart Display Manager
+input=&#34;/tmp/vfio-store-display-manager&#34;
+while read displayManager; do
+  if command -v systemctl; then
+    systemctl start &#34;$displayManager.service&#34;
+  else
+    if command -v sv; then
+      sv start $displayManager
+    fi
+  fi
+done &lt; &#34;$input&#34;
+
+# Rebind VT consoles (adapted from https://www.kernel.org/doc/Documentation/fb/fbcon.txt)
+input=&#34;/tmp/vfio-bound-consoles&#34;
+while read consoleNumber; do
+  if test -x /sys/class/vtconsole/vtcon${consoleNumber}; then
+      if [ `cat /sys/class/vtconsole/vtcon${consoleNumber}/name | grep -c &#34;frame buffer&#34;` \
+           = 1 ]; then
+    echo &#34;Rebinding console ${consoleNumber}&#34;
+	  echo 1 &gt; /sys/class/vtconsole/vtcon${consoleNumber}/bind
+      fi
+  fi
+done &lt; &#34;$input&#34;
+
+# Rebind framebuffer for nvidia
+if test -e &#34;/tmp/vfio-is-nvidia&#34; ; then
+  echo &#34;efi-framebuffer.0&#34; &gt; /sys/bus/platform/drivers/efi-framebuffer/bind
+fi
+
+echo &#34;End of teardown!&#34;
+</code></pre><p>增加执行权限<br>
+<code>sudo chmod +x /etc/libvirt/hooks/vfio-teardown.sh</code><br>
+软链接到/bin目录下<br>
+<code>sudo ln -s /etc/libvirt/hooks/vfio-teardown.sh /bin/vfio-teardown.sh</code></p>
+<h3 id="24libvirt无睡眠服务">2.4Libvirt无睡眠服务</h3>
+<p><code>sudo nvim /etc/systemd/system/libvirt-nosleep@.service</code></p>
+<pre tabindex="0"><code>[Unit]
+Description=Preventing sleep while libvirt domain &#34;%i&#34; is running
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemd-inhibit --what=sleep --why=&#34;Libvirt domain \&#34;%i\&#34; is running&#34; --who=%U --mode=block sleep infinity
+</code></pre><p>增加执行权限<br>
+<code>sudo chmod 644 -R /etc/systemd/system/libvirt-nosleep@.service</code><br>
+更改所有权<br>
+<code>sudo chown root:root /etc/systemd/system/libvirt-nosleep@.service</code></p>
+<h2 id="3配置libvirt">3配置Libvirt</h2>
+<h3 id="31libvirt">3.1Libvirt</h3>
+<p><code>sudo nvim /etc/libvirt/libvirtd.conf</code></p>
+<pre tabindex="0"><code>去掉#来取消注释这两行
+unix_sock_group = &#34;libvirt&#34;
+unix_sock_rw_perms = &#34;0770&#34;
+#添加到文件的末尾
+log_filters=&#34;1:qemu&#34;
+log_outputs=&#34;1:file:/var/log/libvirt/libvirtd.log&#34;
+</code></pre><h3 id="32qemu">3.2QEMU</h3>
+<p><code>sudo nvim /etc/libvirt/qemu.conf</code></p>
+<pre tabindex="0"><code>user = &#34;你的用户名&#34;
+group = &#34;你的用户名&#34;
+</code></pre><p>把自己添加到libvirt组<br>
+<code>sudo usermod -a -G libvirt 你的用户名</code><br>
+重启电脑或重启Libvirt<br>
+<code>sudo systemctl restart libvirtd.service</code></p>
+<h2 id="4设置直通">4.设置直通</h2>
+<h3 id="41获取gpu-vbios">4.1获取GPU VBIOS</h3>
+<p>方法1 在临时 Windows 10 上使用 GPU-Z<br>
+方法2 或在TECHPOWERUP<a href="https://www.techpowerup.com/vgabios/" target="_blank" rel="noopener noreffer ">下载</a><br>
+方法3<br>
+AMD显卡<br>
+<code>paru -S amdvbflash</code><br>
+<code>sudo amdvbflash -f -p 显卡位置 xxx.rom</code><br>
+NVIDIA显卡<br>
+<code>paru -S nvflash</code><br>
+<code>sudo nvflash -b xxx.rom</code></p>
+<h3 id="42给vbios打补丁仅限nvidia">4.2给VBIOS打补丁(仅限NVIDIA)</h3>
+<p>用十六进制编辑器(Bless)打开rom<br>
+寻找CHAR &ldquo;video&quot;删除之前的所有内容U.(十六进制中的55)<br>
+保存在某个位置 比如<br>
+<code>sudo mkdir /var/lib/libvirt/vbios</code><br>
+增加读取和执行权限<br>
+<code>sudo chmod -R 660 xxx.rom</code><br>
+更改所有权<br>
+<code>sudo chown 你的用户名:你的用户名 xxx.rom</code></p>
+<h3 id="43配置虚拟机">4.3配置虚拟机</h3>
+<p>转到virt-manager并将显卡的所有pcie部分添加到vm<br>
+在pci设备中启用XML编辑 在显卡的所有pci设备里 <!-- raw HTML omitted -->添加后</p>
+<pre tabindex="0"><code>&lt;rom bar=&#34;on&#34; file=&#34;/path/to/patched.rom&#34;/&gt;
+</code></pre><p>把信道 usb转接 显卡qxl 触摸板等东西删掉<br>
+添加你的USB设备 比如鼠标 键盘和USB耳机&hellip;</p>
+<h3 id="44绕过nvidia-vm检测或许从2021年4月起不再需要">4.4绕过Nvidia VM检测(或许从2021年4月起不再需要)</h3>
+<p>在<code>&lt;/hyperv&gt;</code>前添加(value应该等于8-12个字母)</p>
+<pre tabindex="0"><code>&lt;vendor_id state=&#39;on&#39; value=&#39;randomid&#39;/&gt;
+</code></pre><p>AMD显卡可以用&quot;AuthenticAMD&quot;作为id但不需要 因为AMD阻止你显卡虚拟化<br>
+在<code>&lt;features&gt;</code>和<code>&lt;/features&gt;</code>之间添加</p>
+<pre tabindex="0"><code> &lt;kvm&gt;
+ 	&lt;hidden state=&#39;on&#39;/&gt;
+ &lt;/kvm&gt;
+</code></pre><h2 id="也可以看看">也可以看看</h2>
+<p><a href="https://gitlab.com/liucreator/LEDs-single-gpu-passthrough/-/blob/main/README-cn.md" target="_blank" rel="noopener noreffer ">ledis的单显卡直通教程</a><br>
+<a href="https://wiki.archlinux.org/title/Kernel_parameters" target="_blank" rel="noopener noreffer ">内核参数的ArchWiki</a><br>
+<a href="https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF" target="_blank" rel="noopener noreffer ">通过OVMF的PCI直通的ArchWiki</a><br>
+<a href="https://wiki.archlinux.org/title/QEMU" target="_blank" rel="noopener noreffer ">QEMU的ArchWiki</a><br>
+<a href="https://wiki.archlinux.org/title/KVM" target="_blank" rel="noopener noreffer ">KVM的ArchWiki</a><br>
+<a href="https://wiki.archlinux.org/title/libvirt" target="_blank" rel="noopener noreffer ">Libvirt的ArchWiki</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-07-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通" data-hashtags="ArchLinux,KVM,GPU,Libvirt,QEMU"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-hashtag="ArchLinux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/archlinux/">ArchLinux</a>,&nbsp;<a href="/tags/kvm/">KVM</a>,&nbsp;<a href="/tags/gpu/">GPU</a>,&nbsp;<a href="/tags/libvirt/">Libvirt</a>,&nbsp;<a href="/tags/qemu/">QEMU</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E4%BD%BF%E7%94%A8droidcam%E8%AE%A9%E6%89%8B%E6%9C%BA%E5%81%9A%E7%94%B5%E8%84%91%E6%91%84%E5%83%8F%E5%A4%B4/" class="prev" rel="prev" title="使用Droidcam让手机做电脑摄像头"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>使用Droidcam让手机做电脑摄像头</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

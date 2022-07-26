@@ -1,6 +1,6 @@
 ---
 title: "安装qBittorrent-enhanced-nox"
-date: 2021-06-09T08:00:00+08:00
+date: 2022-08-17T08:00:00+08:00
 tags: ["ArchLinux","qBittorrent","BT"]
 categories: ["ArchLinux"]
 draft: false

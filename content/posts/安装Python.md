@@ -1,6 +1,6 @@
 ---
 title: "安装Python"
-date: 2021-05-09T08:00:00+08:00
+date: 2022-08-16T08:00:00+08:00
 tags: ["ArchLinux","Python"]
 categories: ["ArchLinux"]
 draft: false

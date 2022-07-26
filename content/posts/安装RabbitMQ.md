@@ -1,6 +1,6 @@
 ---
 title: "安装RabbitMQ"
-date: 2021-07-17T08:00:00+08:00
+date: 2022-08-18T08:00:00+08:00
 tags: ["ArchLinux","RabbitMQ","Message queue"]
 categories: ["ArchLinux"]
 draft: false

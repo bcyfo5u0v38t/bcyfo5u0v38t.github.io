@@ -4,85 +4,69 @@
         <link>https://bcyfo5u0v38t.github.io/tags/archlinux/</link>
         <description>ArchLinux - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/archlinux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/archlinux/" rel="self" type="application/rss+xml" /><item>
+    <title>KVM单显卡直通</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/</link>
+    <pubDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/</guid>
+    <description><![CDATA[1.配置一个KVM虚拟机 1.1启用IOMMU 重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一]]></description>
+</item>
+<item>
+    <title>使用Droidcam让手机做电脑摄像头</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8droidcam%E8%AE%A9%E6%89%8B%E6%9C%BA%E5%81%9A%E7%94%B5%E8%84%91%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8droidcam%E8%AE%A9%E6%89%8B%E6%9C%BA%E5%81%9A%E7%94%B5%E8%84%91%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+    <description><![CDATA[1.安装Droidcam paru -S droidcam 手机端搜索安装droidcamx 2.载入所需模块 sudo modprobe videodev sudo modprobe v4l2loopback sudo modprobe v4l2loopback_dc 1920 1080 #分辨率 3.使用 将电脑和手机连入同一个局]]></description>
+</item>
+<item>
+    <title>Waifu2x 一个用于动漫风格图像的图像缩放和图像降噪的程序</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/waifu2x_%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8E%E5%8A%A8%E6%BC%AB%E9%A3%8E%E6%A0%BC%E5%9B%BE%E5%83%8F%E7%9A%84%E5%9B%BE%E5%83%8F%E7%BC%A9%E6%94%BE%E5%92%8C%E5%9B%BE%E5%83%8F%E9%99%8D%E5%99%AA%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/waifu2x_%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8E%E5%8A%A8%E6%BC%AB%E9%A3%8E%E6%A0%BC%E5%9B%BE%E5%83%8F%E7%9A%84%E5%9B%BE%E5%83%8F%E7%BC%A9%E6%94%BE%E5%92%8C%E5%9B%BE%E5%83%8F%E9%99%8D%E5%99%AA%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+    <description><![CDATA[1.安装waifu2x-ncnn-Vulkan paru -S waifu2x-ncnn-vulkan 2.使用 waifu2x-ncnn-vulkan -i origin.jpg -o output.png -n 2 -s 2 也可以看看 Waifu2x-ncnn-vulkan的Github]]></description>
+</item>
+<item>
+    <title>Plasma-KWin隐藏应用菜单图标按钮并在标题栏中绘制菜单</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/plasma-kwin%E9%9A%90%E8%97%8F%E5%BA%94%E7%94%A8%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87%E6%8C%89%E9%92%AE%E5%B9%B6%E5%9C%A8%E6%A0%87%E9%A2%98%E6%A0%8F%E4%B8%AD%E7%BB%98%E5%88%B6%E8%8F%9C%E5%8D%95/</link>
+    <pubDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/plasma-kwin%E9%9A%90%E8%97%8F%E5%BA%94%E7%94%A8%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87%E6%8C%89%E9%92%AE%E5%B9%B6%E5%9C%A8%E6%A0%87%E9%A2%98%E6%A0%8F%E4%B8%AD%E7%BB%98%E5%88%B6%E8%8F%9C%E5%8D%95/</guid>
+    <description><![CDATA[1.安装material-decoration paru -S material-kwin-decoration-git 为GTK程序添加支持 paru -S appmenu-gtk-module 也可以看看 material-decoration的Github]]></description>
+</item>
+<item>
+    <title>IntelliJ系IDE使用fish Shell终端报无权限错误和无法创建目录解决办法</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fish-shell%E7%BB%88%E7%AB%AF%E6%8A%A5%E6%97%A0%E6%9D%83%E9%99%90%E9%94%99%E8%AF%AF%E5%92%8C%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+    <pubDate>Thu, 21 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fish-shell%E7%BB%88%E7%AB%AF%E6%8A%A5%E6%97%A0%E6%9D%83%E9%99%90%E9%94%99%E8%AF%AF%E5%92%8C%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+    <description><![CDATA[1.设置软链接 sudo ln -s ~/.config/fish/completions /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/completions sudo ln -s ~/.config/fish/conf.d /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/conf.d sudo ln -s ~/.config/fish/functions /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/functions sudo ln -s ~/.config/fish/fish_variables /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/fish_variables 也可以看看 JetBrains的产品文档 fishshell的文档]]></description>
+</item>
+<item>
     <title>IntelliJ系IDE使用Fcitx输入法候选框不跟随光标解决办法</title>
     <link>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fcitx%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E4%B8%8D%E8%B7%9F%E9%9A%8F%E5%85%89%E6%A0%87%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-    <pubDate>Fri, 01 Oct 2021 08:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 20 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fcitx%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E4%B8%8D%E8%B7%9F%E9%9A%8F%E5%85%89%E6%A0%87%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
     <description><![CDATA[1.安装JetBrainsRuntime-for-Linux-x64 paru -S jbr-linux-x64 也可以看看 JetBrainsRuntime-for-Linux-x]]></description>
 </item>
 <item>
-    <title>安装Tomcat</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85tomcat/</link>
-    <pubDate>Sat, 25 Sep 2021 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85tomcat/</guid>
-    <description><![CDATA[1. 安装Tomcat paru -S tomcat10 2.启用并启动Tomcat systemctl enable --now tomcat10.service 在浏览器 你的主机ip地址:8080 上验证安装 3.修改端口号 sudo nvim /etc/tomcat10/server.xml &lt;Connector port=&#34;22334&#34; protocol=&#34;HTTP/1.1&#34; connectionTimeout=&#34;20000&#34; redirectPort=&#34;8443&#34; /&gt; 4.添]]></description>
-</item>
-<item>
     <title>Howdy面部识别</title>
     <link>https://bcyfo5u0v38t.github.io/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/</link>
-    <pubDate>Fri, 17 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/</guid>
     <description><![CDATA[1.安装Howdy paru -S howdy 2.配置 你想用howdy通过pam来认证 就在那个配置文件里加入下面这个配置 auth sufficient pam_unix.so try_first_pass likeauth nullok #这行应当放在文件的顶部 auth sufficient pam_python.so]]></description>
 </item>
 <item>
-    <title>安装Nextcloud</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/</link>
-    <pubDate>Thu, 09 Sep 2021 08:00:00 &#43;0800</pubDate>
+    <title>使用Hugo搭建个人博客并部署在GitHubPages</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/</link>
+    <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85nextcloud/</guid>
-    <description><![CDATA[1.安装Nextcloud 还需要MariaDB Nginx Redis&hellip; paru -S nextcloud php-imagick php-intl php-fpm php-redis 2.配置 复制/etc/php/php.ini到/etc/webapps/ne]]></description>
-</item>
-<item>
-    <title>安装mpv</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85mpv/</link>
-    <pubDate>Wed, 01 Sep 2021 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85mpv/</guid>
-    <description><![CDATA[1.安装mpv paru -S mpv 2.配置 复制默认设置的示例配置文件 cp -r /usr/share/doc/mpv/ ~/.config/ 配置 nvim ~/.config/mpv/mpv.conf 一些通用配置 sub-auto=fuzzy #字幕模糊搜索 sub-bold=yes #加粗字幕增加可读性 高品质配置 profile=gpu-hq #在视频]]></description>
-</item>
-<item>
-    <title>安装MariaDB</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85mariadb/</link>
-    <pubDate>Wed, 25 Aug 2021 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85mariadb/</guid>
-    <description><![CDATA[1.安装MariaDB paru -S mariadb 2.BTRFS文件系统需要禁用写时复制 sudo chattr +C /var/lib/mysql 3.初始化MariaDB sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql 4.把用户添加到mysql用户组]]></description>
-</item>
-<item>
-    <title>安装Elasticsearch</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85elasticsearch/</link>
-    <pubDate>Tue, 17 Aug 2021 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85elasticsearch/</guid>
-    <description><![CDATA[1.配置环境 Elasticsearch需要JDK10以上版本 安装JDK 注意 8.2(2022-07-18 14:16 (UTC))以上版本才可以使用JDK18构建 paru -S liberica-jdk-full-bin 确认环境是否]]></description>
-</item>
-<item>
-    <title>双内核救灾机制</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6/</link>
-    <pubDate>Mon, 09 Aug 2021 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6/</guid>
-    <description><![CDATA[1.准备需要的软件包 paru -S asp base-devel pacman-contrib kexec-tools makedumpfile modprobed-db 2.准备内核源码 mkdir Kdump_Kernel cd Kdump_Kernel asp update linux-lts asp export linux-lts 3.修改模板 修改参数以开启错误快照功能&hellip; 当前默认的Ar]]></description>
-</item>
-<item>
-    <title>内核热切换</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/</link>
-    <pubDate>Sun, 01 Aug 2021 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/</guid>
-    <description><![CDATA[1.安装Kexec paru -S kexec-tools 重新启动以使用Kexec 2.使用 可以手动调用Kexec使用 直接运行 kexec -e 不会卸载活动文件系统或正常终止任何正在运行的服]]></description>
-</item>
-<item>
-    <title>安装Redis</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85redis/</link>
-    <pubDate>Sun, 25 Jul 2021 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%AE%89%E8%A3%85redis/</guid>
-    <description><![CDATA[1.安装Redis paru -S redis 2.配置 禁用对 TCP 的监听 sudo nvim /etc/redis/redis.conf port 0 使用Unix套接字 unixsocket /run/redis/redis.sock 将套接字的权限设置为redis用户组的所有成员 unixsocketperm 770 3.启用并启]]></description>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/</guid>
+    <description><![CDATA[1.安装Hugo paru -S hugo 2.创建新站点 初始化一个hugo项目 hugo new site 你的Github用户名.github.io 3.添加主题 从该页面选择自己心仪的]]></description>
 </item>
 </channel>
 </rss>
