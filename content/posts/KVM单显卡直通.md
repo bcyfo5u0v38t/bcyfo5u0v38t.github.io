@@ -10,7 +10,8 @@ draft: false
 
 ### 1.1启用IOMMU
 
-重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一般叫Virtualization Technology或AMD-Vi 英特尔的叫VT-x或VT-d  
+重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一般叫Virtualization Technology或AMD-Vi
+英特尔的叫VT-x或VT-d  
 添加[内核参数](https://wiki.archlinux.org/title/Kernel_parameters)到引导程序  
 AMD处理器 amd_iommu=on  
 英特尔处理器 intel_iommu=on  

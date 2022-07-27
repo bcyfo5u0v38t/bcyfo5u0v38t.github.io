@@ -32,9 +32,9 @@ NODE_PORT=5672
 ```
 
 添加一个新用户并设置密码  
-`sudo rabbitmqctl add_user username password`  
+`sudo rabbitmqctl add_user 用户名 密码`  
 设为管理员  
-`sudo rabbitmqctl set_user_tags username administrator`
+`sudo rabbitmqctl set_user_tags 用户名 administrator`
 
 ## 也可以看看
 

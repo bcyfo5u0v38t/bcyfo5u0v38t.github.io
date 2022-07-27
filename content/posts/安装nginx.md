@@ -10,7 +10,11 @@ draft: false
 
 `paru -S nginx-mainline`
 
-## 2.启用并启动nginx
+## 2.配置nginx
+
+`sudo nvim /etc/nginx/nginx.conf`
+
+## 3.启用并启动nginx
 
 `sudo systemctl enable --now nginx.service`
 

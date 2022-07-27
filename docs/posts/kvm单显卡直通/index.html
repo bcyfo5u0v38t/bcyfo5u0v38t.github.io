@@ -115,7 +115,8 @@
 </nav></div>
             </div><div class="content" id="content"><h2 id="1配置一个kvm虚拟机">1.配置一个KVM虚拟机</h2>
 <h3 id="11启用iommu">1.1启用IOMMU</h3>
-<p>重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一般叫Virtualization Technology或AMD-Vi 英特尔的叫VT-x或VT-d<br>
+<p>重启进入UEFI/BIOS固件设置 开启IOMMU和虚拟化 通常在CPU高级选项里面 AMD处理器的一般叫Virtualization Technology或AMD-Vi
+英特尔的叫VT-x或VT-d<br>
 添加<a href="https://wiki.archlinux.org/title/Kernel_parameters" target="_blank" rel="noopener noreffer ">内核参数</a>到引导程序<br>
 AMD处理器 amd_iommu=on<br>
 英特尔处理器 intel_iommu=on<br>

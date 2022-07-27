@@ -12,6 +12,8 @@ draft: false
 
 ## 2.配置
 
+### 2.1启用PHP模块
+
 复制/etc/php/php.ini到/etc/webapps/nextcloud  
 `sudo cp /etc/php/php.ini /etc/webapps/nextcloud/php.ini`  
 更改副本的所有权  
@@ -35,10 +37,13 @@ memory_limit = 512M
 open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/webapps/nextcloud:/etc/webapps/nextcloud:/dev/urandom:/usr/lib/php/modules:/var/log/nextcloud:/proc/meminfo
 ```
 
-在配置中启用Redis   
+### 2.2启用Redis
+
 `sudo nvim /etc/php/conf.d/redis.ini`  
-`extension=redis`  
-配置Nextcloud    
+`extension=redis`
+
+### 2.3配置Nextcloud
+
 `sudo nvim /etc/webapps/nextcloud/config/config.php`
 
 ```
@@ -71,7 +76,8 @@ open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/web
 
 ## 3.数据库
 
-修改事务隔离级别  
+### 3.1修改事务隔离级别
+
 `sudo nvim /etc/my.cnf.d/server.cnf`
 
 ```
@@ -79,9 +85,11 @@ open_basedir=/var/lib/nextcloud/data:/var/lib/nextcloud/apps:/tmp:/usr/share/web
 transaction_isolation=READ-COMMITTED
 ```
 
-启动CLI工具  
-`mysql -u root -p`  
-Nextcloud创建用户和数据库
+### 3.2启动CLI工具
+
+`mysql -u root -p`
+
+### 3.3Nextcloud创建用户和数据库
 
 ```
 CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'xxxxxxxx';
@@ -90,7 +98,7 @@ GRANT ALL PRIVILEGES on nextcloud.* to 'nextcloud'@'localhost';
 FLUSH privileges;
 ```
 
-设置Nextcloud的数据库架构
+### 3.4设置Nextcloud的数据库架构
 
 ```
 occ maintenance:install \
@@ -106,9 +114,12 @@ occ maintenance:install \
 
 ## 4.应用服务器
 
-创建一个php-fpm特定的副本(应确保此文件只能由root写入)  
-`cp /etc/php/php.ini /etc/php/php-fpm.ini`  
-配置php-fpm  
+### 4.1创建一个php-fpm特定的副本(应确保此文件只能由root写入)
+
+`cp /etc/php/php.ini /etc/php/php-fpm.ini`
+
+### 4.2配置php-fpm
+
 `sudo nvim /etc/php/php-fpm.ini`  
 `;zend_extension=opcache`  
 并把以下参数放在[opcache]下方
@@ -122,9 +133,12 @@ opcache.save_comments = 1
 opcache.revalidate_freq = 1
 ```
 
-创建池文件 [参考](https://gist.github.com/wolegis/0d9c83acd0c8bf83bcfb3983931bc364) (应确保此文件只能由root写入)  
-`sudo nvim /etc/php/php-fpm.d/nextcloud.conf`  
-设置php-fpm服务  
+### 4.3创建池文件 [参考](https://gist.github.com/wolegis/0d9c83acd0c8bf83bcfb3983931bc364) (应确保此文件只能由root写入)
+
+`sudo nvim /etc/php/php-fpm.d/nextcloud.conf`
+
+### 4.4设置php-fpm服务
+
 `sudo nvim /etc/systemd/system/php-fpm.service.d/override.conf`
 
 ```
@@ -135,7 +149,8 @@ ReadWritePaths=/var/lib/nextcloud
 ReadWritePaths=/etc/webapps/nextcloud/config
 ```
 
-启用并启动php-fpm服务  
+### 4.5启用并启动php-fpm服务
+
 `sudo systemctl enable --now php-fpm.service`
 
 ## 5.网络服务器

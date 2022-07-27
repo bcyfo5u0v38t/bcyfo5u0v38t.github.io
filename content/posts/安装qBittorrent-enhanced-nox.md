@@ -23,7 +23,9 @@ draft: false
 qBittorrent的WEBUI应该在(浏览器打开)  
 http://localhost:8080/  
 默认用户名:admin  
-密码:adminadmin
+密码:adminadmin  
+一个使用Vue.js为qBittorren打造的的WebUI 它会安装到/usr/share目录下  
+`paru -S qbittorrent-vuetorrent-bin`
 
 ## 4.指定用户启用并启动服务
 
@@ -33,4 +35,5 @@ http://localhost:8080/
 ## 也可以看看
 
 [热门Tracker服务器列表](https://github.com/XIU2/TrackersListCollection)  
-[qBittorrent的Wiki](https://github.com/qbittorrent/qBittorrent/wiki)
+[qBittorrent的Wiki](https://github.com/qbittorrent/qBittorrent/wiki)  
+[VueTorrent的Github](https://github.com/WDaan/VueTorrent)

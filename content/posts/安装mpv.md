@@ -36,6 +36,7 @@ tscale=oversample    #使用oversample插值模式来提高视频质量
 
 ## 3.使用Anime4K
 
+质量等级 UL>VL>L>M>S
 安装  
 `paru -S anime4k`  
 把着色器软连接到那里  
