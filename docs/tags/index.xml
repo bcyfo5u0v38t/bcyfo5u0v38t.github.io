@@ -4,12 +4,28 @@
         <link>https://bcyfo5u0v38t.github.io/tags/</link>
         <description>Tags - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>ArchLinux</title>
     <link>https://bcyfo5u0v38t.github.io/tags/archlinux/</link>
-    <pubDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</pubDate>
+    <pubDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/archlinux/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Kexec</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/kexec/</link>
+    <pubDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/kexec/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Linux Kernel</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</link>
+    <pubDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -66,22 +82,6 @@
     <pubDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/calibre/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Docker</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/docker/</link>
-    <pubDate>Sun, 24 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/docker/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Anime</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/anime/</link>
-    <pubDate>Sat, 23 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/anime/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
