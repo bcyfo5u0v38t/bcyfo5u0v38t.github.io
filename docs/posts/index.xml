@@ -4,7 +4,15 @@
         <link>https://bcyfo5u0v38t.github.io/posts/</link>
         <description>All Posts | bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Thu, 28 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>双内核救灾机制</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6/</link>
+    <pubDate>Thu, 28 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6/</guid>
+    <description><![CDATA[1.准备需要的软件包 paru -S asp base-devel pacman-contrib kexec-tools makedumpfile modprobed-db 2.准备内核源码 mkdir Kdump_Kernel cd Kdump_Kernel asp update linux-lts asp export linux-lts 3.修改模板 修改参数以开启错误快照功能&hellip; 当前默认的Ar]]></description>
+</item>
+<item>
     <title>内核热切换</title>
     <link>https://bcyfo5u0v38t.github.io/posts/%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/</link>
     <pubDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/</guid>
     <description><![CDATA[1.安装Howdy paru -S howdy 2.配置 你想用howdy通过pam来认证 就在那个配置文件里加入下面这个配置 auth sufficient pam_unix.so try_first_pass likeauth nullok #这行应当放在文件的顶部 auth sufficient pam_python.so]]></description>
-</item>
-<item>
-    <title>使用Hugo搭建个人博客并部署在GitHubPages</title>
-    <link>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/</link>
-    <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/</guid>
-    <description><![CDATA[1.安装Hugo paru -S hugo 2.创建新站点 初始化一个hugo项目 hugo new site 你的Github用户名.github.io 3.添加主题 从该页面选择自己心仪的]]></description>
 </item>
 </channel>
 </rss>
