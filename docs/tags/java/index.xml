@@ -13,7 +13,7 @@
     <description><![CDATA[报错: could not find java in bundled JDK at /usr/share/elasticsearch/jdk/bin/java 解决办法: sudo ln -snf /usr/lib/jvm/default /usr/share/elasticsearch/jdk 也可以看看 Elasticsearch的文档 Elasticsearch的ArchWiki Elast]]></description>
 </item>
 <item>
-    <title>A配置编程环境</title>
+    <title>配置编程环境</title>
     <link>https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/</link>
     <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>

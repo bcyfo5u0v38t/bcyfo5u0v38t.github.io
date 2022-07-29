@@ -13,7 +13,7 @@
     <description><![CDATA[1.下载镜像 docker pull johngong/calibre-web:latest 列出本地镜像 docker images 2.启动容器 docker run -d \ --name=my-ebook-library \ 设置容器名 -p 22331:8083 \ #把容器内8083(容器默认WEBUI访问端口)映射到22331 -v]]></description>
 </item>
 <item>
-    <title>A配置编程环境</title>
+    <title>配置编程环境</title>
     <link>https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/</link>
     <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
