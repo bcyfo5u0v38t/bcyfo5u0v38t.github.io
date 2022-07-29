@@ -4,10 +4,10 @@
         <link>https://bcyfo5u0v38t.github.io/tags/authentication/</link>
         <description>Authentication - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/authentication/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Wed, 20 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/authentication/" rel="self" type="application/rss+xml" /><item>
     <title>Howdy面部识别</title>
     <link>https://bcyfo5u0v38t.github.io/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/</link>
-    <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 20 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/</guid>
     <description><![CDATA[1.安装Howdy paru -S howdy 2.配置 你想用howdy通过pam来认证 就在那个配置文件里加入下面这个配置 auth sufficient pam_unix.so try_first_pass likeauth nullok #这行应当放在文件的顶部 auth sufficient pam_python.so]]></description>

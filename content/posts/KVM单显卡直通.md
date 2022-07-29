@@ -1,6 +1,6 @@
 ---
 title: "KVM单显卡直通"
-date: 2022-07-26T15:07:20+08:00
+date: 2022-07-23T15:07:20+08:00
 tags: ["ArchLinux","KVM","GPU","Libvirt","QEMU"]
 categories: ["ArchLinux"]
 draft: false

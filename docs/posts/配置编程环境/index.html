@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>A配置编程环境 - bcyfo5u0v38t&#39;s Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="A配置编程环境" />
+<meta property="og:description" content="本文偏向Java后端 所有内容基于ArchLinux发行版 AUR助手:Paru Shell:fish shell 文本编辑器:Neovim 1.Git 1.1.安装Git paru -S --needed git 1.2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-19T08:00:00+08:00" />
+<meta property="article:modified_time" content="2022-07-19T08:00:00+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A配置编程环境"/>
+<meta name="twitter:description" content="本文偏向Java后端 所有内容基于ArchLinux发行版 AUR助手:Paru Shell:fish shell 文本编辑器:Neovim 1.Git 1.1.安装Git paru -S --needed git 1.2."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A配置编程环境",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83\/"
+        },"genre": "posts","keywords": "ArchLinux, Git, Java, Node.js, Python, Maven, Gradle, MariaDB, PostgreSQL, Redis, Tomcat, Nginx, RabbitMQ, ZooKeeper, Kafka, Docker, Kubernetes, Elasticsearch","wordcount":  2767 ,
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83\/","datePublished": "2022-07-19T08:00:00+08:00","dateModified": "2022-07-19T08:00:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "bcyfo5u0v38t"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="bcyfo5u0v38t&#39;s Blog">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A配置编程环境</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span>&nbsp;<span class="post-category">included in <a href="/categories/archlinux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ArchLinux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-19">2022-07-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2767 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1git">1.Git</a>
+      <ul>
+        <li><a href="#11安装git">1.1.安装Git</a></li>
+        <li><a href="#12配置git">1.2.配置Git</a></li>
+        <li><a href="#13安装github-desktop可选">1.3.安装GitHub-Desktop(可选)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2jdk">2.JDK</a>
+      <ul>
+        <li><a href="#21安装liberica-jdk">2.1.安装Liberica JDK</a></li>
+        <li><a href="#22配置java环境">2.2.配置Java环境</a></li>
+      </ul>
+    </li>
+    <li><a href="#3nodejs">3.Node.js</a>
+      <ul>
+        <li><a href="#31安装nodejs和包管理pnpm">3.1.安装Node.js和包管理pnpm</a></li>
+      </ul>
+    </li>
+    <li><a href="#4python">4.Python</a>
+      <ul>
+        <li><a href="#41安装python-和包管理pip">4.1.安装Python 和包管理pip</a></li>
+      </ul>
+    </li>
+    <li><a href="#5maven">5.Maven</a>
+      <ul>
+        <li><a href="#51安装maven">5.1.安装Maven</a></li>
+        <li><a href="#52配置maven镜像源">5.2.配置Maven镜像源</a></li>
+      </ul>
+    </li>
+    <li><a href="#6gradle">6.Gradle</a>
+      <ul>
+        <li><a href="#61安装gradle">6.1.安装Gradle</a></li>
+        <li><a href="#62配置gradle镜像源">6.2.配置Gradle镜像源</a></li>
+      </ul>
+    </li>
+    <li><a href="#7mariadb或postgresql数据库">7.MariaDB或PostgreSQL数据库</a>
+      <ul>
+        <li><a href="#71mariadb">7.1.MariaDB</a></li>
+        <li><a href="#72postgresql">7.2.PostgreSQL</a></li>
+      </ul>
+    </li>
+    <li><a href="#8redis">8.Redis</a>
+      <ul>
+        <li><a href="#81安装redis">8.1.安装Redis</a></li>
+        <li><a href="#82配置redis">8.2.配置Redis</a></li>
+        <li><a href="#83启用并启动redis">8.3.启用并启动Redis</a></li>
+      </ul>
+    </li>
+    <li><a href="#9tomcat">9.Tomcat</a>
+      <ul>
+        <li><a href="#91安装tomcat">9.1.安装Tomcat</a></li>
+        <li><a href="#92配置tomcat">9.2.配置Tomcat</a></li>
+        <li><a href="#93把用户添加到组">9.3.把用户添加到组</a></li>
+        <li><a href="#94启用并启动tomcat">9.4.启用并启动Tomcat</a></li>
+      </ul>
+    </li>
+    <li><a href="#10nginx">10.Nginx</a>
+      <ul>
+        <li><a href="#101安装nginx">10.1.安装Nginx</a></li>
+        <li><a href="#102配置nginx">10.2.配置Nginx</a></li>
+        <li><a href="#103启用并启动nginx">10.3启用并启动Nginx</a></li>
+      </ul>
+    </li>
+    <li><a href="#11rabbitmq">11.RabbitMQ</a>
+      <ul>
+        <li><a href="#111安装rabbitmq">11.1.安装RabbitMQ</a></li>
+        <li><a href="#112配置rabbitmq">11.2.配置RabbitMQ</a></li>
+        <li><a href="#113启用并启动rabbitmq">11.3.启用并启动RabbitMQ</a></li>
+        <li><a href="#114启用web管理界面">11.4.启用WEB管理界面</a></li>
+        <li><a href="#115添加用户并设置权限">11.5.添加用户并设置权限</a></li>
+      </ul>
+    </li>
+    <li><a href="#12kafka">12.Kafka</a>
+      <ul>
+        <li><a href="#121安装zookeeperkafka">12.1.安装ZooKeeper+Kafka</a></li>
+        <li><a href="#122启用并启动kafka">12.2.启用并启动Kafka</a></li>
+      </ul>
+    </li>
+    <li><a href="#13docker">13.Docker</a>
+      <ul>
+        <li><a href="#131安装docker">13.1.安装Docker</a></li>
+        <li><a href="#132把用户添加到docker组">13.2.把用户添加到docker组</a></li>
+        <li><a href="#133启用并启动docker">13.3.启用并启动Docker</a></li>
+        <li><a href="#14kubernetes">14.Kubernetes</a></li>
+        <li><a href="#141安装kubernetes">14.1.安装Kubernetes</a></li>
+        <li><a href="#142启用并启动kubernetes">14.2.启用并启动Kubernetes</a></li>
+      </ul>
+    </li>
+    <li><a href="#15lxd">15.LXD</a>
+      <ul>
+        <li><a href="#151安装lxd">15.1.安装LXD</a></li>
+        <li><a href="#152把用户添加到lxd组">15.2.把用户添加到lxd组</a></li>
+        <li><a href="#153启用并启动lxd">15.3.启用并启动LXD</a></li>
+      </ul>
+    </li>
+    <li><a href="#16elasticsearch">16.Elasticsearch</a>
+      <ul>
+        <li><a href="#161安装elasticsearch">16.1.安装Elasticsearch</a></li>
+        <li><a href="#163配置elasticsearch">16.3.配置Elasticsearch</a></li>
+        <li><a href="#164启用并启动elasticsearch">16.4启用并启动Elasticsearch</a></li>
+      </ul>
+    </li>
+    <li><a href="#也可以看看">也可以看看</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本文偏向Java后端 所有内容基于ArchLinux发行版
+AUR助手:Paru
+Shell:fish shell
+文本编辑器:Neovim</p>
+<h2 id="1git">1.Git</h2>
+<h3 id="11安装git">1.1.安装Git</h3>
+<p><code>paru -S --needed git</code></p>
+<h3 id="12配置git">1.2.配置Git</h3>
+<p>为了使用Git 至少需要设置一个名字和电子邮件地址<br>
+<code>git config --global user.name &quot;用户名&quot;</code><br>
+<code>git config --global user.email &quot;电子邮件地址&quot;</code></p>
+<h3 id="13安装github-desktop可选">1.3.安装GitHub-Desktop(可选)</h3>
+<p>这是一个用于GitHub的桌面版本<br>
+<code>paru -S --needed github-desktop</code></p>
+<h2 id="2jdk">2.JDK</h2>
+<h3 id="21安装liberica-jdk">2.1.安装Liberica JDK</h3>
+<p>安装最新的Liberica JDK<br>
+<code>paru -S --needed liberica-jdk-full-bin</code><br>
+还可以安装其他版本的Liberica JDK 比如8 11 17版本<br>
+<code>paru -S --needed liberica-jdk-8-full-bin liberica-jdk-11-full-bin liberica-jdk-17-full-bin</code></p>
+<h3 id="22配置java环境">2.2.配置Java环境</h3>
+<p>安装后会自动配置环境 无需手动配置<br>
+可以使用<code>archlinux-java</code>来切换Java环境<br>
+查看Java环境<br>
+<code>archlinux-java status</code><br>
+切换到其他Java环境<br>
+<code>sudo archlinux-java set liberica-jdk-full</code></p>
+<h2 id="3nodejs">3.Node.js</h2>
+<h3 id="31安装nodejs和包管理pnpm">3.1.安装Node.js和包管理pnpm</h3>
+<p><code>paru -S --needed nodejs pnpm</code></p>
+<h2 id="4python">4.Python</h2>
+<h3 id="41安装python-和包管理pip">4.1.安装Python 和包管理pip</h3>
+<p><code>paru -S --needed python python-pip</code></p>
+<h2 id="5maven">5.Maven</h2>
+<h3 id="51安装maven">5.1.安装Maven</h3>
+<p><code>paru -S --needed maven</code></p>
+<h3 id="52配置maven镜像源">5.2.配置Maven镜像源</h3>
+<p><code>sudo nvim /opt/maven/conf/settings.xml</code></p>
+<pre tabindex="0"><code>&lt;mirror&gt;
+    &lt;id&gt;aliyunmaven&lt;/id&gt;
+    &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+    &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+    &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+&lt;/mirror&gt;
+</code></pre><h2 id="6gradle">6.Gradle</h2>
+<h3 id="61安装gradle">6.1.安装Gradle</h3>
+<p><code>paru -S --needed gradle</code></p>
+<h3 id="62配置gradle镜像源">6.2.配置Gradle镜像源</h3>
+<p><code>nvim ~/.gradle/init.gradle</code></p>
+<pre tabindex="0"><code>allprojects {
+    repositories {
+        maven { url &#39;https://maven.aliyun.com/repository/public/&#39; }
+        mavenLocal()
+        mavenCentral()
+    }
+}
+</code></pre><h2 id="7mariadb或postgresql数据库">7.MariaDB或PostgreSQL数据库</h2>
+<h3 id="71mariadb">7.1.MariaDB</h3>
+<h4 id="712btrfs文件系统需要禁用写时复制">7.1.2.BTRFS文件系统需要禁用写时复制</h4>
+<p><code>sudo chattr +C /var/lib/mysql</code></p>
+<h4 id="713初始化mariadb">7.1.3.初始化MariaDB</h4>
+<p><code>sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</code></p>
+<h4 id="714把用户添加到mysql用户组">7.1.4.把用户添加到mysql用户组</h4>
+<p><code>sudo usermod -a -G mysql 用户名</code><br>
+验证是否添加成功<br>
+<code>id 用户名</code></p>
+<h4 id="715配置mariadb">7.1.5.配置MariaDB</h4>
+<p><code>sudo nvim /etc/my.cnf.d/server.cnf</code></p>
+<pre tabindex="0"><code>[mysqld]
+bind-address = localhost    #限制只能本地访问
+skip-networking    #使用Unix套接字
+</code></pre><h4 id="716启用并启动mariadb">7.1.6.启用并启动MariaDB</h4>
+<p><code>sudo systemctl enable --now mariadb.service</code></p>
+<h4 id="717提高初始安全性">7.1.7.提高初始安全性</h4>
+<p>该<code>mysql_secure_installation</code>命令将交互式地引导您完成一些推荐的安全措施 例如删除匿名帐户和删除测试数据库:<br>
+<code>sudo mysql_secure_installation</code><br>
+1.问你root用户的密码 如果你刚刚安装了MariaDB 并且还没有设置root密码 你应该在这里按回车<br>
+2.问你是否切换到unix_socket身份验证 默认是y 回车即可<br>
+3.问你是否更改root密码 默认是y 回车即可<br>
+4.默认情况下 MariaDB安装有一个匿名用户 允许任何人 无需创建用户帐户即可登录MariaDB 问你是否移除匿名用户 默认是y
+回车即可<br>
+5.问你是否禁用远程root登录(如果你有从其他电脑连接数据库的需要 则应该输入n) 默认是y 回车即可<br>
+6.默认情况下 MariaDB带有一个名为&quot;test&quot;的数据库 任何人都可以使用 问你是否移除这个测试数据库 默认是y 回车即可<br>
+7.问你是否重新加载权限表将确保到目前为止所做的所有更改将立即生效(如果你反悔了 可以输入n重新来过) 默认是y 回车即可</p>
+<h3 id="72postgresql">7.2.PostgreSQL</h3>
+<h4 id="721安装postgresql">7.2.1.安装PostgreSQL</h4>
+<p><code>paru -S postgresql</code></p>
+<h4 id="722btrfs文件系统需要禁用写时复制">7.2.2.BTRFS文件系统需要禁用写时复制</h4>
+<p><code>sudo chattr +C /var/lib/postgres/data</code></p>
+<h4 id="723初始化postgresql">7.2.3.初始化PostgreSQL</h4>
+<p><code>sudo su - postgres -c &quot;initdb --locale=en_US.UTF-8 --encoding=UTF8 -D '/var/lib/postgres/data' --data-checksums&quot;</code></p>
+<h4 id="724配置postgresql">7.2.4.配置PostgreSQL</h4>
+<p>限制对数据库超级用户的访问权限<br>
+<code>sudo nvim /var/lib/postgres/data/pg_hba.conf</code></p>
+<pre tabindex="0"><code># TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# &#34;local&#34; is for Unix domain socket connections only
+local   all             postgres                                peer
+</code></pre><p>使用Unix套接字<br>
+<code>sudo nvim /var/lib/postgres/data/postgresql.conf</code><br>
+<code>listen_addresses = ''</code></p>
+<h4 id="725启用并启动postgresql">7.2.5.启用并启动PostgreSQL</h4>
+<p><code>sudo systemctl enable --now postgresql.service</code></p>
+<h4 id="726新建用户并设置权限">7.2.6.新建用户并设置权限</h4>
+<p>切换到PostgreSQL用户<br>
+<code>sudo su postgres</code><br>
+新建用户并设置权限 创建的用户和你的用户名一样就无需指定用户登录(这非常方便)<br>
+<code>createuser --interactive</code><br>
+根据提示输入用户名 回车<br>
+问你是否设为管理员 输入<code>y</code>设为管理员 回车</p>
+<h2 id="8redis">8.Redis</h2>
+<h3 id="81安装redis">8.1.安装Redis</h3>
+<p><code>paru -S redis</code></p>
+<h3 id="82配置redis">8.2.配置Redis</h3>
+<p><code>sudo nvim /etc/redis/redis.conf</code></p>
+<pre tabindex="0"><code>port 0    #禁用对TCP的监听
+unixsocket /run/redis/redis.sock    #使用Unix套接字
+unixsocketperm 770    #将套接字的权限设置为redis用户组的所有成员
+</code></pre><h3 id="83启用并启动redis">8.3.启用并启动Redis</h3>
+<p><code>sudo systemctl enable --now redis.service</code></p>
+<h2 id="9tomcat">9.Tomcat</h2>
+<h3 id="91安装tomcat">9.1.安装Tomcat</h3>
+<p><code>paru -S tomcat10</code></p>
+<h3 id="92配置tomcat">9.2.配置Tomcat</h3>
+<p>修改端口号<br>
+<code>sudo nvim /etc/tomcat10/server.xml</code></p>
+<pre tabindex="0"><code>&lt;Connector port=&#34;22330&#34; protocol=&#34;HTTP/1.1&#34;
+            connectionTimeout=&#34;20000&#34;
+            redirectPort=&#34;8443&#34; /&gt;
+</code></pre><p>添加一个新用户并设置密码<br>
+<code>sudo nvim /etc/tomcat10/tomcat-users.xml</code></p>
+<pre tabindex="0"><code>&lt;role rolename=&#34;manager-gui&#34;/&gt;
+&lt;user username=&#34;用户名&#34; password=&#34;密码&#34; roles=&#34;manager-gui&#34;/&gt;
+</code></pre><h3 id="93把用户添加到组">9.3.把用户添加到组</h3>
+<p><code>sudo gpasswd -a 用户名 tomcat10</code><br>
+验证是否添加成功<br>
+<code>id 用户名</code></p>
+<h3 id="94启用并启动tomcat">9.4.启用并启动Tomcat</h3>
+<p><code>systemctl enable --now tomcat10.service</code></p>
+<h2 id="10nginx">10.Nginx</h2>
+<h3 id="101安装nginx">10.1.安装Nginx</h3>
+<p><code>paru -S nginx-mainline</code></p>
+<h3 id="102配置nginx">10.2.配置Nginx</h3>
+<p>修改端口号<br>
+<code>sudo nvim /etc/nginx/nginx.conf</code></p>
+<pre tabindex="0"><code>server {
+        listen       22332;
+</code></pre><h3 id="103启用并启动nginx">10.3启用并启动Nginx</h3>
+<p><code>systemctl enable --now nginx.service</code></p>
+<h2 id="11rabbitmq">11.RabbitMQ</h2>
+<h3 id="111安装rabbitmq">11.1.安装RabbitMQ</h3>
+<p><code>paru -S rabbitmq</code></p>
+<h3 id="112配置rabbitmq">11.2.配置RabbitMQ</h3>
+<p>指定主机名 主机名需要与/etc/hostname中的一致<br>
+<code>sudo nvim /etc/rabbitmq/rabbitmq-env.conf</code></p>
+<pre tabindex="0"><code>NODENAME=主机名
+NODE_IP_ADDRESS=0.0.0.0
+NODE_PORT=5672
+</code></pre><p>修改默认端口号<br>
+<code>sudo nvim /etc/rabbitmq/rabbitmq.conf</code></p>
+<pre tabindex="0"><code>listeners.tcp.default=11223    #默认端口为5672
+management.tcp.port=22333    #默认端口为15672
+</code></pre><h3 id="113启用并启动rabbitmq">11.3.启用并启动RabbitMQ</h3>
+<p><code>sudo systemctl enable --now rabbitmq.service</code></p>
+<h3 id="114启用web管理界面">11.4.启用WEB管理界面</h3>
+<p><code>sudo rabbitmq-plugins enable rabbitmq_management</code><br>
+在 localhost:15672 上访问管理界面 <br>
+默认凭据 username:guest password:guest</p>
+<h3 id="115添加用户并设置权限">11.5.添加用户并设置权限</h3>
+<p><code>sudo rabbitmqctl add_user 用户名 密码</code><br>
+设为管理员<br>
+<code>sudo rabbitmqctl set_user_tags 用户名 administrator</code></p>
+<h2 id="12kafka">12.Kafka</h2>
+<h3 id="121安装zookeeperkafka">12.1.安装ZooKeeper+Kafka</h3>
+<p>安装Kafka的同时会自动安装ZooKeeper<br>
+<code>paur -S kafka</code></p>
+<h3 id="122启用并启动kafka">12.2.启用并启动Kafka</h3>
+<p>这同时会自动启动并启动zookeeper@kafka.service<br>
+<code>systemctl enable --now kafka.service</code></p>
+<h2 id="13docker">13.Docker</h2>
+<h3 id="131安装docker">13.1.安装Docker</h3>
+<p><code>paru -S docker docker-compose</code></p>
+<h3 id="132把用户添加到docker组">13.2.把用户添加到docker组</h3>
+<p><code>sudo usermod -a -G docker 用户名</code></p>
+<h3 id="133启用并启动docker">13.3.启用并启动Docker</h3>
+<p><code>sudo systemctl enable --now docker.service</code></p>
+<h3 id="14kubernetes">14.Kubernetes</h3>
+<h3 id="141安装kubernetes">14.1.安装Kubernetes</h3>
+<p><code>paru -S etcd kubernetes-control-plane kubernetes-node kubeadm containerd cri-o kubectl</code></p>
+<h3 id="142启用并启动kubernetes">14.2.启用并启动Kubernetes</h3>
+<p>启动服务前应禁用Swap<br>
+<code>sudo swapoff /dev/sdxy</code><br>
+<code>sudo systemctl enable --now kubelet.service</code></p>
+<h2 id="15lxd">15.LXD</h2>
+<h3 id="151安装lxd">15.1.安装LXD</h3>
+<p><code>paru -S lxd</code></p>
+<h3 id="152把用户添加到lxd组">15.2.把用户添加到lxd组</h3>
+<p><code>sudo usermod -a -G lxd 用户名</code></p>
+<h3 id="153启用并启动lxd">15.3.启用并启动LXD</h3>
+<p><code>sudo systemctl enable --now lxd.service</code></p>
+<h2 id="16elasticsearch">16.Elasticsearch</h2>
+<h3 id="161安装elasticsearch">16.1.安装Elasticsearch</h3>
+<p><code>paru -S elasticsearch</code></p>
+<h3 id="163配置elasticsearch">16.3.配置Elasticsearch</h3>
+<p>在启动Elasticsearch之前应该创建一个密钥库<br>
+<code>sudo elasticsearch-keystore create</code><br>
+配置一个节点 只允许在主机上访问并设置端口号<br>
+<code>sudo nvim /etc/elasticsearch/elasticsearch.yml</code></p>
+<pre tabindex="0"><code>cluster.name: my-application
+node.name: node-1
+network.host: 127.0.0.1
+http.port: 22331
+discovery.seed_hosts: [&#34;127.0.0.1&#34;]
+cluster.initial_master_nodes: [&#34;node-1&#34;]
+</code></pre><p>修改内存使用量<br>
+<code>sudo nvim /etc/elasticsearch/jvm.options.d/.options</code></p>
+<pre tabindex="0"><code>-Xms2g
+-Xmx2g
+</code></pre><h3 id="164启用并启动elasticsearch">16.4启用并启动Elasticsearch</h3>
+<p><code>sudo systemctl enable --now elasticsearch.service</code></p>
+<h2 id="也可以看看">也可以看看</h2>
+<p><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreffer ">Git的文档</a><br>
+<a href="https://wiki.archlinux.org/title/git" target="_blank" rel="noopener noreffer ">Git的ArchWiki</a><br>
+<a href="https://docs.github.com/en" target="_blank" rel="noopener noreffer ">Github的文档</a><br>
+<a href="https://wiki.archlinux.org/title/java" target="_blank" rel="noopener noreffer ">Java的ArchWiki</a><br>
+<a href="https://docs.oracle.com/en/java/javase/" target="_blank" rel="noopener noreffer ">Oracle的JDK文档</a><br>
+<a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreffer ">Nodejs的文档</a> <br>
+<a href="https://pnpm.io/motivation" target="_blank" rel="noopener noreffer ">pnpm的文档</a><br>
+<a href="https://wiki.archlinux.org/title/Node.js" target="_blank" rel="noopener noreffer ">Nodejs的ArchWiki</a><br>
+<a href="https://www.python.org/doc/" target="_blank" rel="noopener noreffer ">Python的文档</a><br>
+<a href="https://wiki.archlinux.org/title/python" target="_blank" rel="noopener noreffer ">Python的ArchWiki</a><br>
+<a href="https://maven.apache.org/guides/index.html" target="_blank" rel="noopener noreffer ">Maven的文档</a><br>
+<a href="https://docs.gradle.org/current/userguide/userguide.html" target="_blank" rel="noopener noreffer ">Gradle的文档</a><br>
+<a href="https://wiki.archlinux.org/title/MariaDB" target="_blank" rel="noopener noreffer ">MariaDB的ArchWiki</a><br>
+<a href="https://mariadb.com/" target="_blank" rel="noopener noreffer ">MariaDB的网站</a><br>
+<a href="https://mariadb.com/kb/en/" target="_blank" rel="noopener noreffer ">MariaDB的知识库</a><br>
+<a href="https://www.askapache.com/mysql/mysql-performance-tuning/" target="_blank" rel="noopener noreffer ">MySQL的性能调优脚本和专有技术</a><br>
+<a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener noreffer ">PostgreSQL的文档</a><br>
+<a href="https://wiki.archlinux.org/title/PostgreSQL" target="_blank" rel="noopener noreffer ">PostgreSQL的ArchWiki</a><br>
+<a href="https://redis.io/docs" target="_blank" rel="noopener noreffer ">Redis的文档</a><br>
+<a href="https://wiki.archlinux.org/title/redis" target="_blank" rel="noopener noreffer ">Redis的ArchWiki</a><br>
+<a href="https://tomcat.apache.org/" target="_blank" rel="noopener noreffer ">Tomcat的网站</a><br>
+<a href="https://wiki.archlinux.org/title/Tomcat" target="_blank" rel="noopener noreffer ">Tomcat的ArchWiki</a><br>
+<a href="https://www.rabbitmq.com/documentation.html" target="_blank" rel="noopener noreffer ">RabbitMQ的文档</a><br>
+<a href="https://wiki.archlinux.org/title/RabbitMQ" target="_blank" rel="noopener noreffer ">RabbitMQ的ArchWiki</a><br>
+<a href="https://zookeeper.apache.org/doc/current/index.html" target="_blank" rel="noopener noreffer ">ZooKeeper的文档</a><br>
+<a href="https://kafka.apache.org/quickstart" target="_blank" rel="noopener noreffer ">Kafka的文档</a><br>
+<a href="https://wiki.archlinux.org/title/Docker" target="_blank" rel="noopener noreffer ">Docker的ArchWiki</a><br>
+<a href="https://docs.docker.com/" target="_blank" rel="noopener noreffer ">Docker的文档</a><br>
+<a href="https://kubernetes.io/docs/home/" target="_blank" rel="noopener noreffer ">Kubernetes的文档</a><br>
+<a href="https://wiki.archlinux.org/title/Kubernetes" target="_blank" rel="noopener noreffer ">Kubernetes的ArchWiki</a><br>
+<a href="https://wiki.archlinux.org/title/LXD" target="_blank" rel="noopener noreffer ">LXD的ArchWiki</a><br>
+<a href="https://linuxcontainers.org/lxd/docs/master/" target="_blank" rel="noopener noreffer ">LXD的文档</a><br>
+<a href="https://wiki.archlinux.org/title/Linux_Containers" target="_blank" rel="noopener noreffer ">Linux容器的ArchWiki</a><br>
+<a href="https://www.elastic.co/guide/index.html" target="_blank" rel="noopener noreffer ">Elasticsearch的文档</a><br>
+<a href="https://wiki.archlinux.org/title/Elasticsearch" target="_blank" rel="noopener noreffer ">Elasticsearch的ArchWiki</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-07-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" data-title="A配置编程环境" data-hashtags="ArchLinux,Git,Java,Node.js,Python,Maven,Gradle,MariaDB,PostgreSQL,Redis,Tomcat,Nginx,RabbitMQ,ZooKeeper,Kafka,Docker,Kubernetes,Elasticsearch"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" data-hashtag="ArchLinux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" data-title="A配置编程环境"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" data-title="A配置编程环境"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" data-title="A配置编程环境"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/archlinux/">ArchLinux</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/node.js/">Node.js</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/maven/">Maven</a>,&nbsp;<a href="/tags/gradle/">Gradle</a>,&nbsp;<a href="/tags/mariadb/">MariaDB</a>,&nbsp;<a href="/tags/postgresql/">PostgreSQL</a>,&nbsp;<a href="/tags/redis/">Redis</a>,&nbsp;<a href="/tags/tomcat/">Tomcat</a>,&nbsp;<a href="/tags/nginx/">Nginx</a>,&nbsp;<a href="/tags/rabbitmq/">RabbitMQ</a>,&nbsp;<a href="/tags/zookeeper/">ZooKeeper</a>,&nbsp;<a href="/tags/kafka/">Kafka</a>,&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/kubernetes/">Kubernetes</a>,&nbsp;<a href="/tags/elasticsearch/">Elasticsearch</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8githubpages/" class="prev" rel="prev" title="使用Hugo搭建个人博客并部署在GitHubPages"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>使用Hugo搭建个人博客并部署在GitHubPages</a>
+            <a href="/posts/howdy%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB/" class="next" rel="next" title="Howdy面部识别">Howdy面部识别<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/bcyfo5u0v38t" target="_blank">bcyfo5u0v38t</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

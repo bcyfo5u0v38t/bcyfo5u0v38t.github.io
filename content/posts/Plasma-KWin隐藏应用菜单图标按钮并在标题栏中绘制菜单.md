@@ -1,6 +1,6 @@
 ---
 title: "Plasma-KWin隐藏应用菜单图标按钮并在标题栏中绘制菜单"
-date: 2022-07-22T08:00:00+08:00
+date: 2022-07-24T08:00:00+08:00
 tags: ["ArchLinux","Plasma","KWin"]
 categories: ["ArchLinux"]
 draft: false

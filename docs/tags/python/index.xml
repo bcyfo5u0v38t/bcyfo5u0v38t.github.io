@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python - Tag - bcyfo5u0v38t&#39;s Blog</title>
+        <link>https://bcyfo5u0v38t.github.io/tags/python/</link>
+        <description>Python - Tag - bcyfo5u0v38t&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>A配置编程环境</title>
+    <link>https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/</link>
+    <pubDate>Tue, 19 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/posts/%E9%85%8D%E7%BD%AE%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/</guid>
+    <description><![CDATA[本文偏向Java后端 所有内容基于ArchLinux发行版 AUR助手:Paru Shell:fish shell 文本编辑器:Neovim 1.Git 1.1.安装Git paru -S --needed git 1.2.]]></description>
+</item>
+</channel>
+</rss>

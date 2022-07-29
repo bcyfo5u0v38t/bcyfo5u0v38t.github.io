@@ -4,10 +4,10 @@
         <link>https://bcyfo5u0v38t.github.io/tags/intellij/</link>
         <description>IntelliJ - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Thu, 21 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/intellij/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/intellij/" rel="self" type="application/rss+xml" /><item>
     <title>IntelliJ系IDE使用fish Shell终端报无权限错误和无法创建目录解决办法</title>
     <link>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fish-shell%E7%BB%88%E7%AB%AF%E6%8A%A5%E6%97%A0%E6%9D%83%E9%99%90%E9%94%99%E8%AF%AF%E5%92%8C%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-    <pubDate>Thu, 21 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Fri, 22 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fish-shell%E7%BB%88%E7%AB%AF%E6%8A%A5%E6%97%A0%E6%9D%83%E9%99%90%E9%94%99%E8%AF%AF%E5%92%8C%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
     <description><![CDATA[1.设置软链接 sudo ln -s ~/.config/fish/completions /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/completions sudo ln -s ~/.config/fish/conf.d /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/conf.d sudo ln -s ~/.config/fish/functions /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/functions sudo ln -s ~/.config/fish/fish_variables /opt/intellij-idea-ultimate-edition/plugins/terminal/fish/fish_variables 也可以看看 JetBrains的产品文档 fishshell的文档]]></description>
@@ -15,7 +15,7 @@
 <item>
     <title>IntelliJ系IDE使用Fcitx输入法候选框不跟随光标解决办法</title>
     <link>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fcitx%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E4%B8%8D%E8%B7%9F%E9%9A%8F%E5%85%89%E6%A0%87%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-    <pubDate>Wed, 20 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Thu, 21 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/posts/intellij%E7%B3%BBide%E4%BD%BF%E7%94%A8fcitx%E8%BE%93%E5%85%A5%E6%B3%95%E5%80%99%E9%80%89%E6%A1%86%E4%B8%8D%E8%B7%9F%E9%9A%8F%E5%85%89%E6%A0%87%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
     <description><![CDATA[1.安装JetBrainsRuntime-for-Linux-x64 paru -S jbr-linux-x64 也可以看看 JetBrainsRuntime-for-Linux-x]]></description>

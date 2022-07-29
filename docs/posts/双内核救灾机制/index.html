@@ -8,8 +8,8 @@
 <meta property="og:description" content="1.准备需要的软件包 paru -S asp base-devel pacman-contrib kexec-tools makedumpfile modprobed-db 2.准备内核源码 mkdir Kdump_Kernel cd Kdump_Kernel asp update linux-lts asp export linux-lts 3.修改模板 修改参数以开启错误快照功能&hellip; 当前默认的Ar" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bcyfo5u0v38t.github.io/posts/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-28T08:00:00+08:00" />
-<meta property="article:modified_time" content="2022-07-28T08:00:00+08:00" /><meta property="og:site_name" content="My cool site" />
+<meta property="article:published_time" content="2022-07-29T08:00:00+08:00" />
+<meta property="article:modified_time" content="2022-07-29T08:00:00+08:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="双内核救灾机制"/>
@@ -17,7 +17,7 @@
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bcyfo5u0v38t.github.io/posts/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6/" /><link rel="prev" href="https://bcyfo5u0v38t.github.io/posts/%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" /><link rel="next" href="https://bcyfo5u0v38t.github.io/posts/elasticsearch%E5%9C%A8%E6%8D%86%E7%BB%91%E7%9A%84jdk%E4%B8%AD%E6%89%BE%E4%B8%8D%E5%88%B0java/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -29,7 +29,7 @@
             "@type": "WebPage",
             "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6\/"
         },"genre": "posts","keywords": "ArchLinux, Linux Kernel, Kexec, Kdump","wordcount":  1101 ,
-        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6\/","datePublished": "2022-07-28T08:00:00+08:00","dateModified": "2022-07-28T08:00:00+08:00","publisher": {
+        "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/%E5%8F%8C%E5%86%85%E6%A0%B8%E6%95%91%E7%81%BE%E6%9C%BA%E5%88%B6\/","datePublished": "2022-07-29T08:00:00+08:00","dateModified": "2022-07-29T08:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -70,7 +70,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">双内核救灾机制</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span>&nbsp;<span class="post-category">included in <a href="/categories/archlinux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ArchLinux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-28">2022-07-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1101 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-29">2022-07-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1101 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -212,7 +212,7 @@ WantedBy=multi-user.target
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-07-28</span>
+                <span>Updated on 2022-07-29</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
@@ -229,7 +229,8 @@ WantedBy=multi-user.target
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" class="prev" rel="prev" title="内核热切换"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>内核热切换</a></div>
+    <div class="post-nav"><a href="/posts/%E5%86%85%E6%A0%B8%E7%83%AD%E5%88%87%E6%8D%A2/" class="prev" rel="prev" title="内核热切换"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>内核热切换</a>
+            <a href="/posts/elasticsearch%E5%9C%A8%E6%8D%86%E7%BB%91%E7%9A%84jdk%E4%B8%AD%E6%89%BE%E4%B8%8D%E5%88%B0java/" class="next" rel="next" title="Elasticsearch在捆绑的JDK中找不到Java">Elasticsearch在捆绑的JDK中找不到Java<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

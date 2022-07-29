@@ -1,6 +1,6 @@
 ---
 title: "Howdy面部识别"
-date: 2022-07-19T08:00:00+08:00
+date: 2022-07-20T08:00:00+08:00
 tags: ["ArchLinux","Howdy","Authentication"]
 categories: ["ArchLinux"]
 draft: false

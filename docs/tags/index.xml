@@ -4,18 +4,42 @@
         <link>https://bcyfo5u0v38t.github.io/tags/</link>
         <description>Tags - Tag - bcyfo5u0v38t&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</managingEditor>
-            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Thu, 28 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bcyfo5u0v38t@gmail.com (bcyfo5u0v38t)</webMaster><lastBuildDate>Fri, 29 Jul 2022 14:00:03 &#43;0800</lastBuildDate><atom:link href="https://bcyfo5u0v38t.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>ArchLinux</title>
     <link>https://bcyfo5u0v38t.github.io/tags/archlinux/</link>
-    <pubDate>Thu, 28 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Fri, 29 Jul 2022 14:00:03 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/archlinux/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
+    <title>Elasticsearch</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/elasticsearch/</link>
+    <pubDate>Fri, 29 Jul 2022 14:00:03 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/elasticsearch/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Java</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/java/</link>
+    <pubDate>Fri, 29 Jul 2022 14:00:03 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/java/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>故障排除</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/</link>
+    <pubDate>Fri, 29 Jul 2022 14:00:03 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Kdump</title>
     <link>https://bcyfo5u0v38t.github.io/tags/kdump/</link>
-    <pubDate>Thu, 28 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Fri, 29 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/kdump/</guid>
     <description><![CDATA[]]></description>
@@ -23,7 +47,7 @@
 <item>
     <title>Kexec</title>
     <link>https://bcyfo5u0v38t.github.io/tags/kexec/</link>
-    <pubDate>Thu, 28 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Fri, 29 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/kexec/</guid>
     <description><![CDATA[]]></description>
@@ -31,47 +55,15 @@
 <item>
     <title>Linux Kernel</title>
     <link>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</link>
-    <pubDate>Thu, 28 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Fri, 29 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/linux-kernel/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>GPU</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/gpu/</link>
-    <pubDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/gpu/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>KVM</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/kvm/</link>
-    <pubDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/kvm/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Libvirt</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/libvirt/</link>
-    <pubDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/libvirt/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>QEMU</title>
-    <link>https://bcyfo5u0v38t.github.io/tags/qemu/</link>
-    <pubDate>Tue, 26 Jul 2022 15:07:20 &#43;0800</pubDate>
-    <author>bcyfo5u0v38t</author>
-    <guid>https://bcyfo5u0v38t.github.io/tags/qemu/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
     <title>Droidcam</title>
     <link>https://bcyfo5u0v38t.github.io/tags/droidcam/</link>
-    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/droidcam/</guid>
     <description><![CDATA[]]></description>
@@ -79,9 +71,17 @@
 <item>
     <title>Webcam</title>
     <link>https://bcyfo5u0v38t.github.io/tags/webcam/</link>
-    <pubDate>Mon, 25 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 27 Jul 2022 08:00:00 &#43;0800</pubDate>
     <author>bcyfo5u0v38t</author>
     <guid>https://bcyfo5u0v38t.github.io/tags/webcam/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Calibre</title>
+    <link>https://bcyfo5u0v38t.github.io/tags/calibre/</link>
+    <pubDate>Tue, 26 Jul 2022 08:00:00 &#43;0800</pubDate>
+    <author>bcyfo5u0v38t</author>
+    <guid>https://bcyfo5u0v38t.github.io/tags/calibre/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

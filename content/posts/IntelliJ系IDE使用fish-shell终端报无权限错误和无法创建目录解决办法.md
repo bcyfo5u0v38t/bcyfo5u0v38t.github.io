@@ -1,6 +1,6 @@
 ---
 title: "IntelliJ系IDE使用fish Shell终端报无权限错误和无法创建目录解决办法"
-date: 2022-07-21T08:00:00+08:00
+date: 2022-07-22T08:00:00+08:00
 tags: ["ArchLinux","fish shell","shell","IntelliJ","故障排除"]
 categories: ["ArchLinux"]
 draft: false

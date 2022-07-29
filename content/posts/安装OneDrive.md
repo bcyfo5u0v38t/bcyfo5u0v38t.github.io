@@ -1,6 +1,6 @@
 ---
 title: "安装OneDrive"
-date: 2022-08-14T08:00:00+08:00
+date: 2022-08-02T08:00:00+08:00
 tags: ["ArchLinux","OneDrive","Storage"]
 categories: ["ArchLinux"]
 draft: false

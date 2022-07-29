@@ -1,6 +1,6 @@
 ---
 title: "Waifu2x 一个用于动漫风格图像的图像缩放和图像降噪的程序"
-date: 2022-07-23T08:00:00+08:00
+date: 2022-07-25T08:00:00+08:00
 tags: ["ArchLinux","Waifu2x","Anime","Picture"]
 categories: ["ArchLinux"]
 draft: false
