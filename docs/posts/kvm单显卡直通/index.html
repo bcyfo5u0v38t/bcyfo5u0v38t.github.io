@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/bcyfo5u0v38t.github.io\/posts\/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A\/"
-        },"genre": "posts","keywords": "ArchLinux, KVM, GPU, Libvirt, QEMU","wordcount":  2099 ,
+        },"genre": "posts","keywords": "ArchLinux, KVM, GPU, Libvirt, QEMU, Looking Glass, WinApps","wordcount":  3050 ,
         "url": "https:\/\/bcyfo5u0v38t.github.io\/posts\/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A\/","datePublished": "2022-07-23T15:07:20+08:00","dateModified": "2022-07-23T15:07:20+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -70,8 +70,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">KVM单显卡直通</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/bcyfo5u0v38t" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>bcyfo5u0v38t</a></span>&nbsp;<span class="post-category">included in <a href="/categories/archlinux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ArchLinux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-23">2022-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2099 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-23">2022-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3050 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -108,6 +108,20 @@
         <li><a href="#42给vbios打补丁仅限nvidia">4.2给VBIOS打补丁(仅限NVIDIA)</a></li>
         <li><a href="#43配置虚拟机">4.3配置虚拟机</a></li>
         <li><a href="#44绕过nvidia-vm检测或许从2021年4月起不再需要">4.4绕过Nvidia VM检测(或许从2021年4月起不再需要)</a></li>
+      </ul>
+    </li>
+    <li><a href="#5looking-glass">5.Looking Glass</a>
+      <ul>
+        <li><a href="#51安装looking-glass">5.1.安装Looking Glass</a></li>
+        <li><a href="#52配置looking-glass">5.2.配置Looking Glass</a></li>
+        <li><a href="#53创建共享内存文件">5.3.创建共享内存文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#6winapps-for-linux">6.WinApps for Linux</a>
+      <ul>
+        <li><a href="#61安装freerdp并克隆winapps">6.1.安装freerdp并克隆WinApps</a></li>
+        <li><a href="#62配置winapps">6.2.配置WinApps</a></li>
+        <li><a href="#63-运行winapps安装程序">6.3 运行WinApps安装程序</a></li>
       </ul>
     </li>
     <li><a href="#也可以看看">也可以看看</a></li>
@@ -493,13 +507,68 @@ NVIDIA显卡<br>
 <pre tabindex="0"><code> &lt;kvm&gt;
  	&lt;hidden state=&#39;on&#39;/&gt;
  &lt;/kvm&gt;
-</code></pre><h2 id="也可以看看">也可以看看</h2>
+</code></pre><h2 id="5looking-glass">5.Looking Glass</h2>
+<h3 id="51安装looking-glass">5.1.安装Looking Glass</h3>
+<p><code>paru -S looking-glass</code></p>
+<h3 id="52配置looking-glass">5.2.配置Looking Glass</h3>
+<p>在<code>&lt;devices&gt;</code>和<code>&lt;/devices&gt;</code>之间添加</p>
+<pre tabindex="0"><code>&lt;shmem name=&#39;looking-glass&#39;&gt;
+  &lt;model type=&#39;ivshmem-plain&#39;/&gt;
+  &lt;size unit=&#39;M&#39;&gt;32&lt;/size&gt;
+&lt;/shmem&gt;
+</code></pre><p>根据您要传输的分辨率将32替换为您自己所需要的值 计算方法:</p>
+<pre tabindex="0"><code>宽 x 高 x 4 x 2 = 总比特数
+总比特数 / 1024 / 1024 = 总兆字节 + 10
+</code></pre><p>例如在1920x1080的情况下:</p>
+<pre tabindex="0"><code>1920 x 1080 x 4 x 2 = 16,588,800 字节
+16,588,800 / 1024 / 1024 = 15.82 MiB + 10 = 25.82
+</code></pre><p>结果必须四舍五入到最接近的2次方 由于25.82大于16 我们应该选择32</p>
+<h3 id="53创建共享内存文件">5.3.创建共享内存文件</h3>
+<p><code>sudo nvim /etc/tmpfiles.d/10-looking-glass.conf</code><br>
+<code>f /dev/shm/looking-glass	0660	用户名	kvm -</code><br>
+使用systemd-tmpfiles创建共享内存文件 而无需等待到下次启动<br>
+<code>sudo systemd-tmpfiles --create /etc/tmpfiles.d/10-looking-glass.conf</code></p>
+<p>Windows不会通知用户新的IVSHMEM设备 它会静默安装一个虚拟驱动程序<br>
+进入设备管理器并在&quot;系统设备&quot;节点下为“PCI 标准 RAM 控制器”更新设备的驱动程序<br>
+下载匹配的<a href="https://looking-glass.io/downloads" target="_blank" rel="noopener noreffer ">looking-glass-host</a><br>
+在虚拟机设置并运行后启动它 禁用Spice 设置全屏<br>
+<code>looking-glass-client -s -F</code></p>
+<h2 id="6winapps-for-linux">6.WinApps for Linux</h2>
+<h3 id="61安装freerdp并克隆winapps">6.1.安装freerdp并克隆WinApps</h3>
+<pre tabindex="0"><code>paru -S freerdp
+git clone https://github.com/Fmstrat/winapps.git
+cd winapps
+</code></pre><h3 id="62配置winapps">6.2.配置WinApps</h3>
+<p><code>nvim ~/.config/winapps/winapps.conf</code></p>
+<pre tabindex="0"><code>RDP_USER=&#34;Windows用户帐户&#34;    #在设置Windows或域用户时创建的用户名
+RDP_PASS=&#34;Windows用户密码&#34;    #不能是用户/PIN组合
+#RDP_DOMAIN=&#34;MYDOMAIN&#34;
+#RDP_IP=&#34;192.168.123.111&#34;
+#RDP_SCALE=100
+#RDP_FLAGS=&#34;&#34;
+#MULTIMON=&#34;true&#34;
+#DEBUG=&#34;true&#34;
+</code></pre><p>当使用预先存在的非虚拟机RDP服务器 可以使用<code>RDP_IP</code>指定它的位置<br>
+对于正在运行的虚拟机(启用NAT) 可以留空<code>RDP_IP</code> WinApps将自动检测正确的本地IP<br>
+对于域用户 您可以取消注释和更改<code>RDP_DOMAIN</code><br>
+在高分辨率(UHD)显示器上 可以设置RDP_SCALE为您想要的比例[100|140|160|180]<br>
+将标志添加到自由RDP调用 比如<code>/audio-mode:1</code>传入一个mic 使用<code>RDP_FLAGS</code>配置选项<br>
+对于多显示器设置 您可以尝试启用<code>MULTIMON</code> 但是如果出现黑屏 (freerdp错误)您将需要恢复<br>
+如果启用<code>DEBUG</code> 将在每个应用程序启动时创建一个日志 在~/.local/share/winapps/winapps.log</p>
+<h3 id="63-运行winapps安装程序">6.3 运行WinApps安装程序</h3>
+<p>检查一下freerdp是否可以连接 接受初始证书<br>
+<code>bin/winapps check</code><br>
+安装<br>
+<code>./installer.sh</code></p>
+<h2 id="也可以看看">也可以看看</h2>
 <p><a href="https://gitlab.com/liucreator/LEDs-single-gpu-passthrough/-/blob/main/README-cn.md" target="_blank" rel="noopener noreffer ">ledis的单显卡直通教程</a><br>
 <a href="https://wiki.archlinux.org/title/Kernel_parameters" target="_blank" rel="noopener noreffer ">内核参数的ArchWiki</a><br>
 <a href="https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF" target="_blank" rel="noopener noreffer ">通过OVMF的PCI直通的ArchWiki</a><br>
 <a href="https://wiki.archlinux.org/title/QEMU" target="_blank" rel="noopener noreffer ">QEMU的ArchWiki</a><br>
 <a href="https://wiki.archlinux.org/title/KVM" target="_blank" rel="noopener noreffer ">KVM的ArchWiki</a><br>
-<a href="https://wiki.archlinux.org/title/libvirt" target="_blank" rel="noopener noreffer ">Libvirt的ArchWiki</a></p>
+<a href="https://wiki.archlinux.org/title/libvirt" target="_blank" rel="noopener noreffer ">Libvirt的ArchWiki</a><br>
+<a href="https://looking-glass.io/" target="_blank" rel="noopener noreffer ">LookingGlass的官网</a><br>
+<a href="https://github.com/Fmstrat/winapps" target="_blank" rel="noopener noreffer ">WinAppsforLinux的Github</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -509,13 +578,13 @@ NVIDIA显卡<br>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通" data-hashtags="ArchLinux,KVM,GPU,Libvirt,QEMU"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-hashtag="ArchLinux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通" data-hashtags="ArchLinux,KVM,GPU,Libvirt,QEMU,Looking Glass,WinApps"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-hashtag="ArchLinux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://bcyfo5u0v38t.github.io/posts/kvm%E5%8D%95%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" data-title="KVM单显卡直通"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/archlinux/">ArchLinux</a>,&nbsp;<a href="/tags/kvm/">KVM</a>,&nbsp;<a href="/tags/gpu/">GPU</a>,&nbsp;<a href="/tags/libvirt/">Libvirt</a>,&nbsp;<a href="/tags/qemu/">QEMU</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/archlinux/">ArchLinux</a>,&nbsp;<a href="/tags/kvm/">KVM</a>,&nbsp;<a href="/tags/gpu/">GPU</a>,&nbsp;<a href="/tags/libvirt/">Libvirt</a>,&nbsp;<a href="/tags/qemu/">QEMU</a>,&nbsp;<a href="/tags/looking-glass/">Looking Glass</a>,&nbsp;<a href="/tags/winapps/">WinApps</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>

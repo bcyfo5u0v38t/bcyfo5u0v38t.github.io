@@ -1,7 +1,7 @@
 ---
 title: "KVM单显卡直通"
 date: 2022-07-23T15:07:20+08:00
-tags: ["ArchLinux","KVM","GPU","Libvirt","QEMU"]
+tags: ["ArchLinux","KVM","GPU","Libvirt","QEMU","Looking Glass","WinApps"]
 categories: ["ArchLinux"]
 draft: false
 ---
@@ -471,6 +471,92 @@ AMD显卡可以用"AuthenticAMD"作为id但不需要 因为AMD阻止你显卡虚
  </kvm>
 ```
 
+## 5.Looking Glass
+
+### 5.1.安装Looking Glass
+
+`paru -S looking-glass`
+
+### 5.2.配置Looking Glass
+
+在`<devices>`和`</devices>`之间添加
+
+```
+<shmem name='looking-glass'>
+  <model type='ivshmem-plain'/>
+  <size unit='M'>32</size>
+</shmem>
+```
+
+根据您要传输的分辨率将32替换为您自己所需要的值 计算方法:
+
+```
+宽 x 高 x 4 x 2 = 总比特数
+总比特数 / 1024 / 1024 = 总兆字节 + 10
+```
+
+例如在1920x1080的情况下:
+
+```
+1920 x 1080 x 4 x 2 = 16,588,800 字节
+16,588,800 / 1024 / 1024 = 15.82 MiB + 10 = 25.82
+```
+
+结果必须四舍五入到最接近的2次方 由于25.82大于16 我们应该选择32
+
+### 5.3.创建共享内存文件
+
+`sudo nvim /etc/tmpfiles.d/10-looking-glass.conf`  
+`f /dev/shm/looking-glass	0660	用户名	kvm -`  
+使用systemd-tmpfiles创建共享内存文件 而无需等待到下次启动  
+`sudo systemd-tmpfiles --create /etc/tmpfiles.d/10-looking-glass.conf`
+
+Windows不会通知用户新的IVSHMEM设备 它会静默安装一个虚拟驱动程序  
+进入设备管理器并在"系统设备"节点下为“PCI 标准 RAM 控制器”更新设备的驱动程序  
+下载匹配的[looking-glass-host](https://looking-glass.io/downloads)  
+在虚拟机设置并运行后启动它 禁用Spice 设置全屏  
+`looking-glass-client -s -F`
+
+## 6.WinApps for Linux
+
+### 6.1.安装freerdp并克隆WinApps
+
+```
+paru -S freerdp
+git clone https://github.com/Fmstrat/winapps.git
+cd winapps
+```
+
+### 6.2.配置WinApps
+
+`nvim ~/.config/winapps/winapps.conf`
+
+```
+RDP_USER="Windows用户帐户"    #在设置Windows或域用户时创建的用户名
+RDP_PASS="Windows用户密码"    #不能是用户/PIN组合
+#RDP_DOMAIN="MYDOMAIN"
+#RDP_IP="192.168.123.111"
+#RDP_SCALE=100
+#RDP_FLAGS=""
+#MULTIMON="true"
+#DEBUG="true"
+```
+
+当使用预先存在的非虚拟机RDP服务器 可以使用`RDP_IP`指定它的位置  
+对于正在运行的虚拟机(启用NAT) 可以留空`RDP_IP` WinApps将自动检测正确的本地IP  
+对于域用户 您可以取消注释和更改`RDP_DOMAIN`  
+在高分辨率(UHD)显示器上 可以设置RDP_SCALE为您想要的比例[100|140|160|180]  
+将标志添加到自由RDP调用 比如`/audio-mode:1`传入一个mic 使用`RDP_FLAGS`配置选项  
+对于多显示器设置 您可以尝试启用`MULTIMON` 但是如果出现黑屏 (freerdp错误)您将需要恢复  
+如果启用`DEBUG` 将在每个应用程序启动时创建一个日志 在~/.local/share/winapps/winapps.log
+
+### 6.3 运行WinApps安装程序
+
+检查一下freerdp是否可以连接 接受初始证书  
+`bin/winapps check`  
+安装  
+`./installer.sh`
+
 ## 也可以看看
 
 [ledis的单显卡直通教程](https://gitlab.com/liucreator/LEDs-single-gpu-passthrough/-/blob/main/README-cn.md)  
@@ -478,4 +564,6 @@ AMD显卡可以用"AuthenticAMD"作为id但不需要 因为AMD阻止你显卡虚
 [通过OVMF的PCI直通的ArchWiki](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF)  
 [QEMU的ArchWiki](https://wiki.archlinux.org/title/QEMU)  
 [KVM的ArchWiki](https://wiki.archlinux.org/title/KVM)  
-[Libvirt的ArchWiki](https://wiki.archlinux.org/title/libvirt)
+[Libvirt的ArchWiki](https://wiki.archlinux.org/title/libvirt)  
+[LookingGlass的官网](https://looking-glass.io/)  
+[WinAppsforLinux的Github](https://github.com/Fmstrat/winapps)

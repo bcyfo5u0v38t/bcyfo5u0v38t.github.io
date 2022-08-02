@@ -12,7 +12,7 @@ draft: false
 
 ## 2.使用
 
-`waifu2x-ncnn-vulkan -i origin.jpg -o output.png -n 2 -s 2`
+`waifu2x-ncnn-vulkan -i origin.jpg -o output.png -n 3 -s 2`
 
 ## 也可以看看
 
